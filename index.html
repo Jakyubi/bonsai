@@ -124,6 +124,108 @@
       </div>
     </header>
 
+    <!-- HERO -->
+    <section
+      x-data="{
+          activeSlide: 0,
+          slides: [
+            {
+              image: '/src/assets/photos/zdjecie-3.png',
+              title: 'Sprzedaż unikatowych roślin'
+            },
+            {
+              image: '/src/assets/photos/zdjecie-1.png',
+              title: 'Projektowanie i pielęgnacja ogrodów'
+            },
+            {
+              image: '/src/assets/photos/zdjecie-2.png',
+              title: 'Ekskluzywne formy drzewek Bonsai'
+            }
+          ],
+          timer: null,
+          startAutoplay() {
+            this.timer = setInterval(() => {
+              this.nextSlide();
+            }, 5000);
+          },
+          stopAutoplay() {
+            clearInterval(this.timer);
+          },
+          nextSlide() {
+            this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+          }
+        }"
+      x-init="startAutoplay()"
+      @mouseenter="stopAutoplay()"
+      @mouseleave="startAutoplay()"
+      class="relative w-full min-h-[75vh] sm:min-h-[85vh] flex flex-col xl:flex-row bg-black overflow-hidden">
+      <!-- Background image -->
+      <div class="absolute inset-0 z-0">
+        <template x-for="(slide, index) in slides" :key="index">
+          <div
+            x-show="activeSlide === index"
+            x-transition:enter="transition ease-out duration-700"
+            x-transition:enter-start="opacity-0 scale-105"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-500"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0 w-full h-full">
+            <img :src="slide.image" :alt="slide.title" class="w-full h-full object-cover" />
+            <!-- Photo overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Left side -->
+      <div
+        class="relative z-10 w-full xl:w-50 border-b xl:border-b-0 xl:border-r border-white/20 bg-black/20 backdrop-blur-md flex xl:flex-col justify-center items-center gap-4 py-4 xl:py-6 px-4 shrink-0">
+        <template x-for="(slide, index) in slides" :key="index">
+          <button
+            @click="activeSlide = index"
+            :aria-label="'Przejdź do slajdu ' + (index + 1)"
+            class="relative flex items-center justify-center w-5 h-5 rounded-full transition-all duration-300 focus:outline-none"
+            :class="activeSlide === index ? 'border border-white/40' : 'border border-transparent'">
+            <span
+              class="w-3.5 h-3.5 rounded-full transition-all duration-300"
+              :class="activeSlide === index ? 'bg-bonsai-green' : 'bg-white/30 hover:bg-white/80'"></span>
+          </button>
+        </template>
+      </div>
+
+      <!-- Hero main content -->
+      <div class="relative z-10 flex-1 flex flex-col justify-between p-6 sm:p-12 xl:p-16">
+        <!-- Photo counter -->
+        <div>
+          <span
+            class="inline-flex items-center justify-center px-3.5 py-1 bg-bonsai-green text-white text-xs font-light rounded-full tracking-wider shadow-sm transition-none"
+            x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+        </div>
+
+        <!-- Title change -->
+        <div class="my-auto py-12">
+          <template x-for="(slide, index) in slides" :key="index">
+            <h1
+              x-show="activeSlide === index"
+              x-transition:enter="transition ease-out duration-500 delay-150"
+              x-transition:enter-start="opacity-0 translate-y-4"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              class="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-light text-white leading-tight max-w-4xl"
+              x-text="slide.title"></h1>
+          </template>
+        </div>
+      </div>
+
+      <!-- Chat button -->
+      <button
+        type="button"
+        aria-label="Otwórz czat"
+        class="absolute right-6 sm:right-10 bottom-20 sm:bottom-28 z-20 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-200">
+        <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="w-5 h-5" />
+      </button>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
