@@ -6,6 +6,7 @@
   --color-bonsai-advice-overlay: #89a22e;
   --color-bonsai-dark: #231f20;
   --color-bonsai-timeline-text: #dfdfd0;
+  --color-bonsai-gray: #808080;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
