@@ -135,11 +135,11 @@
             },
             {
               image: '/src/assets/photos/zdjecie-1.png',
-              title: 'Projektowanie i pielęgnacja ogrodów'
+              title: 'Krotki tekst'
             },
             {
               image: '/src/assets/photos/zdjecie-2.png',
-              title: 'Ekskluzywne formy drzewek Bonsai'
+              title: 'Dlugi tekst do testowania roznej liczby wierszy'
             }
           ],
           timer: null,
@@ -195,7 +195,7 @@
       </div>
 
       <!-- Hero main content -->
-      <div class="relative z-10 flex-1 flex flex-col justify-between p-6 sm:p-12 xl:p-16">
+      <div class="relative z-10 flex-1 flex flex-col justify-start p-6 sm:p-12 xl:p-16">
         <!-- Photo counter -->
         <div>
           <span
@@ -211,7 +211,7 @@
               x-transition:enter="transition ease-out duration-500 delay-150"
               x-transition:enter-start="opacity-0 translate-y-4"
               x-transition:enter-end="opacity-100 translate-y-0"
-              class="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-light text-white leading-tight max-w-4xl"
+              class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-tight max-w-4xl"
               x-text="slide.title"></h1>
           </template>
         </div>
@@ -323,10 +323,10 @@
 
           <!-- Content -->
           <div class="p-8 lg:p-16 xl:p-24 flex flex-col justify-center items-start space-y-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-base text-bonsai-dark tracking-tight">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-bonsai-dark tracking-tight">
               Rośliny liściaste
             </h3>
-            <p class="text-lg sm:text-xl lg:text-2xl font-base text-bonsai-dark leading-relaxed max-w-md">
+            <p class="text-lg sm:text-xl lg:text-2xl font-normal text-bonsai-dark leading-relaxed max-w-md">
               Wszystkie rośliny liściaste ozdobne, miododajne, krzewy i drzewa
             </p>
             <a
@@ -341,8 +341,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden min-h-120">
           <!-- Content -->
           <div class="order-2 lg:order-1 p-8 lg:p-16 xl:pl-50 flex flex-col justify-center items-start space-y-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-base text-bonsai-dark tracking-tight">Rośliny iglaste</h3>
-            <p class="text-lg sm:text-xl lg:text-2xl font-base text-bonsai-dark leading-relaxed max-w-md">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-bonsai-dark tracking-tight">
+              Rośliny iglaste
+            </h3>
+            <p class="text-lg sm:text-xl lg:text-2xl font-normal text-bonsai-dark leading-relaxed max-w-md">
               Szeroki wybór wyszukanych gatunków i odmian
             </p>
             <a
@@ -365,8 +367,8 @@
 
           <!-- Content -->
           <div class="p-8 lg:p-16 xl:p-24 flex flex-col justify-center items-start space-y-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-base text-bonsai-dark tracking-tight">Bonsai</h3>
-            <p class="text-lg sm:text-xl lg:text-2xl font-base text-bonsai-dark leading-relaxed max-w-md">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-bonsai-dark tracking-tight">Bonsai</h3>
+            <p class="text-lg sm:text-xl lg:text-2xl font-normal text-bonsai-dark leading-relaxed max-w-md">
               Wszystkie rośliny liściaste, ozdobne, miododajne, krzewy i drzewa
             </p>
             <a
@@ -396,7 +398,7 @@
           <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300"></div>
 
           <div class="relative z-10 flex flex-col items-center gap-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-base text-white tracking-wide leading-tight">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-wide leading-tight">
               Obserwuj nas<br />na Instagram
             </h3>
 
@@ -413,7 +415,7 @@
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative h-95 sm:h-112.5 lg:h-125 overflow-hidden flex flex-col items-center justify-center text-center px-4 border-t md:border-t-0 md:border-l border-white/10">
+          class="group relative h-95 sm:h-112.5 lg:h-125 overflow-hidden flex flex-col items-center justify-center text-center px-4 border-t md:border-t-0">
           <img
             src="/src/assets/photos/zdjecie-1.png"
             alt="TikTok Japanese Garden"
@@ -421,7 +423,7 @@
           <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300"></div>
 
           <div class="relative z-10 flex flex-col items-center gap-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-base text-white tracking-wide leading-tight">
+            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-wide leading-tight">
               Obserwuj nas<br />na Tik Tok
             </h3>
 
@@ -464,7 +466,7 @@
         }
       }"
       @mouseleave="hovered = false; isDown = false"
-      class="relative w-full h-[85vh] sm:h-[90vh] lg:h-[95vh] min-h-125 bg-white overflow-hidden select-none border-t border-gray-100">
+      class="relative w-full h-[85vh] sm:h-[90vh] lg:h-[95vh] min-h-125 bg-white overflow-hidden select-none">
       <!-- Cover -->
       <div
         class="absolute inset-0 z-30 bg-bonsai-advice-overlay flex flex-col items-center justify-center transition-all duration-700 ease-in-out cursor-pointer"
@@ -508,7 +510,7 @@
               <div
                 class="absolute right-0 top-[45%] -translate-y-1/2 translate-x-[38%] sm:translate-x-[38%] z-20 pointer-events-none whitespace-nowrap">
                 <span
-                  class="text-[46vw] sm:text-[36vw] lg:text-[22vw] xl:text-[20vw] font-base text-bonsai-timeline-text tracking-wider leading-none select-none"
+                  class="text-[46vw] sm:text-[36vw] lg:text-[22vw] xl:text-[20vw] font-normal text-bonsai-timeline-text tracking-wider leading-none select-none"
                   x-text="item.year">
                 </span>
               </div>
@@ -526,7 +528,7 @@
               <div
                 class="absolute top-[45%] -translate-y-1/2 left-0 flex z-20 pl-[42%] sm:pl-[38%] md:pl-[35%] lg:pl-[32%] pr-6 sm:pr-12 pointer-events-none">
                 <p
-                  class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-base text-bonsai-timeline-text whitespace-pre-line leading-relaxed drop-shadow-md"
+                  class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-bonsai-timeline-text whitespace-pre-line leading-relaxed drop-shadow-md"
                   x-text="item.text"></p>
               </div>
             </div>
@@ -547,23 +549,23 @@
             <!-- TikTok -->
             <a
               href="#"
-              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all duration-200"
+              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:scale-105 transition-all duration-200"
               aria-label="TikTok">
-              <img src="src/assets/icons/tt.svg" alt="TikTok" srcset="" />
+              <img src="/src/assets/icons/tt.svg" alt="TikTok" srcset="" />
             </a>
             <!-- Facebook -->
             <a
               href="#"
-              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all duration-200"
+              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:scale-105 transition-all duration-200"
               aria-label="Facebook">
-              <img src="src/assets/icons/fb.svg" alt="Facebook" srcset="" />
+              <img src="/src/assets/icons/fb.svg" alt="Facebook" srcset="" />
             </a>
             <!-- Instagram -->
             <a
               href="#"
-              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white hover:border-gray-800 transition-all duration-200"
+              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:scale-105 transition-all duration-200"
               aria-label="Instagram">
-              <img src="src/assets/icons/instagram.svg" alt="Instagram" srcset="" />
+              <img src="/src/assets/icons/instagram.svg" alt="Instagram" srcset="" />
             </a>
           </div>
 
@@ -593,13 +595,13 @@
                 </div>
               </div>
 
-              <div class="flex flex-col sm:flex-row items-center gap-20 xl:mr-50 text-center sm:text-right">
+              <div class="flex flex-col sm:flex-row items-center gap-4 xl:gap-20 xl:mr-50 text-center sm:text-right">
                 <span class="text-base font-light text-bonsai-dark"
                   >Zapraszamy do podzielenia się opinią na Google</span
                 >
                 <a
                   href="#"
-                  class="bg-bonsai-dark text-white text-base font-light px-6 py-3 rounded-full hover:bg-black transition-all duration-200 whitespace-nowrap">
+                  class="bg-bonsai-dark text-white text-base font-light px-6 py-3 rounded-full hover:scale-105 transition-all duration-200 whitespace-nowrap">
                   Dodaj opinię
                 </a>
               </div>
@@ -633,16 +635,16 @@
               <div class="md:col-span-2 space-y-3">
                 <h4 class="text-xl lg:text-2xl text-gray-800 font-light mb-8">Nawigacja</h4>
                 <p>
-                  <a href="#" class="hover:text-black transition-colors">O nas</a>
+                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">O nas</a>
                 </p>
                 <p>
-                  <a href="#" class="hover:text-black transition-colors">Realizacje</a>
+                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">Realizacje</a>
                 </p>
                 <p>
-                  <a href="#" class="hover:text-black transition-colors">Oferta</a>
+                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">Oferta</a>
                 </p>
                 <p>
-                  <a href="#" class="hover:text-black transition-colors">Kontakt</a>
+                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">Kontakt</a>
                 </p>
               </div>
 
@@ -651,53 +653,53 @@
                 <h4 class="text-xl lg:text-2xl text-bonsai-dark font-light mb-8">Kategorie</h4>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6">
                   <div>
-                    <a href="#" class="">Zwisające</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Zwisające</a>
                   </div>
                   <div>
-                    <a href="#" class="">Kolumnowe</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Kolumnowe</a>
                   </div>
                   <div>
-                    <a href="#" class="">Pnącza</a>
-                  </div>
-
-                  <div>
-                    <a href="#" class="">Drzewa</a>
-                  </div>
-                  <div>
-                    <a href="#" class="">Inne formy</a>
-                  </div>
-                  <div>
-                    <a href="#" class="">Róże</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Pnącza</a>
                   </div>
 
                   <div>
-                    <a href="#" class="">Drzewka</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Drzewa</a>
                   </div>
                   <div>
-                    <a href="#" class="">Liściaste</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Inne formy</a>
                   </div>
                   <div>
-                    <a href="#" class="">Byliny</a>
-                  </div>
-
-                  <div>
-                    <a href="#" class="">Krzewy</a>
-                  </div>
-                  <div>
-                    <a href="#" class="">Iglaste</a>
-                  </div>
-                  <div>
-                    <a href="#" class="">Owocowe</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Róże</a>
                   </div>
 
                   <div>
-                    <a href="#" class="">Płożące</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Drzewka</a>
                   </div>
                   <div>
-                    <a href="#" class="">Wrzosowate</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Liściaste</a>
                   </div>
                   <div>
-                    <a href="#" class="">Warzywa</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Byliny</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Krzewy</a>
+                  </div>
+                  <div>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Iglaste</a>
+                  </div>
+                  <div>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Owocowe</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Płożące</a>
+                  </div>
+                  <div>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Wrzosowate</a>
+                  </div>
+                  <div>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Warzywa</a>
                   </div>
                 </div>
               </div>
