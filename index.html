@@ -435,6 +435,106 @@
       </div>
     </section>
 
+    <!-- TIMELINE -->
+    <section
+      x-data="{
+        hovered: false,
+        isDown: false,
+        startX: 0,
+        scrollLeft: 0,
+        timeline: [
+          { year: '1996', text: 'sprzedaż roślin\nna placu targowym\nw Piekoszowie', image: '/src/assets/photos/zdjecie-1.png' },
+          { year: '1998', text: 'pierwsza szkółka\nogrodnicza pod\nKielcami', image: '/src/assets/photos/zdjecie-2.png' },
+          { year: '2012', text: 'pierwsze rośliny\nBonsai w Kielcach', image: '/src/assets/photos/zdjecie-3.png' }
+        ],
+        startDrag(e) {
+          this.isDown = true;
+          this.startX = e.pageX - this.$refs.slider.offsetLeft;
+          this.scrollLeft = this.$refs.slider.scrollLeft;
+        },
+        stopDrag() {
+          this.isDown = false;
+        },
+        drag(e) {
+          if (!this.isDown) return;
+          e.preventDefault();
+          const x = e.pageX - this.$refs.slider.offsetLeft;
+          const walk = (x - this.startX) * 1.5;
+          this.$refs.slider.scrollLeft = this.scrollLeft - walk;
+        }
+      }"
+      @mouseleave="hovered = false; isDown = false"
+      class="relative w-full h-[85vh] sm:h-[90vh] lg:h-[95vh] min-h-125 bg-white overflow-hidden select-none border-t border-gray-100">
+      <!-- Cover -->
+      <div
+        class="absolute inset-0 z-30 bg-bonsai-advice-overlay flex flex-col items-center justify-center transition-all duration-700 ease-in-out cursor-pointer"
+        :class="hovered ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'"
+        @mouseenter="hovered = true">
+        <img
+          src="/src/assets/photos/zdjecie-1.png"
+          alt="20 lat pasji"
+          class="absolute inset-0 w-full h-full object-cover opacity-50 filter brightness-75 pointer-events-none" />
+        <div class="absolute inset-0 bg-bonsai-green/80 mix-blend-multiply pointer-events-none"></div>
+
+        <!-- White cover stripe -->
+        <div class="absolute left-1/2 top-0 bottom-0 w-px bg-white/60 -translate-x-1/2 pointer-events-none"></div>
+
+        <div class="relative z-40 flex flex-col items-center text-center px-4 space-y-6 pointer-events-none">
+          <h2 class="text-6xl lg:text-8xl font-extralight text-white py-8 sm:py-16 tracking-wide">20 lat pasji</h2>
+          <button
+            class="px-7 py-4 bg-white text-bonsai-dark text-base xl:text-lg font-light rounded-full shadow-lg pointer-events-auto">
+            Poznaj naszą historię
+          </button>
+        </div>
+      </div>
+
+      <!-- Timeline setup -->
+      <div
+        x-ref="slider"
+        class="hide-scrollbar absolute inset-0 z-10 flex overflow-x-auto overflow-y-hidden"
+        :class="isDown ? 'cursor-grabbing' : 'cursor-grab'"
+        @mousedown="startDrag"
+        @mouseleave="stopDrag"
+        @mouseup="stopDrag"
+        @mousemove="drag">
+        <template x-for="(item, index) in timeline" :key="index">
+          <div class="flex shrink-0 h-full">
+            <!-- White field -->
+            <div class="relative w-[80vw] sm:w-[70vw] lg:w-[60vw] xl:w-[55vw] h-full bg-white shrink-0">
+              <!-- Stripe in the middle -->
+              <div class="absolute top-[48%] left-0 w-full h-px bg-gray-200 -translate-y-1/2 z-0"></div>
+
+              <!-- Year -->
+              <div
+                class="absolute right-0 top-[45%] -translate-y-1/2 translate-x-[38%] sm:translate-x-[38%] z-20 pointer-events-none whitespace-nowrap">
+                <span
+                  class="text-[46vw] sm:text-[36vw] lg:text-[22vw] xl:text-[20vw] font-base text-bonsai-timeline-text tracking-wider leading-none select-none"
+                  x-text="item.year">
+                </span>
+              </div>
+            </div>
+
+            <!-- Photo -->
+            <div class="relative w-[140vw] sm:w-[120vw] lg:w-[90vw] xl:w-[80vw] h-full shrink-0">
+              <img
+                :src="item.image"
+                :alt="item.year"
+                class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+              <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
+
+              <!-- Description -->
+              <div
+                class="absolute top-[45%] -translate-y-1/2 left-0 flex z-20 pl-[42%] sm:pl-[38%] md:pl-[35%] lg:pl-[32%] pr-6 sm:pr-12 pointer-events-none">
+                <p
+                  class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-base text-bonsai-timeline-text whitespace-pre-line leading-relaxed drop-shadow-md"
+                  x-text="item.text"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
