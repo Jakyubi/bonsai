@@ -7,7 +7,7 @@
     <title>bonsai</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
+  <body class="font-sans">
     <div id="app"></div>
 
     <!-- HEADER -->
@@ -135,11 +135,11 @@
             },
             {
               image: '/src/assets/photos/zdjecie-1.png',
-              title: 'Krotki tekst'
+              title: 'Lorem ipsum'
             },
             {
               image: '/src/assets/photos/zdjecie-2.png',
-              title: 'Dlugi tekst do testowania roznej liczby wierszy'
+              title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.'
             }
           ],
           timer: null,
@@ -197,9 +197,9 @@
       <!-- Hero main content -->
       <div class="relative z-10 flex-1 flex flex-col justify-start p-6 sm:p-12 xl:p-16">
         <!-- Photo counter -->
-        <div>
+        <div class="translate-y-36">
           <span
-            class="inline-flex items-center justify-center px-3.5 py-1 bg-bonsai-green text-white text-xs font-light rounded-full tracking-wider shadow-sm transition-none"
+            class="inline-flex items-center justify-center px-3.5 py-2 bg-bonsai-green text-white text-xs font-light rounded-full tracking-wider shadow-sm transition-none"
             x-text="`${activeSlide + 1} / ${slides.length}`"></span>
         </div>
 
@@ -211,7 +211,7 @@
               x-transition:enter="transition ease-out duration-500 delay-150"
               x-transition:enter-start="opacity-0 translate-y-4"
               x-transition:enter-end="opacity-100 translate-y-0"
-              class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-tight max-w-4xl"
+              class="text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-tight max-w-4xl"
               x-text="slide.title"></h1>
           </template>
         </div>
@@ -221,7 +221,7 @@
       <button
         type="button"
         aria-label="Otwórz czat"
-        class="absolute right-6 sm:right-10 bottom-20 sm:bottom-28 z-20 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-200">
+        class="absolute right-6 sm:right-12 bottom-20 sm:bottom-36 z-20 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-200">
         <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="w-5 h-5" />
       </button>
     </section>
@@ -234,17 +234,21 @@
       <div class="flex-1 max-w-[1600px] px-6 lg:px-16 py-16 lg:py-24">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
           <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-2">
-            <span class="text-5xl sm:text-6xl font-extralight text-bonsai-green tracking-tight">10</span>
+            <span class="text-5xl sm:text-7xl font-extralight text-bonsai-green tracking-tight">10</span>
             <h3 class="text-xl font-light text-bonsai-dark tracking-wide">hektarów</h3>
             <p class="text-base font-extralight text-bonsai-dark">ekspozycji pod Kielcami</p>
           </div>
           <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-2">
-            <span class="text-5xl sm:text-6xl font-extralight text-bonsai-green tracking-tight">1000+</span>
+            <span
+              class="text-5xl sm:text-7xl font-extralight text-bonsai-green tracking-tight inline-flex items-baseline">
+              1000
+              <sup class="text-3xl sm:text-5xl font-light -top-4 sm:-top-6 ml-0.5">+</sup>
+            </span>
             <h3 class="text-xl font-light text-bonsai-dark tracking-wide">roślin</h3>
             <p class="text-base font-extralight text-bonsai-dark">dostępnych od ręki</p>
           </div>
           <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-2">
-            <span class="text-5xl sm:text-6xl font-extralight text-bonsai-green tracking-tight">20 lat</span>
+            <span class="text-5xl sm:text-7xl font-extralight text-bonsai-green tracking-tight">20 lat</span>
             <h3 class="text-xl font-light text-bonsai-dark tracking-wide">doświadczenia</h3>
             <p class="text-base font-extralight text-bonsai-dark">w pielęgnacji roślin</p>
           </div>
