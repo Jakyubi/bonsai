@@ -1,13 +1,680 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bonsai</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body>
-    <div id="app"></div>
+  <body class="font-sans">
+    <!-- HEADER -->
+    <header x-data="{ open: false }" class="relative z-50 w-full border-b border-gray-100 bg-white">
+      <!-- Main Container -->
+      <div class="mx-auto flex h-20 max-w-[1920px] items-center justify-between px-4 sm:px-8">
+        <!-- Logo  -->
+        <a href="#" class="flex shrink-0 items-center">
+          <img src="/src/assets/logo/logo-1.png" alt="Japanese Garden" class="h-10 w-auto" />
+        </a>
+
+        <div class="ml-auto hidden items-center gap-10 lg:flex 2xl:gap-16">
+          <!-- Desktop nav -->
+          <nav
+            class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex xl:mr-8 xl:gap-18">
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Home</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Bonsai</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Rośliny</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Realizacje</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kontakt</a>
+          </nav>
+
+          <!-- Action buttons -->
+          <div class="flex shrink-0 items-center gap-3 xl:gap-4">
+            <a
+              href="#"
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
+              Jak dojechać?
+            </a>
+            <a
+              href="#"
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
+              Katalog roślin
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile menu open button -->
+        <button @click="open = !open" type="button" class="text-bonsai-dark ml-auto p-2 focus:outline-none lg:hidden">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              x-show="!open"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 6h16M4 12h16M4 18h16" />
+            <path
+              x-show="open"
+              x-cloak
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        @click.away="open = false"
+        class="absolute top-full left-0 z-50 w-full space-y-3 border-b border-gray-200 bg-white px-6 pt-2 pb-6 shadow-lg lg:hidden">
+        <nav class="space-y-1">
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >O nas</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Bonsai</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Rośliny</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Realizacje</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Kontakt</a
+          >
+        </nav>
+
+        <div class="flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row">
+          <a
+            href="#"
+            class="text-bonsai-dark border-bonsai-dark active:bg-bonsai-dark focus:bg-bonsai-dark w-full rounded-full border py-3 text-center text-base font-light transition-all duration-150 focus:text-white focus:outline-none active:text-white">
+            Jak dojechać?
+          </a>
+          <a
+            href="#"
+            class="text-bonsai-dark border-bonsai-dark active:bg-bonsai-dark focus:bg-bonsai-dark w-full rounded-full border py-3 text-center text-base font-light transition-all duration-150 focus:text-white focus:outline-none active:text-white">
+            Katalog roślin
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      x-data="heroSlider"
+      @mouseenter="stopAutoplay()"
+      @mouseleave="startAutoplay()"
+      class="relative flex min-h-[75vh] w-full flex-col overflow-hidden bg-black sm:min-h-[85vh] xl:min-h-[105vh] xl:flex-row">
+      <!-- Background image -->
+      <div class="absolute inset-0 z-0">
+        <template x-for="(slide, index) in slides" :key="index">
+          <div
+            x-show="activeSlide === index"
+            x-transition:enter="transition ease-out duration-700"
+            x-transition:enter-start="opacity-0 scale-105"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-500"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0 h-full w-full">
+            <img :src="slide.image" :alt="slide.title" class="h-full w-full object-cover" />
+            <!-- Photo overlay -->
+            <div class="absolute inset-0 bg-black/40"></div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Left side -->
+      <div
+        class="relative z-10 flex w-full shrink-0 items-center justify-center gap-3 border-b border-white/20 bg-black/20 px-4 py-4 backdrop-blur-md xl:w-50 xl:flex-col xl:border-r xl:border-b-0 xl:py-6">
+        <template x-for="(slide, index) in slides" :key="index">
+          <button
+            @click="activeSlide = index"
+            :aria-label="'Przejdź do slajdu ' + (index + 1)"
+            class="relative flex h-5 w-5 items-center justify-center rounded-full transition-all duration-300 focus:outline-none"
+            :class="activeSlide === index ? 'border border-white/40' : 'border border-transparent'">
+            <span
+              class="h-3.5 w-3.5 rounded-full transition-all duration-300"
+              :class="activeSlide === index ? 'bg-bonsai-green' : 'bg-white/30 hover:bg-white/80'"></span>
+          </button>
+        </template>
+      </div>
+
+      <!-- Hero main content -->
+      <div
+        class="relative z-10 flex flex-1 flex-col justify-start px-6 py-6 sm:py-12 sm:pr-12 sm:pl-20 lg:pl-28 xl:py-16 xl:pr-16 xl:pl-36">
+        <!-- Photo counter -->
+        <div class="absolute top-6 left-6 z-20 xl:static xl:top-auto xl:left-auto xl:translate-y-36">
+          <span
+            class="bg-bonsai-green inline-flex items-center justify-center rounded-full px-3.5 py-2 text-xs font-light tracking-wider text-white shadow-sm transition-none"
+            x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+        </div>
+
+        <!-- Title change -->
+        <div class="my-auto py-12">
+          <template x-for="(slide, index) in slides" :key="index">
+            <h1
+              x-show="activeSlide === index"
+              x-transition:enter="transition ease-out duration-500 delay-150"
+              x-transition:enter-start="opacity-0 translate-y-4"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              class="max-w-4xl text-6xl leading-tight font-light text-white lg:text-7xl xl:text-8xl"
+              x-text="slide.title"></h1>
+          </template>
+        </div>
+      </div>
+
+      <!-- Chat button -->
+      <button
+        type="button"
+        aria-label="Otwórz czat"
+        class="absolute right-6 bottom-20 z-20 flex h-16 w-16 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105 sm:right-12 sm:bottom-36">
+        <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
+      </button>
+    </section>
+
+    <!-- STATS -->
+    <section class="flex w-full flex-col bg-white md:flex-row">
+      <!-- Left side -->
+      <div class="hidden w-50 shrink-0 border-r border-gray-100 xl:block"></div>
+
+      <div class="max-w-[1600px] flex-1 px-6 py-16 lg:px-32 lg:py-36">
+        <div class="grid grid-cols-1 gap-12 text-left md:grid-cols-3 lg:gap-36">
+          <div class="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
+            <span class="text-bonsai-green text-5xl font-light tracking-tight sm:text-7xl">10</span>
+            <h3 class="text-bonsai-dark text-3xl font-light tracking-wide lg:pb-12">hektarów</h3>
+            <p class="text-bonsai-dark text-lg font-light">ekspozycji pod Kielcami</p>
+          </div>
+          <div class="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
+            <span class="text-bonsai-green inline-flex items-baseline text-5xl font-light tracking-tight sm:text-7xl">
+              1000
+              <sup class="-top-4 ml-0.5 text-3xl font-light sm:-top-6 sm:text-5xl">+</sup>
+            </span>
+            <h3 class="text-bonsai-dark text-3xl font-light tracking-wide lg:pb-12">roślin</h3>
+            <p class="text-bonsai-dark text-lg font-light">dostępnych od ręki</p>
+          </div>
+          <div class="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
+            <span class="text-bonsai-green text-5xl font-light tracking-tight sm:text-7xl">20 lat</span>
+            <h3 class="text-bonsai-dark text-3xl font-light tracking-wide lg:pb-12">doświadczenia</h3>
+            <p class="text-bonsai-dark text-lg font-light">w pielęgnacji roślin</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVICE -->
+    <section class="bg-bonsai-advice-overlay relative flex w-full flex-col overflow-hidden text-white md:flex-row">
+      <!-- Background photo -->
+      <div class="pointer-events-none absolute inset-0 z-0 opacity-20">
+        <img src="/src/assets/photos/zdjecie-1.png" alt="" class="h-full w-full object-cover" />
+      </div>
+
+      <!-- Left side -->
+      <div class="relative z-10 hidden w-50 shrink-0 border-r border-white/20 xl:block"></div>
+
+      <!-- Main section content -->
+      <div class="relative z-10 w-full flex-1 divide-y divide-white/20">
+        <!-- First tile  -->
+        <div
+          class="flex flex-col justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-56 xl:pl-32 2xl:py-32">
+          <h2 class="max-w-xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
+            Pomagamy dobrać rośliny do warunków glebowych
+          </h2>
+          <a
+            href="#"
+            class="text-bonsai-dark inline-flex shrink-0 items-center justify-center self-start rounded-full bg-white px-8 py-3.5 text-lg font-light whitespace-nowrap shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-100 sm:self-auto">
+            Zobacz więcej
+          </a>
+        </div>
+
+        <!-- Second tile -->
+        <div
+          class="flex flex-col justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-56 xl:pl-32 2xl:py-32">
+          <h2 class="max-w-xl text-3xl leading-tight sm:text-4xl lg:text-5xl">Szczegóły transportu HDS</h2>
+          <a
+            href="#"
+            class="text-bonsai-dark inline-flex shrink-0 items-center justify-center self-start rounded-full bg-white px-8 py-3.5 text-lg font-light whitespace-nowrap shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-100 sm:self-auto">
+            Wyceń transport
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOVER WHAT'S NEW -->
+    <section class="flex w-full flex-col bg-white md:flex-row">
+      <!-- Left side -->
+      <div class="relative z-10 hidden w-50 xl:block"></div>
+
+      <!-- Main content -->
+      <div
+        class="flex max-w-[1600px] flex-1 flex-col justify-between gap-6 py-12 pr-6 pl-6 sm:flex-row sm:items-center lg:py-16 lg:pr-16 lg:pl-16 xl:py-32 xl:pl-0">
+        <h2 class="text-bonsai-dark text-3xl tracking-wide sm:text-4xl lg:text-6xl">Odkryj nowości</h2>
+        <a
+          href="#"
+          class="text-bonsai-dark hover:bg-bonsai-dark inline-flex shrink-0 items-center justify-center self-start rounded-full border border-gray-400 px-6 py-3.5 text-lg font-light transition-all duration-300 hover:text-white sm:self-auto">
+          Zobacz całą ofertę
+        </a>
+      </div>
+    </section>
+
+    <!-- PLANT'S CATEGORIES -->
+    <section class="flex w-full flex-col border-t border-gray-100 bg-white md:flex-row">
+      <!-- Main content -->
+      <div class="w-full divide-y divide-gray-100">
+        <!-- First card -->
+        <div class="grid grid-cols-1 items-stretch overflow-hidden lg:min-h-125 lg:grid-cols-2 xl:min-h-162.5">
+          <div class="relative h-80 w-full sm:h-96 lg:h-full">
+            <img src="/src/assets/photos/klon1.png" alt="Rośliny liściaste" class="h-full w-full object-cover" />
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col items-start justify-center space-y-6 p-8 lg:p-12 xl:p-20 2xl:p-28">
+            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
+              Rośliny liściaste
+            </h3>
+            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl xl:text-3xl">
+              Wszystkie rośliny liściaste ozdobne, miododajne, krzewy i drzewa
+            </p>
+            <a
+              href="#"
+              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
+              Zobacz ofertę
+            </a>
+          </div>
+        </div>
+
+        <!-- Second card -->
+        <div class="grid grid-cols-1 items-stretch overflow-hidden lg:min-h-125 lg:grid-cols-2 xl:min-h-162.5">
+          <!-- Content -->
+          <div
+            class="order-2 flex flex-col items-start justify-center space-y-6 p-8 lg:order-1 lg:p-12 xl:p-20 2xl:p-28">
+            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
+              Rośliny iglaste
+            </h3>
+            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl xl:text-3xl">
+              Szeroki wybór wyszukanych gatunków i odmian
+            </p>
+            <a
+              href="#"
+              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
+              Zobacz ofertę
+            </a>
+          </div>
+
+          <div class="relative order-1 h-80 w-full sm:h-96 lg:order-2 lg:h-full">
+            <img src="/src/assets/photos/klon2.png" alt="Rośliny iglaste" class="h-full w-full object-cover" />
+          </div>
+        </div>
+
+        <!-- Third card -->
+        <div class="grid grid-cols-1 items-stretch overflow-hidden lg:min-h-125 lg:grid-cols-2 xl:min-h-162.5">
+          <div class="relative h-80 w-full sm:h-96 lg:h-full">
+            <img src="/src/assets/photos/klon1.png" alt="Bonsai" class="h-full w-full object-cover" />
+          </div>
+
+          <!-- Content  -->
+          <div class="flex flex-col items-start justify-center space-y-6 p-8 lg:p-12 xl:p-20 2xl:p-28">
+            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
+              Bonsai
+            </h3>
+            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl xl:text-3xl">
+              Wszystkie rośliny liściaste, ozdobne, miododajne, krzewy i drzewa
+            </p>
+            <a
+              href="#"
+              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
+              Zobacz ofertę
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL MEDIA -->
+    <section class="flex w-full flex-col border-t border-gray-100 bg-white md:flex-row">
+      <!-- Main content -->
+      <div class="grid w-full grid-cols-1 md:grid-cols-2">
+        <!-- First tile: instagram -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden px-4 text-center sm:h-112.5 md:min-h-250">
+          <img
+            src="/src/assets/photos/zdjecie-2.png"
+            alt="Instagram Japanese Garden"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/50"></div>
+
+          <div class="relative z-10 flex flex-col items-center gap-6">
+            <h3 class="text-3xl leading-tight font-normal tracking-wide text-white sm:text-4xl lg:text-5xl">
+              Obserwuj nas na Instagram
+            </h3>
+
+            <!-- IG button -->
+            <div
+              class="bg-bonsai-green flex h-15 w-15 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+              <img src="/src/assets/icons/instagram.svg" alt="Instagram" class="h-10 max-w-10 brightness-0 invert" />
+            </div>
+          </div>
+        </a>
+
+        <!-- Second tile: Tik Tok -->
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden border-t px-4 text-center sm:h-112.5 md:min-h-250 md:border-t-0">
+          <img
+            src="/src/assets/photos/zdjecie-1.png"
+            alt="TikTok Japanese Garden"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/50"></div>
+
+          <div class="relative z-10 flex flex-col items-center gap-6">
+            <h3 class="text-3xl leading-tight font-normal tracking-wide text-white sm:text-4xl lg:text-5xl">
+              Obserwuj nas na Tik Tok
+            </h3>
+
+            <!-- TikTok button -->
+            <div
+              class="bg-bonsai-green flex h-15 w-15 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+              <img src="/src/assets/icons/tt.svg" alt="TikTok" class="h-10 max-w-10 brightness-0 invert" />
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section
+      x-data="timelineSlider"
+      @mouseleave="hovered = false; isDown = false"
+      class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[95vh]">
+      <!-- Cover -->
+      <div
+        class="bg-bonsai-advice-overlay absolute inset-0 z-30 flex cursor-pointer flex-col items-center justify-center transition-all duration-700 ease-in-out"
+        :class="hovered ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'"
+        @mouseenter="hovered = true">
+        <img
+          src="/src/assets/photos/zdjecie-1.png"
+          alt="20 lat pasji"
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50" />
+        <div class="bg-bonsai-green/80 pointer-events-none absolute inset-0 mix-blend-multiply"></div>
+
+        <!-- White cover stripe -->
+        <div class="pointer-events-none absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2 bg-white/60"></div>
+
+        <div class="pointer-events-none relative z-40 flex flex-col items-center space-y-6 px-4 text-center">
+          <h2 class="py-8 text-6xl font-extralight tracking-wide text-white sm:py-16 lg:text-8xl">20 lat pasji</h2>
+          <button
+            class="text-bonsai-dark pointer-events-auto rounded-full bg-white px-7 py-4 text-base font-light shadow-lg xl:text-lg">
+            Poznaj naszą historię
+          </button>
+        </div>
+      </div>
+
+      <!-- Timeline setup -->
+      <div
+        x-ref="slider"
+        class="hide-scrollbar absolute inset-0 z-10 flex overflow-x-auto overflow-y-hidden"
+        :class="isDown ? 'cursor-grabbing' : 'cursor-grab'"
+        @mousedown="startDrag"
+        @mouseleave="stopDrag"
+        @mouseup="stopDrag"
+        @mousemove="drag">
+        <template x-for="(item, index) in timeline" :key="index">
+          <div class="flex h-full shrink-0">
+            <!-- White field -->
+            <div class="relative h-full w-[80vw] shrink-0 bg-white sm:w-[70vw] lg:w-[60vw] xl:w-[55vw]">
+              <!-- Stripe in the middle -->
+              <div class="absolute top-[48%] left-0 z-0 h-px w-full -translate-y-1/2 bg-gray-200"></div>
+
+              <!-- Year -->
+              <div
+                class="pointer-events-none absolute top-[45%] right-0 z-20 translate-x-[38%] -translate-y-1/2 whitespace-nowrap sm:translate-x-[38%]">
+                <span
+                  class="text-bonsai-timeline-text text-[46vw] leading-none font-normal tracking-wider select-none sm:text-[36vw] lg:text-[22vw] xl:text-[20vw]"
+                  x-text="item.year">
+                </span>
+              </div>
+            </div>
+
+            <!-- Photo -->
+            <div class="relative h-full w-[140vw] shrink-0 sm:w-[120vw] lg:w-[90vw] xl:w-[80vw]">
+              <img
+                :src="item.image"
+                :alt="item.year"
+                class="pointer-events-none absolute inset-0 h-full w-full object-cover" />
+              <div class="pointer-events-none absolute inset-0 bg-black/20"></div>
+
+              <!-- Description -->
+              <div
+                class="pointer-events-none absolute top-[45%] left-0 z-20 flex -translate-y-1/2 pr-6 pl-[42%] sm:pr-12 sm:pl-[38%] md:pl-[35%] lg:pl-[32%]">
+                <p
+                  class="text-bonsai-timeline-text text-3xl leading-tight font-normal whitespace-pre-line drop-shadow-md sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+                  x-text="item.text"></p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-bonsai-bg1 text-bonsai-dark relative w-full font-sans">
+      <!-- Main container -->
+      <div class="flex w-full flex-col xl:flex-row">
+        <!-- Left side -->
+        <aside
+          class="relative flex w-full shrink-0 flex-row items-center justify-between border-b border-gray-300 p-6 xl:w-50 xl:flex-col xl:justify-end xl:border-r xl:border-b-0 xl:py-12">
+          <!-- Social media icons-->
+          <div class="my-auto flex gap-4 xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:flex-col">
+            <!-- TikTok -->
+            <a
+              href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+              aria-label="TikTok">
+              <img src="/src/assets/icons/tt.svg" alt="TikTok" />
+            </a>
+            <!-- Facebook -->
+            <a
+              href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+              aria-label="Facebook">
+              <img src="/src/assets/icons/fb.svg" alt="Facebook" />
+            </a>
+            <!-- Instagram -->
+            <a
+              href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+              aria-label="Instagram">
+              <img src="/src/assets/icons/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+
+          <!-- Logo -->
+          <div class="xl:mt-auto">
+            <img src="/src/assets/logo/logo-dark.png" alt="Japanese Garden" class="h-auto w-20" />
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="flex min-w-0 flex-1 flex-col justify-between">
+          <div>
+            <!-- Google opinions -->
+            <div
+              class="flex flex-col items-center justify-between gap-6 border-gray-300 px-6 py-8 md:p-10 md:py-12 lg:flex-row lg:py-20 lg:pl-20 xl:border-b xl:pl-32">
+              <div class="flex items-center gap-3">
+                <img src="/src/assets/icons/logo-google.svg" alt="Google Logo" class="grayscale" />
+                <div class="flex flex-col">
+                  <div class="flex space-x-1 tracking-widest">
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                  </div>
+                  <span class="text-bonsai-gray mt-0.5 text-xs font-bold">5.0 | 19 opinii</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-right xl:gap-20">
+                <span class="text-bonsai-dark text-base font-light"
+                  >Zapraszamy do podzielenia się opinią na Google</span
+                >
+                <a
+                  href="#"
+                  class="bg-bonsai-dark rounded-full px-6 py-3.5 text-base font-light whitespace-nowrap text-white transition-all duration-200 hover:scale-105 xl:mr-20">
+                  Dodaj opinię
+                </a>
+              </div>
+            </div>
+
+            <!-- Links and data -->
+            <div
+              class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 font-light md:grid-cols-12 md:pl-16 xl:gap-16 xl:pl-32">
+              <!-- Contact -->
+              <div class="text-bonsai-dark space-y-2.5 text-base leading-relaxed md:col-span-3 xl:text-lg">
+                <h4 class="mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Dane kontaktowe</h4>
+                <p>Japanese Garden</p>
+                <p>Górki Szczukowskie 1,</p>
+                <p>26-065 Piekoszów</p>
+
+                <div class="space-y-1.5 pt-4">
+                  <p>
+                    <a
+                      href="mailto:Bonsaipark.kielce@gmail.com"
+                      class="text-bonsai-green transition-all hover:underline"
+                      >Bonsaipark.kielce@gmail.com</a
+                    >
+                  </p>
+                  <p>
+                    <a href="tel:728106796" class="text-bonsai-green transition-all hover:underline">728 106 796</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Nav -->
+              <div class="space-y-3 md:col-span-2">
+                <h4 class="mb-8 text-xl font-light text-gray-800 lg:mb-16 lg:text-2xl">Nawigacja</h4>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
+                </p>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Realizacje</a>
+                </p>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Oferta</a>
+                </p>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kontakt</a>
+                </p>
+              </div>
+
+              <!-- Categories -->
+              <div class="md:col-span-7">
+                <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h4>
+                <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Zwisające</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kolumnowe</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Pnącza</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Drzewa</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Inne formy</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Róże</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Drzewka</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Liściaste</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Byliny</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Krzewy</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Iglaste</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Owocowe</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Płożące</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Wrzosowate</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Warzywa</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="relative h-72 w-full shrink-0 overflow-hidden lg:h-96">
+            <img
+              src="/src/assets/photos/mapa.png"
+              alt="Mapa Kielce - Górki Szczukowskie"
+              class="h-full w-full object-cover opacity-90 grayscale" />
+          </div>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div>
+        <div class="text-bonsai-dark w-full bg-white px-6 py-10 text-base font-light sm:px-12">
+          <div class="flex flex-col items-center justify-between gap-2 sm:flex-row">
+            <p>© Copyright 2026 - Japanese Garden</p>
+            <p>Made with <span class="text-bonsai-green">♥</span> by NET-atak.pl</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
