@@ -11,43 +11,43 @@
     <div id="app"></div>
 
     <!-- HEADER -->
-    <header x-data="{ open: false }" class="relative w-full bg-white border-b border-gray-100 z-50">
+    <header x-data="{ open: false }" class="relative z-50 w-full border-b border-gray-100 bg-white">
       <!-- Main Container -->
-      <div class="max-w-[1920px] mx-auto px-4 sm:px-8 xl:px-12 h-20 flex items-center justify-between">
+      <div class="mx-auto flex h-20 max-w-[1920px] items-center justify-between px-4 sm:px-8 xl:px-12">
         <!-- Logo  -->
-        <a href="#" class="flex items-center shrink-0">
+        <a href="#" class="flex shrink-0 items-center">
           <img src="/src/assets/logo/logo-1.png" alt="Japanese Garden" class="h-10 w-auto" />
         </a>
 
-        <div class="hidden lg:flex items-center gap-10 2xl:gap-16 ml-auto">
+        <div class="ml-auto hidden items-center gap-10 lg:flex 2xl:gap-16">
           <!-- Desktop nav -->
-          <nav class="hidden lg:flex items-center gap-8 xl:gap-14 text-sm font-light text-bonsai-dark tracking-wide">
-            <a href="#" class="hover:text-gray-500 transition-colors duration-200">Home</a>
-            <a href="#" class="hover:text-gray-500 transition-colors duration-200">O nas</a>
-            <a href="#" class="hover:text-gray-500 transition-colors duration-200">Bonsai</a>
-            <a href="#" class="hover:text-gray-500 transition-colors duration-200">Rośliny</a>
-            <a href="#" class="hover:text-gray-500 transition-colors duration-200">Realizacje</a>
-            <a href="#" class="hover:text-gray-500 transition-colors duration-200">Kontakt</a>
+          <nav class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex xl:gap-14">
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Home</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Bonsai</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Rośliny</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Realizacje</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kontakt</a>
           </nav>
 
           <!-- Action buttons -->
-          <div class="flex items-center gap-3 xl:gap-4 shrink-0">
+          <div class="flex shrink-0 items-center gap-3 xl:gap-4">
             <a
               href="#"
-              class="px-6 py-2 xl:text-sm font-light text-bonsai-dark border border-bonsai-dark rounded-full hover:bg-bonsai-dark hover:text-white transition-all duration-300 whitespace-nowrap">
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
               Jak dojechać?
             </a>
             <a
               href="#"
-              class="px-6 py-2 xl:text-sm font-light text-bonsai-dark border border-bonsai-dark rounded-full hover:bg-bonsai-dark hover:text-white transition-all duration-300 whitespace-nowrap">
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
               Katalog roślin
             </a>
           </div>
         </div>
 
         <!-- Mobile menu open button -->
-        <button @click="open = !open" type="button" class="lg:hidden p-2 text-bonsai-dark focus:outline-none ml-auto">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button @click="open = !open" type="button" class="text-bonsai-dark ml-auto p-2 focus:outline-none lg:hidden">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               x-show="!open"
               stroke-linecap="round"
@@ -75,49 +75,49 @@
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-2"
         @click.away="open = false"
-        class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 px-6 pt-2 pb-6 space-y-3 shadow-lg z-50">
+        class="absolute top-full left-0 z-50 w-full space-y-3 border-b border-gray-200 bg-white px-6 pt-2 pb-6 shadow-lg lg:hidden">
         <nav class="space-y-1">
           <a
             href="#"
-            class="block py-3 px-2 text-lg font-light text-bonsai-dark text-center hover:bg-gray-50 rounded-lg transition-colors duration-150 active:bg-gray-100 active:text-black focus:outline-none focus:bg-gray-100"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >Home</a
           >
           <a
             href="#"
-            class="block py-3 px-2 text-lg font-light text-bonsai-dark text-center hover:bg-gray-50 rounded-lg transition-colors duration-150 active:bg-gray-100 active:text-black focus:outline-none focus:bg-gray-100"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >O nas</a
           >
           <a
             href="#"
-            class="block py-3 px-2 text-lg font-light text-bonsai-dark text-center hover:bg-gray-50 rounded-lg transition-colors duration-150 active:bg-gray-100 active:text-black focus:outline-none focus:bg-gray-100"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >Bonsai</a
           >
           <a
             href="#"
-            class="block py-3 px-2 text-lg font-light text-bonsai-dark text-center hover:bg-gray-50 rounded-lg transition-colors duration-150 active:bg-gray-100 active:text-black focus:outline-none focus:bg-gray-100"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >Rośliny</a
           >
           <a
             href="#"
-            class="block py-3 px-2 text-lg font-light text-bonsai-dark text-center hover:bg-gray-50 rounded-lg transition-colors duration-150 active:bg-gray-100 active:text-black focus:outline-none focus:bg-gray-100"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >Realizacje</a
           >
           <a
             href="#"
-            class="block py-3 px-2 text-lg font-light text-bonsai-dark text-center hover:bg-gray-50 rounded-lg transition-colors duration-150 active:bg-gray-100 active:text-black focus:outline-none focus:bg-gray-100"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >Kontakt</a
           >
         </nav>
 
-        <div class="pt-4 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
+        <div class="flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row">
           <a
             href="#"
-            class="w-full text-center py-3 text-base font-light text-bonsai-dark border border-bonsai-dark rounded-full transition-all duration-150 active:bg-bonsai-dark active:text-white focus:bg-bonsai-dark focus:text-white focus:outline-none">
+            class="text-bonsai-dark border-bonsai-dark active:bg-bonsai-dark focus:bg-bonsai-dark w-full rounded-full border py-3 text-center text-base font-light transition-all duration-150 focus:text-white focus:outline-none active:text-white">
             Jak dojechać?
           </a>
           <a
             href="#"
-            class="w-full text-center py-3 text-base font-light text-bonsai-dark border border-bonsai-dark rounded-full transition-all duration-150 active:bg-bonsai-dark active:text-white focus:bg-bonsai-dark focus:text-white focus:outline-none">
+            class="text-bonsai-dark border-bonsai-dark active:bg-bonsai-dark focus:bg-bonsai-dark w-full rounded-full border py-3 text-center text-base font-light transition-all duration-150 focus:text-white focus:outline-none active:text-white">
             Katalog roślin
           </a>
         </div>
@@ -158,7 +158,7 @@
       x-init="startAutoplay()"
       @mouseenter="stopAutoplay()"
       @mouseleave="startAutoplay()"
-      class="relative w-full min-h-[75vh] sm:min-h-[85vh] flex flex-col xl:flex-row bg-black overflow-hidden">
+      class="relative flex min-h-[75vh] w-full flex-col overflow-hidden bg-black sm:min-h-[85vh] xl:flex-row">
       <!-- Background image -->
       <div class="absolute inset-0 z-0">
         <template x-for="(slide, index) in slides" :key="index">
@@ -170,8 +170,8 @@
             x-transition:leave="transition ease-in duration-500"
             x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
-            class="absolute inset-0 w-full h-full">
-            <img :src="slide.image" :alt="slide.title" class="w-full h-full object-cover" />
+            class="absolute inset-0 h-full w-full">
+            <img :src="slide.image" :alt="slide.title" class="h-full w-full object-cover" />
             <!-- Photo overlay -->
             <div class="absolute inset-0 bg-black/40"></div>
           </div>
@@ -180,26 +180,26 @@
 
       <!-- Left side -->
       <div
-        class="relative z-10 w-full xl:w-50 border-b xl:border-b-0 xl:border-r border-white/20 bg-black/20 backdrop-blur-md flex xl:flex-col justify-center items-center gap-4 py-4 xl:py-6 px-4 shrink-0">
+        class="relative z-10 flex w-full shrink-0 items-center justify-center gap-4 border-b border-white/20 bg-black/20 px-4 py-4 backdrop-blur-md xl:w-50 xl:flex-col xl:border-r xl:border-b-0 xl:py-6">
         <template x-for="(slide, index) in slides" :key="index">
           <button
             @click="activeSlide = index"
             :aria-label="'Przejdź do slajdu ' + (index + 1)"
-            class="relative flex items-center justify-center w-5 h-5 rounded-full transition-all duration-300 focus:outline-none"
+            class="relative flex h-5 w-5 items-center justify-center rounded-full transition-all duration-300 focus:outline-none"
             :class="activeSlide === index ? 'border border-white/40' : 'border border-transparent'">
             <span
-              class="w-3.5 h-3.5 rounded-full transition-all duration-300"
+              class="h-3.5 w-3.5 rounded-full transition-all duration-300"
               :class="activeSlide === index ? 'bg-bonsai-green' : 'bg-white/30 hover:bg-white/80'"></span>
           </button>
         </template>
       </div>
 
       <!-- Hero main content -->
-      <div class="relative z-10 flex-1 flex flex-col justify-start p-6 sm:p-12 xl:p-16">
+      <div class="relative z-10 flex flex-1 flex-col justify-start p-6 sm:p-12 xl:p-16">
         <!-- Photo counter -->
         <div class="translate-y-36">
           <span
-            class="inline-flex items-center justify-center px-3.5 py-2 bg-bonsai-green text-white text-xs font-light rounded-full tracking-wider shadow-sm transition-none"
+            class="bg-bonsai-green inline-flex items-center justify-center rounded-full px-3.5 py-2 text-xs font-light tracking-wider text-white shadow-sm transition-none"
             x-text="`${activeSlide + 1} / ${slides.length}`"></span>
         </div>
 
@@ -211,7 +211,7 @@
               x-transition:enter="transition ease-out duration-500 delay-150"
               x-transition:enter-start="opacity-0 translate-y-4"
               x-transition:enter-end="opacity-100 translate-y-0"
-              class="text-6xl lg:text-7xl xl:text-8xl font-light text-white leading-tight max-w-4xl"
+              class="max-w-4xl text-6xl leading-tight font-light text-white lg:text-7xl xl:text-8xl"
               x-text="slide.title"></h1>
           </template>
         </div>
@@ -221,77 +221,77 @@
       <button
         type="button"
         aria-label="Otwórz czat"
-        class="absolute right-6 sm:right-12 bottom-20 sm:bottom-36 z-20 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-200">
-        <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="w-5 h-5" />
+        class="absolute right-6 bottom-20 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105 sm:right-12 sm:bottom-36">
+        <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
       </button>
     </section>
 
     <!-- STATS -->
-    <section class="w-full bg-white flex flex-col md:flex-row">
+    <section class="flex w-full flex-col bg-white md:flex-row">
       <!-- Left side -->
-      <div class="hidden xl:block w-50 border-r border-gray-100 shrink-0"></div>
+      <div class="hidden w-50 shrink-0 border-r border-gray-100 xl:block"></div>
 
-      <div class="flex-1 max-w-[1600px] px-6 lg:px-16 py-16 lg:py-24">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-          <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-2">
-            <span class="text-5xl sm:text-7xl font-extralight text-bonsai-green tracking-tight">10</span>
-            <h3 class="text-xl font-light text-bonsai-dark tracking-wide">hektarów</h3>
-            <p class="text-base font-extralight text-bonsai-dark">ekspozycji pod Kielcami</p>
+      <div class="max-w-[1600px] flex-1 px-6 py-16 lg:px-16 lg:py-24">
+        <div class="grid grid-cols-1 gap-12 text-left md:grid-cols-3">
+          <div class="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
+            <span class="text-bonsai-green text-5xl font-extralight tracking-tight sm:text-7xl">10</span>
+            <h3 class="text-bonsai-dark text-xl font-light tracking-wide">hektarów</h3>
+            <p class="text-bonsai-dark text-base font-extralight">ekspozycji pod Kielcami</p>
           </div>
-          <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-2">
+          <div class="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
             <span
-              class="text-5xl sm:text-7xl font-extralight text-bonsai-green tracking-tight inline-flex items-baseline">
+              class="text-bonsai-green inline-flex items-baseline text-5xl font-extralight tracking-tight sm:text-7xl">
               1000
-              <sup class="text-3xl sm:text-5xl font-light -top-4 sm:-top-6 ml-0.5">+</sup>
+              <sup class="-top-4 ml-0.5 text-3xl font-light sm:-top-6 sm:text-5xl">+</sup>
             </span>
-            <h3 class="text-xl font-light text-bonsai-dark tracking-wide">roślin</h3>
-            <p class="text-base font-extralight text-bonsai-dark">dostępnych od ręki</p>
+            <h3 class="text-bonsai-dark text-xl font-light tracking-wide">roślin</h3>
+            <p class="text-bonsai-dark text-base font-extralight">dostępnych od ręki</p>
           </div>
-          <div class="flex flex-col items-center text-center md:items-start md:text-left space-y-2">
-            <span class="text-5xl sm:text-7xl font-extralight text-bonsai-green tracking-tight">20 lat</span>
-            <h3 class="text-xl font-light text-bonsai-dark tracking-wide">doświadczenia</h3>
-            <p class="text-base font-extralight text-bonsai-dark">w pielęgnacji roślin</p>
+          <div class="flex flex-col items-center space-y-2 text-center md:items-start md:text-left">
+            <span class="text-bonsai-green text-5xl font-extralight tracking-tight sm:text-7xl">20 lat</span>
+            <h3 class="text-bonsai-dark text-xl font-light tracking-wide">doświadczenia</h3>
+            <p class="text-bonsai-dark text-base font-extralight">w pielęgnacji roślin</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ADVICE -->
-    <section class="relative w-full bg-bonsai-advice-overlay text-white flex flex-col md:flex-row overflow-hidden">
+    <section class="bg-bonsai-advice-overlay relative flex w-full flex-col overflow-hidden text-white md:flex-row">
       <!-- Background photo -->
-      <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <img src="/src/assets/photos/zdjecie-1.png" alt="" class="w-full h-full object-cover" />
+      <div class="pointer-events-none absolute inset-0 z-0 opacity-20">
+        <img src="/src/assets/photos/zdjecie-1.png" alt="" class="h-full w-full object-cover" />
       </div>
 
       <!-- Left side -->
-      <div class="relative z-10 hidden xl:block w-50 border-r border-white/20 shrink-0"></div>
+      <div class="relative z-10 hidden w-50 shrink-0 border-r border-white/20 xl:block"></div>
 
       <!-- Main section content -->
-      <div class="relative z-10 flex-1 w-full divide-y divide-white/20">
+      <div class="relative z-10 w-full flex-1 divide-y divide-white/20">
         <!-- First tile  -->
         <div
-          class="px-6 lg:px-16 py-12 lg:py-16 2xl:py-24 pr-12 lg:pr-32 xl:pr-56 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-xl">
+          class="flex flex-col justify-between gap-6 px-6 py-12 pr-12 sm:flex-row sm:items-center lg:px-16 lg:py-16 lg:pr-32 xl:pr-56 2xl:py-24">
+          <h2 class="max-w-xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
             Pomagamy dobrać rośliny <br class="hidden sm:inline" />
             do warunków glebowych
           </h2>
           <a
             href="#"
-            class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-bonsai-dark text-lg font-light rounded-full hover:bg-gray-100 hover:scale-105 transition-all duration-300 shrink-0 self-start sm:self-auto shadow-md whitespace-nowrap">
+            class="text-bonsai-dark inline-flex shrink-0 items-center justify-center self-start rounded-full bg-white px-8 py-3.5 text-lg font-light whitespace-nowrap shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-100 sm:self-auto">
             Zobacz więcej
           </a>
         </div>
 
         <!-- Second tile -->
         <div
-          class="px-6 lg:px-16 py-12 lg:py-16 2xl:py-24 pr-12 lg:pr-32 xl:pr-56 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-tight max-w-xl">
+          class="flex flex-col justify-between gap-6 px-6 py-12 pr-12 sm:flex-row sm:items-center lg:px-16 lg:py-16 lg:pr-32 xl:pr-56 2xl:py-24">
+          <h2 class="max-w-xl text-3xl leading-tight sm:text-4xl lg:text-5xl">
             Szczegóły <br class="hidden sm:inline" />
             transportu HDS
           </h2>
           <a
             href="#"
-            class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-bonsai-dark text-lg font-light rounded-full hover:bg-gray-100 hover:scale-105 transition-all duration-300 shrink-0 self-start sm:self-auto shadow-md whitespace-nowrap">
+            class="text-bonsai-dark inline-flex shrink-0 items-center justify-center self-start rounded-full bg-white px-8 py-3.5 text-lg font-light whitespace-nowrap shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-100 sm:self-auto">
             Wyceń transport
           </a>
         </div>
@@ -299,85 +299,85 @@
     </section>
 
     <!-- DISCOVER WHAT'S NEW -->
-    <section class="w-full bg-white flex flex-col md:flex-row">
+    <section class="flex w-full flex-col bg-white md:flex-row">
       <!-- Left side -->
-      <div class="relative z-10 hidden xl:block w-50"></div>
+      <div class="relative z-10 hidden w-50 xl:block"></div>
 
       <!-- Main content -->
       <div
-        class="flex-1 max-w-[1600px] pl-6 lg:pl-16 xl:pl-0 pr-6 lg:pr-16 py-12 lg:py-16 xl:py-24 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl text-bonsai-dark tracking-wide">Odkryj nowości</h2>
+        class="flex max-w-[1600px] flex-1 flex-col justify-between gap-6 py-12 pr-6 pl-6 sm:flex-row sm:items-center lg:py-16 lg:pr-16 lg:pl-16 xl:py-24 xl:pl-0">
+        <h2 class="text-bonsai-dark text-3xl tracking-wide sm:text-4xl lg:text-5xl">Odkryj nowości</h2>
         <a
           href="#"
-          class="inline-flex items-center justify-center px-6 py-2.5 text-lg font-light text-bonsai-dark border border-gray-400 rounded-full hover:bg-bonsai-dark hover:text-white transition-all duration-300 shrink-0 self-start sm:self-auto">
+          class="text-bonsai-dark hover:bg-bonsai-dark inline-flex shrink-0 items-center justify-center self-start rounded-full border border-gray-400 px-6 py-2.5 text-lg font-light transition-all duration-300 hover:text-white sm:self-auto">
           Zobacz całą ofertę
         </a>
       </div>
     </section>
 
     <!-- PLANT'S CATEGORIES -->
-    <section class="w-full bg-white flex flex-col md:flex-row border-t border-gray-100">
+    <section class="flex w-full flex-col border-t border-gray-100 bg-white md:flex-row">
       <!-- Main content -->
       <div class="w-full divide-y divide-gray-100">
         <!-- First card -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden min-h-120">
-          <div class="relative w-full h-72 lg:h-full min-h-87.5">
-            <img src="/src/assets/photos/klon1.png" alt="Rośliny liściaste" class="w-full h-full object-cover" />
+        <div class="grid min-h-120 grid-cols-1 items-center overflow-hidden lg:grid-cols-2">
+          <div class="relative h-72 min-h-87.5 w-full lg:h-full">
+            <img src="/src/assets/photos/klon1.png" alt="Rośliny liściaste" class="h-full w-full object-cover" />
           </div>
 
           <!-- Content -->
-          <div class="p-8 lg:p-16 xl:p-24 flex flex-col justify-center items-start space-y-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-bonsai-dark tracking-tight">
+          <div class="flex flex-col items-start justify-center space-y-6 p-8 lg:p-16 xl:p-24">
+            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
               Rośliny liściaste
             </h3>
-            <p class="text-lg sm:text-xl lg:text-2xl font-normal text-bonsai-dark leading-relaxed max-w-md">
+            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl">
               Wszystkie rośliny liściaste ozdobne, miododajne, krzewy i drzewa
             </p>
             <a
               href="#"
-              class="inline-flex items-center px-7 py-4 text-base font-light text-white bg-bonsai-dark rounded-full hover:scale-105 transition-all duration-300 shadow-sm">
+              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
               Zobacz ofertę
             </a>
           </div>
         </div>
 
         <!-- Second card -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden min-h-120">
+        <div class="grid min-h-120 grid-cols-1 items-center overflow-hidden lg:grid-cols-2">
           <!-- Content -->
-          <div class="order-2 lg:order-1 p-8 lg:p-16 xl:pl-50 flex flex-col justify-center items-start space-y-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-bonsai-dark tracking-tight">
+          <div class="order-2 flex flex-col items-start justify-center space-y-6 p-8 lg:order-1 lg:p-16 xl:pl-50">
+            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
               Rośliny iglaste
             </h3>
-            <p class="text-lg sm:text-xl lg:text-2xl font-normal text-bonsai-dark leading-relaxed max-w-md">
+            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl">
               Szeroki wybór wyszukanych gatunków i odmian
             </p>
             <a
               href="#"
-              class="inline-flex items-center px-7 py-4 text-base font-light text-white bg-bonsai-dark rounded-full hover:scale-105 transition-all duration-300 shadow-sm">
+              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
               Zobacz ofertę
             </a>
           </div>
 
-          <div class="order-1 lg:order-2 relative w-full h-72 lg:h-full min-h-87.5">
-            <img src="/src/assets/photos/klon2.png" alt="Rośliny iglaste" class="w-full h-full object-cover" />
+          <div class="relative order-1 h-72 min-h-87.5 w-full lg:order-2 lg:h-full">
+            <img src="/src/assets/photos/klon2.png" alt="Rośliny iglaste" class="h-full w-full object-cover" />
           </div>
         </div>
 
         <!-- Third card -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 items-center overflow-hidden min-h-120">
-          <div class="relative w-full h-72 lg:h-full min-h-87.5">
-            <img src="/src/assets/photos/klon1.png" alt="Bonsai" class="w-full h-full object-cover" />
+        <div class="grid min-h-120 grid-cols-1 items-center overflow-hidden lg:grid-cols-2">
+          <div class="relative h-72 min-h-87.5 w-full lg:h-full">
+            <img src="/src/assets/photos/klon1.png" alt="Bonsai" class="h-full w-full object-cover" />
           </div>
 
           <!-- Content -->
-          <div class="p-8 lg:p-16 xl:p-24 flex flex-col justify-center items-start space-y-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-bonsai-dark tracking-tight">Bonsai</h3>
-            <p class="text-lg sm:text-xl lg:text-2xl font-normal text-bonsai-dark leading-relaxed max-w-md">
+          <div class="flex flex-col items-start justify-center space-y-6 p-8 lg:p-16 xl:p-24">
+            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">Bonsai</h3>
+            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl">
               Wszystkie rośliny liściaste, ozdobne, miododajne, krzewy i drzewa
             </p>
             <a
               href="#"
-              class="inline-flex items-center px-7 py-4 text-base font-light text-white bg-bonsai-dark rounded-full hover:scale-105 transition-all duration-300 shadow-sm">
+              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
               Zobacz ofertę
             </a>
           </div>
@@ -386,30 +386,30 @@
     </section>
 
     <!-- SOCIAL MEDIA -->
-    <section class="w-full bg-white flex flex-col md:flex-row border-t border-gray-100">
+    <section class="flex w-full flex-col border-t border-gray-100 bg-white md:flex-row">
       <!-- Main content -->
-      <div class="w-full grid grid-cols-1 md:grid-cols-2">
+      <div class="grid w-full grid-cols-1 md:grid-cols-2">
         <!-- First tile: instagram -->
         <a
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative h-95 sm:h-112.5 lg:h-125 overflow-hidden flex flex-col items-center justify-center text-center px-4">
+          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden px-4 text-center sm:h-112.5 lg:h-125">
           <img
             src="/src/assets/photos/zdjecie-2.png"
             alt="Instagram Japanese Garden"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300"></div>
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/50"></div>
 
           <div class="relative z-10 flex flex-col items-center gap-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-wide leading-tight">
+            <h3 class="text-3xl leading-tight font-normal tracking-wide text-white sm:text-4xl lg:text-5xl">
               Obserwuj nas<br />na Instagram
             </h3>
 
             <!-- IG button -->
             <div
-              class="w-15 h-15 rounded-full bg-bonsai-green text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-lg">
-              <img src="src/assets/icons/instagram.svg" alt="Instagram" class="max-w-10 h-10 brightness-0 invert" />
+              class="bg-bonsai-green flex h-15 w-15 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+              <img src="src/assets/icons/instagram.svg" alt="Instagram" class="h-10 max-w-10 brightness-0 invert" />
             </div>
           </div>
         </a>
@@ -419,22 +419,22 @@
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative h-95 sm:h-112.5 lg:h-125 overflow-hidden flex flex-col items-center justify-center text-center px-4 border-t md:border-t-0">
+          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden border-t px-4 text-center sm:h-112.5 md:border-t-0 lg:h-125">
           <img
             src="/src/assets/photos/zdjecie-1.png"
             alt="TikTok Japanese Garden"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300"></div>
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/50"></div>
 
           <div class="relative z-10 flex flex-col items-center gap-6">
-            <h3 class="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-wide leading-tight">
+            <h3 class="text-3xl leading-tight font-normal tracking-wide text-white sm:text-4xl lg:text-5xl">
               Obserwuj nas<br />na Tik Tok
             </h3>
 
             <!-- TikTok button -->
             <div
-              class="w-15 h-15 rounded-full bg-bonsai-green text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-lg">
-              <img src="src/assets/icons/tt.svg" alt="TikTok" class="max-w-10 h-10 brightness-0 invert" />
+              class="bg-bonsai-green flex h-15 w-15 items-center justify-center rounded-full text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+              <img src="src/assets/icons/tt.svg" alt="TikTok" class="h-10 max-w-10 brightness-0 invert" />
             </div>
           </div>
         </a>
@@ -470,25 +470,25 @@
         }
       }"
       @mouseleave="hovered = false; isDown = false"
-      class="relative w-full h-[85vh] sm:h-[90vh] lg:h-[95vh] min-h-125 bg-white overflow-hidden select-none">
+      class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[95vh]">
       <!-- Cover -->
       <div
-        class="absolute inset-0 z-30 bg-bonsai-advice-overlay flex flex-col items-center justify-center transition-all duration-700 ease-in-out cursor-pointer"
+        class="bg-bonsai-advice-overlay absolute inset-0 z-30 flex cursor-pointer flex-col items-center justify-center transition-all duration-700 ease-in-out"
         :class="hovered ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'"
         @mouseenter="hovered = true">
         <img
           src="/src/assets/photos/zdjecie-1.png"
           alt="20 lat pasji"
-          class="absolute inset-0 w-full h-full object-cover opacity-50 filter brightness-75 pointer-events-none" />
-        <div class="absolute inset-0 bg-bonsai-green/80 mix-blend-multiply pointer-events-none"></div>
+          class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50 brightness-75 filter" />
+        <div class="bg-bonsai-green/80 pointer-events-none absolute inset-0 mix-blend-multiply"></div>
 
         <!-- White cover stripe -->
-        <div class="absolute left-1/2 top-0 bottom-0 w-px bg-white/60 -translate-x-1/2 pointer-events-none"></div>
+        <div class="pointer-events-none absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2 bg-white/60"></div>
 
-        <div class="relative z-40 flex flex-col items-center text-center px-4 space-y-6 pointer-events-none">
-          <h2 class="text-6xl lg:text-8xl font-extralight text-white py-8 sm:py-16 tracking-wide">20 lat pasji</h2>
+        <div class="pointer-events-none relative z-40 flex flex-col items-center space-y-6 px-4 text-center">
+          <h2 class="py-8 text-6xl font-extralight tracking-wide text-white sm:py-16 lg:text-8xl">20 lat pasji</h2>
           <button
-            class="px-7 py-4 bg-white text-bonsai-dark text-base xl:text-lg font-light rounded-full shadow-lg pointer-events-auto">
+            class="text-bonsai-dark pointer-events-auto rounded-full bg-white px-7 py-4 text-base font-light shadow-lg xl:text-lg">
             Poznaj naszą historię
           </button>
         </div>
@@ -504,35 +504,35 @@
         @mouseup="stopDrag"
         @mousemove="drag">
         <template x-for="(item, index) in timeline" :key="index">
-          <div class="flex shrink-0 h-full">
+          <div class="flex h-full shrink-0">
             <!-- White field -->
-            <div class="relative w-[80vw] sm:w-[70vw] lg:w-[60vw] xl:w-[55vw] h-full bg-white shrink-0">
+            <div class="relative h-full w-[80vw] shrink-0 bg-white sm:w-[70vw] lg:w-[60vw] xl:w-[55vw]">
               <!-- Stripe in the middle -->
-              <div class="absolute top-[48%] left-0 w-full h-px bg-gray-200 -translate-y-1/2 z-0"></div>
+              <div class="absolute top-[48%] left-0 z-0 h-px w-full -translate-y-1/2 bg-gray-200"></div>
 
               <!-- Year -->
               <div
-                class="absolute right-0 top-[45%] -translate-y-1/2 translate-x-[38%] sm:translate-x-[38%] z-20 pointer-events-none whitespace-nowrap">
+                class="pointer-events-none absolute top-[45%] right-0 z-20 translate-x-[38%] -translate-y-1/2 whitespace-nowrap sm:translate-x-[38%]">
                 <span
-                  class="text-[46vw] sm:text-[36vw] lg:text-[22vw] xl:text-[20vw] font-normal text-bonsai-timeline-text tracking-wider leading-none select-none"
+                  class="text-bonsai-timeline-text text-[46vw] leading-none font-normal tracking-wider select-none sm:text-[36vw] lg:text-[22vw] xl:text-[20vw]"
                   x-text="item.year">
                 </span>
               </div>
             </div>
 
             <!-- Photo -->
-            <div class="relative w-[140vw] sm:w-[120vw] lg:w-[90vw] xl:w-[80vw] h-full shrink-0">
+            <div class="relative h-full w-[140vw] shrink-0 sm:w-[120vw] lg:w-[90vw] xl:w-[80vw]">
               <img
                 :src="item.image"
                 :alt="item.year"
-                class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-              <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
+                class="pointer-events-none absolute inset-0 h-full w-full object-cover" />
+              <div class="pointer-events-none absolute inset-0 bg-black/20"></div>
 
               <!-- Description -->
               <div
-                class="absolute top-[45%] -translate-y-1/2 left-0 flex z-20 pl-[42%] sm:pl-[38%] md:pl-[35%] lg:pl-[32%] pr-6 sm:pr-12 pointer-events-none">
+                class="pointer-events-none absolute top-[45%] left-0 z-20 flex -translate-y-1/2 pr-6 pl-[42%] sm:pr-12 sm:pl-[38%] md:pl-[35%] lg:pl-[32%]">
                 <p
-                  class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal text-bonsai-timeline-text whitespace-pre-line leading-relaxed drop-shadow-md"
+                  class="text-bonsai-timeline-text text-3xl leading-relaxed font-normal whitespace-pre-line drop-shadow-md sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
                   x-text="item.text"></p>
               </div>
             </div>
@@ -542,32 +542,32 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="w-full bg-bonsai-bg1 text-bonsai-dark font-sans relative">
+    <footer class="bg-bonsai-bg1 text-bonsai-dark relative w-full font-sans">
       <!-- Main container -->
-      <div class="w-full flex flex-col xl:flex-row">
+      <div class="flex w-full flex-col xl:flex-row">
         <!-- Left side -->
         <aside
-          class="relative w-full xl:w-50 border-b xl:border-b-0 xl:border-r border-gray-300 p-6 xl:py-12 flex flex-row xl:flex-col justify-between xl:justify-end items-center shrink-0">
+          class="relative flex w-full shrink-0 flex-row items-center justify-between border-b border-gray-300 p-6 xl:w-50 xl:flex-col xl:justify-end xl:border-r xl:border-b-0 xl:py-12">
           <!-- Social media icons-->
-          <div class="flex xl:flex-col gap-4 my-auto xl:absolute xl:top-1/2 xl:-translate-y-1/2">
+          <div class="my-auto flex gap-4 xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:flex-col">
             <!-- TikTok -->
             <a
               href="#"
-              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:scale-105 transition-all duration-200"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
               aria-label="TikTok">
               <img src="/src/assets/icons/tt.svg" alt="TikTok" srcset="" />
             </a>
             <!-- Facebook -->
             <a
               href="#"
-              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:scale-105 transition-all duration-200"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
               aria-label="Facebook">
               <img src="/src/assets/icons/fb.svg" alt="Facebook" srcset="" />
             </a>
             <!-- Instagram -->
             <a
               href="#"
-              class="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:scale-105 transition-all duration-200"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
               aria-label="Instagram">
               <img src="/src/assets/icons/instagram.svg" alt="Instagram" srcset="" />
             </a>
@@ -575,16 +575,16 @@
 
           <!-- Logo -->
           <div class="xl:mt-auto">
-            <img src="/src/assets/logo/logo-dark.png" alt="Japanese Garden" class="w-20 h-auto" />
+            <img src="/src/assets/logo/logo-dark.png" alt="Japanese Garden" class="h-auto w-20" />
           </div>
         </aside>
 
         <!-- Main content -->
-        <div class="flex-1 flex flex-col justify-between">
+        <div class="flex flex-1 flex-col justify-between">
           <div>
             <!-- Google opinions -->
             <div
-              class="py-8 md:py-18 px-8 md:px-18 md:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 xl:border-b border-gray-300">
+              class="flex flex-col items-center justify-between gap-6 border-gray-300 px-8 py-8 sm:flex-row md:p-10 md:px-18 md:py-18 xl:border-b">
               <div class="flex items-center gap-3">
                 <img src="src/assets/icons/logo-google.svg" alt="" class="grayscale" />
                 <div class="flex flex-col">
@@ -595,17 +595,17 @@
                     <img src="src/assets/icons/Polygon3.svg" alt="" />
                     <img src="src/assets/icons/Polygon3.svg" alt="" />
                   </div>
-                  <span class="text-xs font-bold text-bonsai-gray mt-0.5">5.0 | 19 opinii</span>
+                  <span class="text-bonsai-gray mt-0.5 text-xs font-bold">5.0 | 19 opinii</span>
                 </div>
               </div>
 
-              <div class="flex flex-col sm:flex-row items-center gap-4 xl:gap-20 xl:mr-50 text-center sm:text-right">
-                <span class="text-base font-light text-bonsai-dark"
+              <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-right xl:mr-50 xl:gap-20">
+                <span class="text-bonsai-dark text-base font-light"
                   >Zapraszamy do podzielenia się opinią na Google</span
                 >
                 <a
                   href="#"
-                  class="bg-bonsai-dark text-white text-base font-light px-6 py-3 rounded-full hover:scale-105 transition-all duration-200 whitespace-nowrap">
+                  class="bg-bonsai-dark rounded-full px-6 py-3 text-base font-light whitespace-nowrap text-white transition-all duration-200 hover:scale-105">
                   Dodaj opinię
                 </a>
               </div>
@@ -613,97 +613,97 @@
 
             <!-- Links and data -->
             <div
-              class="px-8 md:px-16 lg:px-20 pb-16 pt-16 grid grid-cols-1 md:grid-cols-12 gap-12 text-bonsai-dark font-light">
+              class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 font-light md:grid-cols-12 md:px-16 lg:px-20">
               <!-- Contact -->
-              <div class="text-base xl:text-lg md:col-span-3 space-y-2.5 leading-relaxed text-bonsai-dark">
-                <h4 class="text-xl lg:text-2xl font-light mb-8">Dane kontaktowe</h4>
+              <div class="text-bonsai-dark space-y-2.5 text-base leading-relaxed md:col-span-3 xl:text-lg">
+                <h4 class="mb-8 text-xl font-light lg:text-2xl">Dane kontaktowe</h4>
                 <p>Japanese Garden</p>
                 <p>Górki Szczukowskie 1,</p>
                 <p>26-065 Piekoszów</p>
 
-                <div class="pt-4 space-y-1.5">
+                <div class="space-y-1.5 pt-4">
                   <p>
                     <a
                       href="mailto:Bonsaipark.kielce@gmail.com"
-                      class="text-bonsai-green hover:underline transition-all"
+                      class="text-bonsai-green transition-all hover:underline"
                       >Bonsaipark.kielce@gmail.com</a
                     >
                   </p>
                   <p>
-                    <a href="tel:728106796" class="text-bonsai-green hover:underline transition-all">728 106 796</a>
+                    <a href="tel:728106796" class="text-bonsai-green transition-all hover:underline">728 106 796</a>
                   </p>
                 </div>
               </div>
 
               <!-- Nav -->
-              <div class="md:col-span-2 space-y-3">
-                <h4 class="text-xl lg:text-2xl text-gray-800 font-light mb-8">Nawigacja</h4>
+              <div class="space-y-3 md:col-span-2">
+                <h4 class="mb-8 text-xl font-light text-gray-800 lg:text-2xl">Nawigacja</h4>
                 <p>
-                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">O nas</a>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
                 </p>
                 <p>
-                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">Realizacje</a>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Realizacje</a>
                 </p>
                 <p>
-                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">Oferta</a>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Oferta</a>
                 </p>
                 <p>
-                  <a href="#" class="hover:text-gray-500 transition-colors duration-200">Kontakt</a>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kontakt</a>
                 </p>
               </div>
 
               <!-- Categories -->
               <div class="md:col-span-7">
-                <h4 class="text-xl lg:text-2xl text-bonsai-dark font-light mb-8">Kategorie</h4>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-3 gap-x-6">
+                <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:text-2xl">Kategorie</h4>
+                <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Zwisające</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Zwisające</a>
                   </div>
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Kolumnowe</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kolumnowe</a>
                   </div>
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Pnącza</a>
-                  </div>
-
-                  <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Drzewa</a>
-                  </div>
-                  <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Inne formy</a>
-                  </div>
-                  <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Róże</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Pnącza</a>
                   </div>
 
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Drzewka</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Drzewa</a>
                   </div>
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Liściaste</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Inne formy</a>
                   </div>
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Byliny</a>
-                  </div>
-
-                  <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Krzewy</a>
-                  </div>
-                  <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Iglaste</a>
-                  </div>
-                  <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Owocowe</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Róże</a>
                   </div>
 
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Płożące</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Drzewka</a>
                   </div>
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Wrzosowate</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Liściaste</a>
                   </div>
                   <div>
-                    <a href="#" class="hover:text-gray-500 transition-colors duration-200">Warzywa</a>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Byliny</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Krzewy</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Iglaste</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Owocowe</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Płożące</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Wrzosowate</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Warzywa</a>
                   </div>
                 </div>
               </div>
@@ -711,11 +711,11 @@
           </div>
 
           <!-- Map -->
-          <div class="w-full h-72 lg:h-96 relative overflow-hidden">
+          <div class="relative h-72 w-full overflow-hidden lg:h-96">
             <img
               src="/src/assets/photos/mapa.png"
               alt="Mapa Kielce - Górki Szczukowskie"
-              class="w-full h-full object-cover grayscale opacity-90" />
+              class="h-full w-full object-cover opacity-90 grayscale" />
           </div>
         </div>
       </div>
@@ -723,8 +723,8 @@
 
     <!-- COPYRIGHT -->
     <section>
-      <div class="w-full bg-white py-10 px-6 sm:px-12 text-base font-light text-bonsai-dark">
-        <div class="flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="text-bonsai-dark w-full bg-white px-6 py-10 text-base font-light sm:px-12">
+        <div class="flex flex-col items-center justify-between gap-2 sm:flex-row">
           <p>© Copyright 2026 - Japanese Garden</p>
           <p>Made with <span class="text-bonsai-green">♥</span> by NET-atak.pl</p>
         </div>
