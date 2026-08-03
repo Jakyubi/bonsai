@@ -77,4 +77,27 @@ Alpine.data("timelineSlider", () => ({
   },
 }));
 
+Alpine.data("categoriesBar", () => ({
+  categories: [
+    { name: "Zwisające\n(płaczące)", image: "/src/assets/plants/zwisajace.png", link: "#" },
+    { name: "Drzewa", image: "/src/assets/plants/drzewa.png", link: "#" },
+    { name: "Drzewka", image: "/src/assets/plants/drzewka.png", link: "#" },
+    { name: "Krzewy", image: "/src/assets/plants/krzewy.png", link: "#" },
+    { name: "Płożące", image: "/src/assets/plants/plozace.png", link: "#" },
+    { name: "Kolumnowe", image: "/src/assets/plants/kolumnowe.png", link: "#" },
+    { name: "Inne\nformy", image: "/src/assets/plants/inne.png", link: "#" },
+    { name: "Liściaste", image: "/src/assets/plants/lisciaste.png", link: "#" },
+    { name: "Iglaste", image: "/src/assets/plants/iglaste.png", link: "#" },
+    { name: "Wrzosowate", image: "/src/assets/plants/wrzosowate.png", link: "#" },
+    { name: "Pnącza", image: "/src/assets/plants/pnacza.png", link: "#" },
+    { name: "Róże", image: "/src/assets/plants/roze.png", link: "#" },
+    { name: "Byliny", image: "/src/assets/plants/byliny.png", link: "#" },
+    { name: "Owocowe", image: "/src/assets/plants/owocowe.png", link: "#" },
+    { name: "Warzywa", image: "/src/assets/plants/warzywa.png", link: "#" },
+  ],
+  scrollRight() {
+    this.$refs.scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+  },
+}));
+
 Alpine.start();
