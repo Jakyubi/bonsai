@@ -125,7 +125,7 @@
 
     <!-- CATEGORIES BAR -->
     <section x-data="categoriesBar" class="relative w-full border-b border-gray-100 bg-white">
-      <div class="relative mx-auto flex h-24 max-w-[1920px] items-center">
+      <div class="relative mx-auto flex h-20 max-w-[1920px] items-center md:h-24">
         <!-- List container -->
         <div
           x-ref="scrollContainer"
@@ -162,7 +162,7 @@
           x-transition:leave="transition opacity duration-300"
           x-transition:leave-start="opacity-100"
           x-transition:leave-end="opacity-0"
-          class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 flex w-32 items-center justify-start bg-gradient-to-r from-white via-white/90 to-transparent pl-4 sm:w-40">
+          class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 hidden w-32 items-center justify-start bg-gradient-to-r from-white via-white/90 to-transparent pl-4 sm:w-40 md:flex">
           <button
             @click="scrollLeft()"
             type="button"
@@ -184,7 +184,7 @@
           x-transition:leave="transition opacity duration-300"
           x-transition:leave-start="opacity-100"
           x-transition:leave-end="opacity-0"
-          class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 flex w-32 items-center justify-end bg-gradient-to-l from-white via-white/90 to-transparent pr-4 sm:w-40">
+          class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-32 items-center justify-end bg-gradient-to-l from-white via-white/90 to-transparent pr-4 sm:w-40 md:flex">
           <button
             @click="scrollRight()"
             type="button"
