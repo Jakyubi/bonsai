@@ -78,6 +78,9 @@ Alpine.data("timelineSlider", () => ({
 }));
 
 Alpine.data("categoriesBar", () => ({
+  canScrollLeft: false,
+  canScrollRight: true,
+
   categories: [
     { name: "Zwisające\n(płaczące)", image: "/src/assets/plants/zwisajace.png", link: "#" },
     { name: "Drzewa", image: "/src/assets/plants/drzewa.png", link: "#" },
@@ -95,8 +98,26 @@ Alpine.data("categoriesBar", () => ({
     { name: "Owocowe", image: "/src/assets/plants/owocowe.png", link: "#" },
     { name: "Warzywa", image: "/src/assets/plants/warzywa.png", link: "#" },
   ],
+
+  init() {
+    this.$nextTick(() => {
+      this.checkScroll();
+    });
+    setTimeout(() => this.checkScroll(), 200);
+  },
+
+  checkScroll() {
+    const el = this.$refs.scrollContainer;
+    if (!el) return;
+    const hasScroll = el.scrollWidth > el.clientWidth;
+    this.canScrollLeft = el.scrollLeft > 5;
+    this.canScrollRight = hasScroll && el.scrollLeft < el.scrollWidth - el.clientWidth - 5;
+  },
   scrollRight() {
     this.$refs.scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+  },
+  scrollLeft() {
+    this.$refs.scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
   },
 }));
 

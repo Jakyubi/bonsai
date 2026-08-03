@@ -125,6 +125,7 @@
 
     <!-- HERO -->
     <section
+      @resize.window.debounce.100ms="checkScroll()"
       x-data="heroSlider"
       @mouseenter="stopAutoplay()"
       @mouseleave="startAutoplay()"

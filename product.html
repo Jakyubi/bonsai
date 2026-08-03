@@ -129,6 +129,8 @@
         <!-- List container -->
         <div
           x-ref="scrollContainer"
+          x-init="checkScroll()"
+          @scroll.debounce.50ms="checkScroll()"
           class="hide-scrollbar flex h-full min-w-0 flex-1 items-center overflow-x-auto scroll-smooth">
           <template x-for="(cat, index) in categories" :key="index">
             <a
@@ -149,6 +151,50 @@
               </span>
             </a>
           </template>
+        </div>
+
+        <!-- Scroll Left Button -->
+        <div
+          x-show="canScrollLeft"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 flex w-32 items-center justify-start bg-gradient-to-r from-white via-white/90 to-transparent pl-4 sm:w-40">
+          <button
+            @click="scrollLeft()"
+            type="button"
+            aria-label="Przewiń kategorie w lewo"
+            class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-9 w-9 -rotate-135 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
+        </div>
+
+        <!-- Scroll Right Button -->
+        <div
+          x-show="canScrollRight"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 flex w-32 items-center justify-end bg-gradient-to-l from-white via-white/90 to-transparent pr-4 sm:w-40">
+          <button
+            @click="scrollRight()"
+            type="button"
+            aria-label="Przewiń kategorie w prawo"
+            class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-9 w-9 rotate-45 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
         </div>
       </div>
     </section>
