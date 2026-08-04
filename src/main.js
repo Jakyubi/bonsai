@@ -121,4 +121,47 @@ Alpine.data("categoriesBar", () => ({
   },
 }));
 
+Alpine.data("productGallery", () => ({
+  activeImage: "/src/assets/photos/zdjecie-1.png",
+  images: ["/src/assets/photos/zdjecie-1.png", "/src/assets/photos/zdjecie-2.png", "/src/assets/photos/zdjecie-3.png"],
+}));
+
+Alpine.data("productsBar", () => ({
+  canScrollLeft: false,
+  canScrollRight: true,
+
+  products: [
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
+    { name: "Jabłoń Liset", image: "/src/assets/products/Image2.png", link: "#" },
+    { name: "Jabłoń - Malus", image: "/src/assets/products/Image3.png", link: "#" },
+    { name: "Jabłoń - Malus", image: "/src/assets/products/Image4.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image2.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image3.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image4.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
+  ],
+
+  init() {
+    this.$nextTick(() => {
+      this.checkScroll();
+    });
+    setTimeout(() => this.checkScroll(), 200);
+  },
+
+  checkScroll() {
+    const el = this.$refs.scrollContainer;
+    if (!el) return;
+    const hasScroll = el.scrollWidth > el.clientWidth;
+    this.canScrollLeft = el.scrollLeft > 5;
+    this.canScrollRight = hasScroll && el.scrollLeft < el.scrollWidth - el.clientWidth - 5;
+  },
+  scrollRight() {
+    this.$refs.scrollContainer.scrollBy({ left: 620, behavior: "smooth" });
+  },
+  scrollLeft() {
+    this.$refs.scrollContainer.scrollBy({ left: -620, behavior: "smooth" });
+  },
+}));
+
 Alpine.start();

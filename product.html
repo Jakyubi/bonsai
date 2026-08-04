@@ -199,6 +199,57 @@
       </div>
     </section>
 
+    <!-- PRODUCT -->
+    <section class="bg-bonsai-bg1 w-full">
+      <div class="grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-12">
+        <!-- Left side - galery -->
+        <div x-data="{ activeImg: '/src/assets/products/Image1.png' }" class="flex w-full flex-col xl:col-span-4">
+          <!-- Main photo -->
+          <div class="aspect-square w-full overflow-hidden">
+            <img :src="activeImg" alt="Catalpa bignonioides Nana" class="h-full w-full object-cover" />
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="grid grid-cols-4 gap-1 p-1">
+            <button
+              @click="activeImg = '/src/assets/products/Image1.png'"
+              class="aspect-square overflow-hidden focus:outline-none">
+              <img
+                src="/src/assets/products/Image1.png"
+                class="h-full w-full object-cover transition-opacity hover:opacity-80" />
+            </button>
+            <button
+              @click="activeImg = '/src/assets/products/Image2.png'"
+              class="aspect-square overflow-hidden focus:outline-none">
+              <img
+                src="/src/assets/products/Image2.png"
+                class="h-full w-full object-cover grayscale transition-all hover:grayscale-0" />
+            </button>
+            <button
+              @click="activeImg = '/src/assets/products/Image3.png'"
+              class="aspect-square overflow-hidden focus:outline-none">
+              <img
+                src="/src/assets/products/Image3.png"
+                class="h-full w-full object-cover grayscale transition-all hover:grayscale-0" />
+            </button>
+            <button
+              @click="activeImg = '/src/assets/products/Image4.png'"
+              class="aspect-square overflow-hidden focus:outline-none">
+              <img
+                src="/src/assets/products/Image4.png"
+                class="h-full w-full object-cover grayscale transition-all hover:grayscale-0" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Right side - content -->
+        <div class="flex flex-col justify-center px-6 py-8 md:px-10 md:py-12 xl:col-span-7 xl:px-20">
+          <div class="w-full max-w-2xl">
+            <!-- text here -->
+          </div>
+        </div>
+      </div>
+    </section>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
