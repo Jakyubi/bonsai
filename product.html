@@ -216,28 +216,32 @@
               class="aspect-square overflow-hidden focus:outline-none">
               <img
                 src="/src/assets/products/Image1.png"
-                class="h-full w-full object-cover transition-opacity hover:opacity-80" />
+                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                :class="activeImg === '/src/assets/products/Image1.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
             </button>
             <button
               @click="activeImg = '/src/assets/products/Image2.png'"
               class="aspect-square overflow-hidden focus:outline-none">
               <img
                 src="/src/assets/products/Image2.png"
-                class="h-full w-full object-cover grayscale transition-all hover:grayscale-0" />
+                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                :class="activeImg === '/src/assets/products/Image2.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
             </button>
             <button
               @click="activeImg = '/src/assets/products/Image3.png'"
               class="aspect-square overflow-hidden focus:outline-none">
               <img
                 src="/src/assets/products/Image3.png"
-                class="h-full w-full object-cover grayscale transition-all hover:grayscale-0" />
+                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                :class="activeImg === '/src/assets/products/Image3.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
             </button>
             <button
               @click="activeImg = '/src/assets/products/Image4.png'"
               class="aspect-square overflow-hidden focus:outline-none">
               <img
                 src="/src/assets/products/Image4.png"
-                class="h-full w-full object-cover grayscale transition-all hover:grayscale-0" />
+                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                :class="activeImg === '/src/assets/products/Image4.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
             </button>
           </div>
         </div>
