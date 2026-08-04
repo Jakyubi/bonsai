@@ -201,7 +201,7 @@
 
     <!-- PRODUCT -->
     <section class="bg-bonsai-bg1 relative w-full">
-      <div class="grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-8">
+      <div class="grid h-full w-full grid-cols-1 xl:grid-cols-8">
         <!-- Left side - galery -->
         <div
           x-data="{ activeImg: '/src/assets/products/Image1.png' }"
@@ -249,9 +249,9 @@
         </div>
 
         <!-- Right side - content -->
-        <div class="flex flex-col justify-start px-6 py-12 md:px-10 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-36">
-          <div class="w-full max-w-4xl">
-            <!-- Nawigacja (Breadcrumbs) -->
+        <div class="flex flex-col justify-start px-6 py-12 md:px-12 md:py-16 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-36">
+          <div class="mx-auto w-full max-w-4xl xl:mx-0">
+            <!-- Nav -->
             <div class="text-bonsai-dark flex items-center space-x-3 text-xs font-light sm:text-sm">
               <span>Bonsai Park</span>
               <span>&mdash;</span>
@@ -260,82 +260,40 @@
               <span>Liściaste</span>
             </div>
 
-            <!-- Nagłówki -->
+            <!-- Text -->
             <h1 class="text-bonsai-dark mt-16 text-4xl sm:text-5xl lg:text-6xl">Catalpa bignonioides 'Nana'</h1>
             <p class="text-bonsai-dark mt-2 text-lg sm:text-3xl">Surmia bignoniowa 'Nana'</p>
 
-            <!-- Specyfikacja (Grid kafelków z ikonami) -->
-            <!-- 1 kolumna na mobilce, 2 na tablecie, 3 na desktopie -->
+            <!-- Specs -->
             <div
-              class="mt-20 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-2 lg:gap-y-10">
-              <!-- Cecha 1: Wysokość -->
-              <div class="flex items-center">
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
-                  <img src="/src/assets/icons/exchange.svg" alt="Wysokość" class="" />
-                </div>
-                <div class="ml-6 flex flex-col">
-                  <span class="text-bonsai-dark text-base">Wysokość</span>
-                  <span class="text-bonsai-dark text-xl font-light">175 - 200 cm</span>
-                </div>
-              </div>
+              x-data="{
+                features: [
+                  { icon: '/src/assets/icons/exchange.svg', label: 'Wysokość', value: '175 - 200 cm' },
+                  { icon: '/src/assets/icons/exchange2.svg', label: 'Szerokość/średnica', value: '100 - 125 cm' },
+                  { icon: '/src/assets/icons/size.svg', label: 'Wielkość doniczki', value: 'C90' },
+                  { icon: '/src/assets/icons/leaf.svg', label: 'Forma', value: 'Pienna' },
+                  { icon: '/src/assets/icons/konewka.svg', label: 'Typ uprawy', value: 'Doniczka' },
+                  { icon: '/src/assets/icons/lopatka.svg', label: 'Ilość przesadzeń', value: '2' }
+                ]
+              }"
+              class="mt-16 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 xl:mt-20 xl:grid-cols-3 xl:gap-x-2 xl:gap-y-10">
+              <template x-for="feature in features">
+                <div class="flex items-center">
+                  <!-- Icon -->
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full xl:h-12 xl:w-12">
+                    <img :src="feature.icon" :alt="feature.label" class="h-full w-full object-contain" />
+                  </div>
 
-              <!-- Cecha 2: Szerokość -->
-              <div class="flex items-center">
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
-                  <img src="/src/assets/icons/exchange2.svg" alt="Szerokość" class="" />
+                  <!-- Text -->
+                  <div class="ml-4 flex flex-col xl:ml-6">
+                    <span class="text-bonsai-dark text-sm xl:text-base" x-text="feature.label"></span>
+                    <span class="text-bonsai-dark text-lg font-light xl:text-xl" x-text="feature.value"></span>
+                  </div>
                 </div>
-                <div class="ml-6 flex flex-col">
-                  <span class="text-bonsai-dark text-base">Szerokość/średnica</span>
-                  <span class="text-bonsai-dark text-xl font-light">100 - 125 cm</span>
-                </div>
-              </div>
-
-              <!-- Cecha 3: Wielkość doniczki -->
-              <div class="flex items-center">
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
-                  <img src="/src/assets/icons/size.svg" alt="Wielkość doniczki" class="" />
-                </div>
-                <div class="ml-6 flex flex-col">
-                  <span class="text-bonsai-dark text-base">Wielkość doniczki</span>
-                  <span class="text-bonsai-dark text-xl font-light">C90</span>
-                </div>
-              </div>
-
-              <!-- Cecha 4: Forma -->
-              <div class="flex items-center">
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
-                  <img src="/src/assets/icons/leaf.svg" alt="Forma" class="" />
-                </div>
-                <div class="ml-6 flex flex-col">
-                  <span class="text-bonsai-dark text-base">Forma</span>
-                  <span class="text-bonsai-dark text-xl font-light">Pienna</span>
-                </div>
-              </div>
-
-              <!-- Cecha 5: Typ uprawy -->
-              <div class="flex items-center">
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
-                  <img src="/src/assets/icons/konewka.svg" alt="Typ uprawy" class="" />
-                </div>
-                <div class="ml-6 flex flex-col">
-                  <span class="text-bonsai-dark text-base">Typ uprawy</span>
-                  <span class="text-bonsai-dark text-xl font-light">Doniczka</span>
-                </div>
-              </div>
-
-              <!-- Cecha 6: Ilość przesadzeń -->
-              <div class="flex items-center">
-                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
-                  <img src="/src/assets/icons/lopatka.svg" alt="Ilość przesadzeń" class="" />
-                </div>
-                <div class="ml-6 flex flex-col">
-                  <span class="text-bonsai-dark text-base">Ilość przesadzeń</span>
-                  <span class="text-bonsai-dark text-xl font-light">2</span>
-                </div>
-              </div>
+              </template>
             </div>
 
-            <!-- Przycisk "Zapytaj o produkt" -->
+            <!-- Button -->
             <div class="mt-20">
               <a
                 href="#"
