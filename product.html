@@ -200,24 +200,26 @@
     </section>
 
     <!-- PRODUCT -->
-    <section class="bg-bonsai-bg1 w-full">
-      <div class="grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-12">
+    <section class="bg-bonsai-bg1 relative w-full">
+      <div class="grid w-full grid-cols-1 md:grid-cols-2 xl:grid-cols-8">
         <!-- Left side - galery -->
-        <div x-data="{ activeImg: '/src/assets/products/Image1.png' }" class="flex w-full flex-col xl:col-span-4">
+        <div
+          x-data="{ activeImg: '/src/assets/products/Image1.png' }"
+          class="flex w-full flex-col gap-px xl:col-span-3">
           <!-- Main photo -->
           <div class="aspect-square w-full overflow-hidden">
             <img :src="activeImg" alt="Catalpa bignonioides Nana" class="h-full w-full object-cover" />
           </div>
 
           <!-- Thumbnails -->
-          <div class="grid grid-cols-4 gap-1 p-1">
+          <div class="grid grid-cols-4 gap-px">
             <button
               @click="activeImg = '/src/assets/products/Image1.png'"
               class="aspect-square overflow-hidden focus:outline-none">
               <img
                 src="/src/assets/products/Image1.png"
                 class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image1.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
+                :class="activeImg === '/src/assets/products/Image1.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
             </button>
             <button
               @click="activeImg = '/src/assets/products/Image2.png'"
@@ -225,7 +227,7 @@
               <img
                 src="/src/assets/products/Image2.png"
                 class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image2.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
+                :class="activeImg === '/src/assets/products/Image2.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
             </button>
             <button
               @click="activeImg = '/src/assets/products/Image3.png'"
@@ -233,7 +235,7 @@
               <img
                 src="/src/assets/products/Image3.png"
                 class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image3.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
+                :class="activeImg === '/src/assets/products/Image3.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
             </button>
             <button
               @click="activeImg = '/src/assets/products/Image4.png'"
@@ -241,17 +243,133 @@
               <img
                 src="/src/assets/products/Image4.png"
                 class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image4.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-40'" />
+                :class="activeImg === '/src/assets/products/Image4.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
             </button>
           </div>
         </div>
 
         <!-- Right side - content -->
-        <div class="flex flex-col justify-center px-6 py-8 md:px-10 md:py-12 xl:col-span-7 xl:px-20">
-          <div class="w-full max-w-2xl">
-            <!-- text here -->
+        <div class="flex flex-col justify-start px-6 py-12 md:px-10 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-36">
+          <div class="w-full max-w-4xl">
+            <!-- Nawigacja (Breadcrumbs) -->
+            <div class="text-bonsai-dark flex items-center space-x-3 text-xs font-light sm:text-sm">
+              <span>Bonsai Park</span>
+              <span>&mdash;</span>
+              <span>Rośliny</span>
+              <span>&mdash;</span>
+              <span>Liściaste</span>
+            </div>
+
+            <!-- Nagłówki -->
+            <h1 class="text-bonsai-dark mt-16 text-4xl sm:text-5xl lg:text-6xl">Catalpa bignonioides 'Nana'</h1>
+            <p class="text-bonsai-dark mt-2 text-lg sm:text-3xl">Surmia bignoniowa 'Nana'</p>
+
+            <!-- Specyfikacja (Grid kafelków z ikonami) -->
+            <!-- 1 kolumna na mobilce, 2 na tablecie, 3 na desktopie -->
+            <div
+              class="mt-20 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-2 lg:gap-y-10">
+              <!-- Cecha 1: Wysokość -->
+              <div class="flex items-center">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
+                  <img src="/src/assets/icons/exchange.svg" alt="Wysokość" class="" />
+                </div>
+                <div class="ml-6 flex flex-col">
+                  <span class="text-bonsai-dark text-base">Wysokość</span>
+                  <span class="text-bonsai-dark text-xl font-light">175 - 200 cm</span>
+                </div>
+              </div>
+
+              <!-- Cecha 2: Szerokość -->
+              <div class="flex items-center">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
+                  <img src="/src/assets/icons/exchange2.svg" alt="Szerokość" class="" />
+                </div>
+                <div class="ml-6 flex flex-col">
+                  <span class="text-bonsai-dark text-base">Szerokość/średnica</span>
+                  <span class="text-bonsai-dark text-xl font-light">100 - 125 cm</span>
+                </div>
+              </div>
+
+              <!-- Cecha 3: Wielkość doniczki -->
+              <div class="flex items-center">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
+                  <img src="/src/assets/icons/size.svg" alt="Wielkość doniczki" class="" />
+                </div>
+                <div class="ml-6 flex flex-col">
+                  <span class="text-bonsai-dark text-base">Wielkość doniczki</span>
+                  <span class="text-bonsai-dark text-xl font-light">C90</span>
+                </div>
+              </div>
+
+              <!-- Cecha 4: Forma -->
+              <div class="flex items-center">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
+                  <img src="/src/assets/icons/leaf.svg" alt="Forma" class="" />
+                </div>
+                <div class="ml-6 flex flex-col">
+                  <span class="text-bonsai-dark text-base">Forma</span>
+                  <span class="text-bonsai-dark text-xl font-light">Pienna</span>
+                </div>
+              </div>
+
+              <!-- Cecha 5: Typ uprawy -->
+              <div class="flex items-center">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
+                  <img src="/src/assets/icons/konewka.svg" alt="Typ uprawy" class="" />
+                </div>
+                <div class="ml-6 flex flex-col">
+                  <span class="text-bonsai-dark text-base">Typ uprawy</span>
+                  <span class="text-bonsai-dark text-xl font-light">Doniczka</span>
+                </div>
+              </div>
+
+              <!-- Cecha 6: Ilość przesadzeń -->
+              <div class="flex items-center">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full">
+                  <img src="/src/assets/icons/lopatka.svg" alt="Ilość przesadzeń" class="" />
+                </div>
+                <div class="ml-6 flex flex-col">
+                  <span class="text-bonsai-dark text-base">Ilość przesadzeń</span>
+                  <span class="text-bonsai-dark text-xl font-light">2</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Przycisk "Zapytaj o produkt" -->
+            <div class="mt-20">
+              <a
+                href="#"
+                class="bg-bonsai-dark inline-flex items-center rounded-full px-8 py-4 text-lg font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
+                Zapytaj o produkt
+              </a>
+            </div>
           </div>
         </div>
+      </div>
+
+      <!-- Chat button -->
+      <button
+        type="button"
+        aria-label="Otwórz czat"
+        class="absolute right-6 bottom-20 z-20 flex h-16 w-16 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105 sm:right-12 sm:bottom-36">
+        <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
+      </button>
+    </section>
+
+    <!-- DISCOVER OTHER -->
+    <section class="flex w-full flex-col bg-white md:flex-row">
+      <!-- Left side -->
+      <div class="relative z-10 hidden w-50 xl:block"></div>
+
+      <!-- Main content -->
+      <div
+        class="flex max-w-[1600px] flex-1 flex-col justify-between gap-6 py-12 pr-6 pl-6 sm:flex-row sm:items-center lg:py-16 lg:pr-16 lg:pl-16 xl:py-32 xl:pl-0">
+        <h2 class="text-bonsai-dark text-3xl tracking-wide sm:text-4xl lg:text-6xl">Zobacz inne rośliny liściaste</h2>
+        <a
+          href="#"
+          class="text-bonsai-dark hover:bg-bonsai-dark inline-flex shrink-0 items-center justify-center self-start rounded-full border border-gray-400 px-6 py-3.5 text-lg font-light transition-all duration-300 hover:text-white sm:self-auto">
+          Zobacz całą ofertę
+        </a>
       </div>
     </section>
     <script type="module" src="/src/main.js"></script>
