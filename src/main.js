@@ -3,19 +3,25 @@ import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 
+const photos = {
+  photo1: new URL("./assets/photos/zdjecie-1.png", import.meta.url).href,
+  photo2: new URL("./assets/photos/zdjecie-2.png", import.meta.url).href,
+  photo3: new URL("./assets/photos/zdjecie-3.png", import.meta.url).href,
+};
+
 Alpine.data("heroSlider", () => ({
   activeSlide: 0,
   slides: [
     {
-      image: "/src/assets/photos/zdjecie-3.png",
+      image: photos.photo1,
       title: "Sprzedaż unikatowych roślin",
     },
     {
-      image: "/src/assets/photos/zdjecie-1.png",
+      image: photos.photo2,
       title: "Lorem ipsum",
     },
     {
-      image: "/src/assets/photos/zdjecie-2.png",
+      image: photos.photo3,
       title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.",
     },
   ],
@@ -49,10 +55,10 @@ Alpine.data("timelineSlider", () => ({
     {
       year: "1996",
       text: "sprzedaż roślin\nna placu targowym\nw Piekoszowie",
-      image: "/src/assets/photos/zdjecie-1.png",
+      image: photos.photo1,
     },
-    { year: "1998", text: "pierwsza szkółka\nogrodnicza pod\nKielcami", image: "/src/assets/photos/zdjecie-2.png" },
-    { year: "2012", text: "pierwsze rośliny\nBonsai w Kielcach", image: "/src/assets/photos/zdjecie-3.png" },
+    { year: "1998", text: "pierwsza szkółka\nogrodnicza pod\nKielcami", image: photos.photo2 },
+    { year: "2012", text: "pierwsze rośliny\nBonsai w Kielcach", image: photos.photo3 },
   ],
   startDrag(e) {
     this.isDown = true;
