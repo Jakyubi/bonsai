@@ -401,7 +401,6 @@
       </div>
     </section>
 
-    <!-- TODO ALL BELOW -->
     <!-- DISCOVER OTHER -->
     <section class="flex w-full flex-col bg-white md:flex-row">
       <!-- Left side -->
@@ -418,6 +417,85 @@
         </a>
       </div>
     </section>
+
+    <!-- OTHER PLANTS BAR -->
+    <section x-data="productsBar" class="relative w-full border-t border-b border-gray-200 bg-white">
+      <div class="relative mx-auto flex max-w-[1920px] items-center">
+        <!-- List container -->
+        <div
+          x-ref="scrollContainer"
+          x-init="checkScroll()"
+          @scroll.debounce.50ms="checkScroll()"
+          class="hide-scrollbar flex h-full min-w-0 flex-1 items-stretch overflow-x-auto scroll-smooth">
+          <template x-for="(prod, index) in products" :key="index">
+            <a
+              :href="prod.link"
+              class="group flex w-64 shrink-0 flex-col items-center justify-start border-r border-gray-200 pt-8 pb-8 transition-colors first:border-l hover:bg-gray-50/50 md:w-72 lg:w-96 lg:pt-20 lg:pb-20">
+              <!-- Image Container -->
+              <div class="flex h-48 w-40 shrink-0 items-center justify-center">
+                <img
+                  :src="prod.image"
+                  :alt="prod.name"
+                  class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+              </div>
+
+              <!-- Text / Title -->
+              <div class="mt-10 text-center">
+                <span
+                  class="text-bonsai-dark text-base font-light tracking-wide transition-colors group-hover:text-black md:text-xl"
+                  x-text="prod.name">
+                </span>
+              </div>
+            </a>
+          </template>
+        </div>
+
+        <!-- Scroll Left Button -->
+        <div
+          x-show="canScrollLeft"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 hidden w-32 items-center justify-start bg-gradient-to-r from-white via-white/90 to-transparent pl-4 sm:w-40 md:flex">
+          <button
+            @click="scrollLeft()"
+            type="button"
+            aria-label="Przewiń kategorie w lewo"
+            class="group pointer-events-auto flex h-10 w-10 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-10 w-10 -rotate-135 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
+        </div>
+
+        <!-- Scroll Right Button -->
+        <div
+          x-show="canScrollRight"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-32 items-center justify-end bg-gradient-to-l from-white via-white/90 to-transparent pr-4 sm:w-40 md:flex">
+          <button
+            @click="scrollRight()"
+            type="button"
+            aria-label="Przewiń kategorie w prawo"
+            class="group pointer-events-auto flex h-10 w-10 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-10 w-10 rotate-45 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
+        </div>
+      </div>
+    </section>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
