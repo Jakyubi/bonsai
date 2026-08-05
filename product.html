@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>product</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header x-data="{ open: false }" class="relative z-50 w-full border-b border-gray-100 bg-white">
+      <!-- Main Container -->
+      <div class="mx-auto flex h-20 max-w-[1920px] items-center justify-between px-4 sm:px-8">
+        <!-- Logo  -->
+        <a href="#" class="flex shrink-0 items-center">
+          <img src="/src/assets/logo/logo-1.png" alt="Japanese Garden" class="h-10 w-auto" />
+        </a>
+
+        <div class="ml-auto hidden items-center gap-10 lg:flex 2xl:gap-16">
+          <!-- Desktop nav -->
+          <nav
+            class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex xl:mr-8 xl:gap-18">
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Home</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Bonsai</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Rośliny</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Realizacje</a>
+            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kontakt</a>
+          </nav>
+
+          <!-- Action buttons -->
+          <div class="flex shrink-0 items-center gap-3 xl:gap-4">
+            <a
+              href="#"
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
+              Jak dojechać?
+            </a>
+            <a
+              href="/product.html"
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
+              Katalog roślin
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile menu open button -->
+        <button @click="open = !open" type="button" class="text-bonsai-dark ml-auto p-2 focus:outline-none lg:hidden">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              x-show="!open"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 6h16M4 12h16M4 18h16" />
+            <path
+              x-show="open"
+              x-cloak
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        @click.away="open = false"
+        class="absolute top-full left-0 z-50 w-full space-y-3 border-b border-gray-200 bg-white px-6 pt-2 pb-6 shadow-lg lg:hidden">
+        <nav class="space-y-1">
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Home</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >O nas</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Bonsai</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Rośliny</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Realizacje</a
+          >
+          <a
+            href="#"
+            class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
+            >Kontakt</a
+          >
+        </nav>
+
+        <div class="flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row">
+          <a
+            href="#"
+            class="text-bonsai-dark border-bonsai-dark active:bg-bonsai-dark focus:bg-bonsai-dark w-full rounded-full border py-3 text-center text-base font-light transition-all duration-150 focus:text-white focus:outline-none active:text-white">
+            Jak dojechać?
+          </a>
+          <a
+            href="#"
+            class="text-bonsai-dark border-bonsai-dark active:bg-bonsai-dark focus:bg-bonsai-dark w-full rounded-full border py-3 text-center text-base font-light transition-all duration-150 focus:text-white focus:outline-none active:text-white">
+            Katalog roślin
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORIES BAR -->
+    <section x-data="categoriesBar" class="relative w-full border-b border-gray-100 bg-white">
+      <div class="relative mx-auto flex h-20 max-w-[1920px] items-center md:h-24">
+        <!-- List container -->
+        <div
+          x-ref="scrollContainer"
+          x-init="checkScroll()"
+          @scroll.debounce.50ms="checkScroll()"
+          class="hide-scrollbar flex h-full min-w-0 flex-1 items-center overflow-x-auto scroll-smooth">
+          <template x-for="(cat, index) in categories" :key="index">
+            <a
+              :href="cat.link"
+              class="group flex h-full shrink-0 items-center justify-center gap-5 border-r border-gray-100 px-8 transition-colors first:border-l hover:bg-gray-50/80">
+              <!-- Image -->
+              <div class="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden">
+                <img
+                  :src="cat.image"
+                  :alt="cat.name"
+                  class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+              </div>
+
+              <!-- Text -->
+              <span
+                class="text-bonsai-dark text-xs leading-tight font-light tracking-wide whitespace-pre-line transition-colors group-hover:text-black sm:text-sm"
+                x-text="cat.name">
+              </span>
+            </a>
+          </template>
+        </div>
+
+        <!-- Scroll Left Button -->
+        <div
+          x-show="canScrollLeft"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 hidden w-32 items-center justify-start bg-gradient-to-r from-white via-white/90 to-transparent pl-4 sm:w-40 md:flex">
+          <button
+            @click="scrollLeft()"
+            type="button"
+            aria-label="Przewiń kategorie w lewo"
+            class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-9 w-9 -rotate-135 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
+        </div>
+
+        <!-- Scroll Right Button -->
+        <div
+          x-show="canScrollRight"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-32 items-center justify-end bg-gradient-to-l from-white via-white/90 to-transparent pr-4 sm:w-40 md:flex">
+          <button
+            @click="scrollRight()"
+            type="button"
+            aria-label="Przewiń kategorie w prawo"
+            class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-9 w-9 rotate-45 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section class="bg-bonsai-bg1 relative w-full">
+      <div class="mx-auto grid h-full w-full max-w-[1920px] grid-cols-1 xl:grid-cols-8">
+        <!-- Left side - gallery -->
+        <div
+          x-data="productGallery"
+          class="relative flex w-full flex-col gap-px overflow-hidden xl:col-span-3 xl:h-full xl:justify-between">
+          <!-- Main photo -->
+          <div
+            class="relative aspect-square w-full shrink-0 overflow-hidden bg-white md:w-4/5 xl:aspect-auto xl:w-full xl:flex-1">
+            <img :src="activeImg" alt="Catalpa bignonioides Nana" class="absolute inset-0 h-full w-full object-cover" />
+          </div>
+
+          <!-- Thumbnails Container -->
+          <div
+            class="relative w-full shrink-0 md:absolute md:top-0 md:right-0 md:bottom-0 md:w-1/5 xl:relative xl:h-auto xl:w-full">
+            <div
+              x-ref="thumbsContainer"
+              @scroll.debounce.50ms="checkScroll()"
+              class="hide-scrollbar bg-bonsai-bg1 grid h-full w-full auto-cols-[25%] grid-flow-col gap-px overflow-x-auto overflow-y-hidden scroll-smooth md:auto-cols-auto md:grid-flow-row md:grid-cols-1 md:overflow-x-hidden md:overflow-y-auto xl:auto-cols-[25%] xl:grid-flow-col xl:overflow-x-auto xl:overflow-y-hidden">
+              <template x-for="(img, index) in images" :key="index">
+                <button
+                  @click="activeImg = img"
+                  type="button"
+                  class="relative aspect-square w-full shrink-0 bg-white focus:outline-none">
+                  <img
+                    :src="img"
+                    alt="Miniaturka produktu"
+                    class="absolute inset-0 h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                    :class="activeImg === img ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
+                </button>
+              </template>
+            </div>
+
+            <!-- Scroll Left Button -->
+            <div
+              x-show="canScrollStart"
+              x-transition:enter="transition opacity duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              x-transition:leave="transition opacity duration-300"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 bottom-0 left-0 z-10 hidden w-16 items-center justify-center bg-gradient-to-r to-transparent md:right-0 md:bottom-auto md:flex md:h-20 md:w-full md:bg-gradient-to-b xl:right-auto xl:bottom-0 xl:h-full xl:w-20 xl:bg-gradient-to-r">
+              <button
+                @click="scrollPrev()"
+                type="button"
+                aria-label="Przewiń do tyłu"
+                class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+                <img
+                  src="/src/assets/icons/icon-arrow.svg"
+                  alt=""
+                  class="h-9 w-9 -rotate-135 invert transition-all duration-200 group-hover:opacity-80 md:-rotate-45 xl:-rotate-135" />
+              </button>
+            </div>
+
+            <!-- Scroll Right Button -->
+            <div
+              x-show="canScrollEnd"
+              x-transition:enter="transition opacity duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              x-transition:leave="transition opacity duration-300"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-16 items-center justify-center bg-gradient-to-l to-transparent md:top-auto md:left-0 md:flex md:h-20 md:w-full md:bg-gradient-to-t xl:top-0 xl:left-auto xl:h-full xl:w-20 xl:bg-gradient-to-l">
+              <button
+                @click="scrollNext()"
+                type="button"
+                aria-label="Przewiń do przodu"
+                class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+                <img
+                  src="/src/assets/icons/icon-arrow.svg"
+                  alt=""
+                  class="h-9 w-9 rotate-45 invert transition-all duration-200 group-hover:opacity-80 md:rotate-135 xl:rotate-45" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side - content -->
+        <div class="flex flex-col justify-start px-6 py-12 md:px-12 md:py-16 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-36">
+          <div class="mx-auto w-full max-w-4xl xl:mx-0">
+            <!-- Nav -->
+            <div class="text-bonsai-dark flex items-center space-x-3 text-xs font-light sm:text-sm">
+              <span>Bonsai Park</span>
+              <span>&mdash;</span>
+              <span>Rośliny</span>
+              <span>&mdash;</span>
+              <span>Liściaste</span>
+            </div>
+
+            <!-- Text -->
+            <h1 class="text-bonsai-dark mt-16 text-4xl sm:text-5xl lg:text-6xl">Catalpa bignonioides 'Nana'</h1>
+            <p class="text-bonsai-dark mt-2 text-lg sm:text-3xl">Surmia bignoniowa 'Nana'</p>
+
+            <!-- Specs -->
+            <div
+              x-data="{
+                features: [
+                  { icon: '/src/assets/icons/exchange.svg', label: 'Wysokość', value: '175 - 200 cm' },
+                  { icon: '/src/assets/icons/exchange2.svg', label: 'Szerokość/średnica', value: '100 - 125 cm' },
+                  { icon: '/src/assets/icons/size.svg', label: 'Wielkość doniczki', value: 'C90' },
+                  { icon: '/src/assets/icons/leaf.svg', label: 'Forma', value: 'Pienna' },
+                  { icon: '/src/assets/icons/konewka.svg', label: 'Typ uprawy', value: 'Doniczka' },
+                  { icon: '/src/assets/icons/lopatka.svg', label: 'Ilość przesadzeń', value: '2' }
+                ]
+              }"
+              class="mt-16 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 xl:mt-20 xl:grid-cols-3 xl:gap-x-2 xl:gap-y-10">
+              <template x-for="feature in features">
+                <div class="flex items-center">
+                  <!-- Icon -->
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full xl:h-12 xl:w-12">
+                    <img :src="feature.icon" :alt="feature.label" class="h-full w-full object-contain" />
+                  </div>
+
+                  <!-- Text -->
+                  <div class="ml-4 flex flex-col xl:ml-6">
+                    <span class="text-bonsai-dark text-sm xl:text-base" x-text="feature.label"></span>
+                    <span class="text-bonsai-dark text-lg font-light xl:text-xl" x-text="feature.value"></span>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <!-- Button -->
+            <div class="mt-20">
+              <a
+                href="#"
+                class="bg-bonsai-dark inline-flex items-center rounded-full px-8 py-4 text-lg font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
+                Zapytaj o produkt
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat button -->
+      <button
+        type="button"
+        aria-label="Otwórz czat"
+        class="fixed right-4 bottom-8 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105 sm:right-8 sm:bottom-16 sm:h-16 sm:w-16">
+        <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
+      </button>
+    </section>
+
+    <!-- PRODUCT DESC -->
+    <section class="relative flex w-full bg-white">
+      <!-- Left side  -->
+      <div class="hidden shrink-0 border-r border-b border-gray-100 xl:block xl:w-50"></div>
+
+      <!-- Right side - content -->
+      <div class="w-full border-b border-gray-100 px-6 pt-16 pb-24 md:px-10 xl:pt-38 xl:pl-32">
+        <div class="w-full max-w-7xl">
+          <!-- Title -->
+          <h2 class="text-bonsai-dark text-4xl leading-relaxed tracking-wider sm:text-5xl lg:text-6xl">
+            Opis produktu
+          </h2>
+
+          <!-- Text description -->
+          <div
+            class="text-bonsai-dark mt-10 flex flex-col space-y-6 text-base leading-loose font-light md:mt-16 xl:mt-22">
+            <p class="text-bonsai-dark text-xl font-normal">
+              Karłowa odmiana dorastająca do wysokości 2-3 m, plus oczywiście wysokość podkładki. Korona płaskokulista,
+              bardzo gęsta, osiągająca średnicę do 5 m.
+            </p>
+            <p>
+              Liście drobniejsze niż u gatunku, długości 8-15 cm, sercowate, na wierzchołku krótko zaostrzone, bez klap,
+              zielone, na spodzie gęsto owłosione, całobrzegie. Wiosną późno się rozwijają, a zaraz po rozwinięciu są
+              purpurowe. Jesienią przebarwiają się na żółtozielono, szybko opadają, zaraz po pierwszych przymrozkach. Po
+              roztarciu nieprzyjemnie pachną. <br />Odmiana nie kwitnie.
+            </p>
+            <p>
+              Odmiana wrażliwa na mrozy (strefa 6b), szczególnie w młodym wieku, dlatego powinna być sadzona w miejscach
+              zacisznych i osłoniętych od wiatru. Starsze egzemplarze są odporniejsze. Wymaga gleb żyznych, głęboko
+              uprawionych, przepuszczalnych, ale dość wilgotnych, o odczynie od lekko kwaśnego po obojętny, a nawet
+              lekko zasadowy. Najlepiej rośnie w pełnym słońcu. Dobrze znosi zanieczyszczenie powietrza i słabe
+              zasolenie. Można używać jej do obsadzania ulic, ale tylko w najcieplejszych rejonach kraju.
+            </p>
+            <p>
+              Polecana do parków, zieleni osiedlowej i większych ogrodów przydomowych. Najlepiej wygląda posadzona
+              pojedynczo na trawniku lub rabacie.
+            </p>
+            <p>
+              Drzewo ze względu na późny rozwój liści i wczesne ich zrzucanie pozostaje w stanie bezlistnym niemal przez
+              7 miesięcy w roku. Pędy przemarznięte należy wiosną wycinać. Sadzi się ją przy podporach. Nie lubi
+              przesadzania.
+            </p>
+          </div>
+
+          <!-- Specs table -->
+          <div
+            x-data="{
+          specs: [
+            { label: 'Grupa roślin', values: ['Liściaste'] },
+            { label: 'Rodzina', values: ['Bignoniaceae - bignoniowate'] },
+            { label: 'Charakterystyka Gatunku', values: ['Pokrój: Kulisty, Płasko kulisty', 'Wysokość: Od 2 m do 3 m, Zależy od wysokości podkładki', 'Szerokość: Od 2 m do 5 m'] },
+            { label: 'Kwiaty', values: ['Rodzaj kwiatów: Brak kwitnienia'] },
+            { label: 'Liście', values: ['Trwałość liści: Sezonowe', 'Kolor liści: Zielone', 'Kolor liści jesienią: Żółty', 'Kształt liści: Sercowaty, Drobniejsze niż u gatunku, Dł. 8-15 cm'] },
+            { label: 'Owoce', values: ['Rodzaj owoców: Brak owocowania'] },
+            { label: 'Pędy', values: ['Rodzaj pędów: Pędy proste, Niedekoracyjne', 'Kolor pędów: Oliwkowy, Szary, Brązowy', 'Kolor pędów zimą: Bez zmian'] },
+            { label: 'System korzeniowy', values: ['Głęboki, Rozległy, Mięsiste korzenie, Korzeń główny'] },
+            { label: 'Podłoże', values: ['Rodzaj gleby: Przepuszczalna, Żyzna', 'Odczyn gleby: Kwaśny (pH 4,0-5,5), Obojętne (pH 5,0-6,0) (w tym lekko kwaśne)', 'Wilgotność: Podłoże wilgotne'] },
+            { label: 'Stanowisko', values: ['Półcieniste, Słoneczne'] },
+            { label: 'Formowanie', values: ['Delikatne'] },
+            { label: 'Siła wzrostu', values: ['Typowy dla gatunku'] },
+            { label: 'Strefa klimatyczna', values: ['6a od -23.3°C do -20.6°C'] },
+            { label: 'Dodatkowe informacje', values: ['Warunki uprawy: Małe wymagania', 'Cechy Użytkowe: Konary podatne na wyłamywanie, W gęstej koronie chętnie gniazdują ptaki', 'Pora największej atrakcyjności: Późna wiosna, Lato, Jesień', 'Walory: Ozdobne z liści lub igieł, Ciekawy pokrój', 'Występowanie gatunku: Europa, Ameryka, Azja', 'Pochodzenie odmiany: Francja, Znaleziona w 1850 roku w szkółkach Massona we Francji.'] },
+            { label: 'Polecamy zastosowanie', values: ['Ogrody przydomowe, Zieleń publiczna, Zieleń osiedlowa, Aleje uliczne, Aleje parkowe, Szpaler, Duże ogrody'] }
+          ]
+        }"
+            class="mt-16 flex flex-col md:mt-24 xl:mt-32">
+            <template x-for="spec in specs">
+              <div class="flex flex-col border-b border-gray-100 py-6 last:border-b-0 md:flex-row md:py-9">
+                <!-- Left column -->
+                <div
+                  class="text-bonsai-dark mb-2 w-full shrink-0 text-lg font-normal md:mb-0 md:w-64 lg:w-80"
+                  x-text="spec.label"></div>
+
+                <!-- Right column -->
+                <div class="text-bonsai-dark flex flex-col space-y-2 text-lg font-light">
+                  <template x-for="val in spec.values">
+                    <span x-text="val"></span>
+                  </template>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOVER OTHER -->
+    <section class="mx-auto flex w-full max-w-[1920px] flex-col bg-white md:flex-row">
+      <!-- Left side -->
+      <div class="relative z-10 hidden w-50 xl:block"></div>
+
+      <!-- Main content -->
+      <div
+        class="flex flex-1 flex-col justify-between gap-6 py-12 pr-6 pl-6 sm:flex-row sm:items-center lg:py-16 lg:pr-16 lg:pl-16 xl:pt-38 xl:pb-28 xl:pl-0">
+        <h2 class="text-bonsai-dark text-3xl tracking-wider sm:text-4xl lg:text-6xl">Zobacz inne rośliny liściaste</h2>
+        <a
+          href="#"
+          class="text-bonsai-dark hover:bg-bonsai-dark border-bonsai-dark mr-11 inline-flex shrink-0 items-center justify-center self-start rounded-full border px-8 py-4 text-lg font-light transition-all duration-300 hover:text-white sm:self-auto">
+          Zobacz całą ofertę
+        </a>
+      </div>
+    </section>
+
+    <!-- OTHER PLANTS BAR -->
+    <section x-data="productsBar" class="relative w-full border-t border-b border-gray-200 bg-white">
+      <div class="relative mx-auto flex max-w-[1920px] items-center">
+        <!-- List container -->
+        <div
+          x-ref="scrollContainer"
+          x-init="checkScroll()"
+          @scroll.debounce.50ms="checkScroll()"
+          class="hide-scrollbar flex h-full min-w-0 flex-1 items-stretch overflow-x-auto scroll-smooth">
+          <template x-for="(prod, index) in products" :key="index">
+            <a
+              :href="prod.link"
+              class="group flex w-64 shrink-0 flex-col items-center justify-start border-r border-gray-200 pt-8 pb-8 transition-colors first:border-l hover:bg-gray-50/50 md:w-72 lg:w-96 lg:pt-20 lg:pb-20">
+              <!-- Image Container -->
+              <div class="flex h-48 w-40 shrink-0 items-center justify-center">
+                <img
+                  :src="prod.image"
+                  :alt="prod.name"
+                  class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+              </div>
+
+              <!-- Text / Title -->
+              <div class="mt-10 text-center">
+                <span
+                  class="text-bonsai-dark text-base font-light tracking-wide transition-colors group-hover:text-black md:text-xl"
+                  x-text="prod.name">
+                </span>
+              </div>
+            </a>
+          </template>
+        </div>
+
+        <!-- Scroll Left Button -->
+        <div
+          x-show="canScrollLeft"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 bottom-0 left-0 z-10 hidden w-32 items-center justify-start bg-gradient-to-r from-white via-white/90 to-transparent pl-4 sm:w-40 md:flex">
+          <button
+            @click="scrollLeft()"
+            type="button"
+            aria-label="Przewiń kategorie w lewo"
+            class="group pointer-events-auto flex h-10 w-10 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-10 w-10 -rotate-135 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
+        </div>
+
+        <!-- Scroll Right Button -->
+        <div
+          x-show="canScrollRight"
+          x-transition:enter="transition opacity duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition opacity duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-32 items-center justify-end bg-gradient-to-l from-white via-white/90 to-transparent pr-4 sm:w-40 md:flex">
+          <button
+            @click="scrollRight()"
+            type="button"
+            aria-label="Przewiń kategorie w prawo"
+            class="group pointer-events-auto flex h-10 w-10 items-center justify-center transition-transform duration-200 hover:scale-105">
+            <img
+              src="/src/assets/icons/icon-arrow.svg"
+              alt=""
+              class="h-10 w-10 rotate-45 invert transition-all duration-200 group-hover:opacity-80" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-bonsai-bg1 text-bonsai-dark relative w-full font-sans">
+      <!-- Main container -->
+      <div class="flex w-full flex-col xl:flex-row">
+        <!-- Left side -->
+        <aside
+          class="relative flex w-full shrink-0 flex-row items-center justify-between border-b border-gray-300 p-6 xl:w-50 xl:flex-col xl:justify-end xl:border-r xl:border-b-0 xl:py-12">
+          <!-- Social media icons-->
+          <div class="my-auto flex gap-4 xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:flex-col">
+            <!-- TikTok -->
+            <a
+              href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+              aria-label="TikTok">
+              <img src="/src/assets/icons/tt.svg" alt="TikTok" />
+            </a>
+            <!-- Facebook -->
+            <a
+              href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+              aria-label="Facebook">
+              <img src="/src/assets/icons/fb.svg" alt="Facebook" />
+            </a>
+            <!-- Instagram -->
+            <a
+              href="#"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+              aria-label="Instagram">
+              <img src="/src/assets/icons/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+
+          <!-- Logo -->
+          <div class="xl:mt-auto">
+            <img src="/src/assets/logo/logo-dark.png" alt="Japanese Garden" class="h-auto w-20" />
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="flex min-w-0 flex-1 flex-col justify-between">
+          <div>
+            <!-- Google opinions -->
+            <div
+              class="flex flex-col items-center justify-between gap-6 border-gray-300 px-6 py-8 md:p-10 md:py-12 lg:flex-row lg:py-20 lg:pl-20 xl:border-b xl:pl-32">
+              <div class="flex items-center gap-3">
+                <img src="/src/assets/icons/logo-google.svg" alt="Google Logo" class="grayscale" />
+                <div class="flex flex-col">
+                  <div class="flex space-x-1 tracking-widest">
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                  </div>
+                  <span class="text-bonsai-gray mt-0.5 text-xs font-bold">5.0 | 19 opinii</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-right xl:gap-20">
+                <span class="text-bonsai-dark text-base font-light"
+                  >Zapraszamy do podzielenia się opinią na Google</span
+                >
+                <a
+                  href="#"
+                  class="bg-bonsai-dark rounded-full px-6 py-3.5 text-base font-light whitespace-nowrap text-white transition-all duration-200 hover:scale-105 xl:mr-20">
+                  Dodaj opinię
+                </a>
+              </div>
+            </div>
+
+            <!-- Links and data -->
+            <div
+              class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 font-light md:grid-cols-12 md:pl-16 xl:gap-16 xl:pl-32">
+              <!-- Contact -->
+              <div class="text-bonsai-dark space-y-2.5 text-base leading-relaxed md:col-span-3 xl:text-lg">
+                <h4 class="mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Dane kontaktowe</h4>
+                <p>Japanese Garden</p>
+                <p>Górki Szczukowskie 1,</p>
+                <p>26-065 Piekoszów</p>
+
+                <div class="space-y-1.5 pt-4">
+                  <p>
+                    <a
+                      href="mailto:Bonsaipark.kielce@gmail.com"
+                      class="text-bonsai-green transition-all hover:underline"
+                      >Bonsaipark.kielce@gmail.com</a
+                    >
+                  </p>
+                  <p>
+                    <a href="tel:728106796" class="text-bonsai-green transition-all hover:underline">728 106 796</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Nav -->
+              <div class="space-y-3 md:col-span-2">
+                <h4 class="mb-8 text-xl font-light text-gray-800 lg:mb-16 lg:text-2xl">Nawigacja</h4>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
+                </p>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Realizacje</a>
+                </p>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Oferta</a>
+                </p>
+                <p>
+                  <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kontakt</a>
+                </p>
+              </div>
+
+              <!-- Categories -->
+              <div class="md:col-span-7">
+                <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h4>
+                <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Zwisające</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Kolumnowe</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Pnącza</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Drzewa</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Inne formy</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Róże</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Drzewka</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Liściaste</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Byliny</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Krzewy</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Iglaste</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Owocowe</a>
+                  </div>
+
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Płożące</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Wrzosowate</a>
+                  </div>
+                  <div>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500">Warzywa</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="relative h-72 w-full shrink-0 overflow-hidden lg:h-96">
+            <img
+              src="/src/assets/photos/mapa.png"
+              alt="Mapa Kielce - Górki Szczukowskie"
+              class="h-full w-full object-cover opacity-90 grayscale" />
+          </div>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div>
+        <div class="text-bonsai-dark w-full bg-white px-6 py-10 text-base font-light sm:px-12">
+          <div class="flex flex-col items-center justify-between gap-2 sm:flex-row">
+            <p>© Copyright 2026 - Japanese Garden</p>
+            <p>Made with <span class="text-bonsai-green">♥</span> by NET-atak.pl</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

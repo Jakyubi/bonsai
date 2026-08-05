@@ -37,7 +37,7 @@
               Jak dojechać?
             </a>
             <a
-              href="#"
+              href="product.html"
               class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
               Katalog roślin
             </a>
@@ -125,6 +125,7 @@
 
     <!-- HERO -->
     <section
+      @resize.window.debounce.100ms="checkScroll()"
       x-data="heroSlider"
       @mouseenter="stopAutoplay()"
       @mouseleave="startAutoplay()"

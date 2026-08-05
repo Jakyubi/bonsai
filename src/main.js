@@ -77,4 +77,149 @@ Alpine.data("timelineSlider", () => ({
   },
 }));
 
+Alpine.data("categoriesBar", () => ({
+  canScrollLeft: false,
+  canScrollRight: true,
+
+  categories: [
+    { name: "Zwisające\n(płaczące)", image: "/src/assets/plants/zwisajace.png", link: "#" },
+    { name: "Drzewa", image: "/src/assets/plants/drzewa.png", link: "#" },
+    { name: "Drzewka", image: "/src/assets/plants/drzewka.png", link: "#" },
+    { name: "Krzewy", image: "/src/assets/plants/krzewy.png", link: "#" },
+    { name: "Płożące", image: "/src/assets/plants/plozace.png", link: "#" },
+    { name: "Kolumnowe", image: "/src/assets/plants/kolumnowe.png", link: "#" },
+    { name: "Inne\nformy", image: "/src/assets/plants/inne.png", link: "#" },
+    { name: "Liściaste", image: "/src/assets/plants/lisciaste.png", link: "#" },
+    { name: "Iglaste", image: "/src/assets/plants/iglaste.png", link: "#" },
+    { name: "Wrzosowate", image: "/src/assets/plants/wrzosowate.png", link: "#" },
+    { name: "Pnącza", image: "/src/assets/plants/pnacza.png", link: "#" },
+    { name: "Róże", image: "/src/assets/plants/roze.png", link: "#" },
+    { name: "Byliny", image: "/src/assets/plants/byliny.png", link: "#" },
+    { name: "Owocowe", image: "/src/assets/plants/owocowe.png", link: "#" },
+    { name: "Warzywa", image: "/src/assets/plants/warzywa.png", link: "#" },
+  ],
+
+  init() {
+    this.$nextTick(() => {
+      this.checkScroll();
+    });
+    setTimeout(() => this.checkScroll(), 200);
+  },
+
+  checkScroll() {
+    const el = this.$refs.scrollContainer;
+    if (!el) return;
+    const hasScroll = el.scrollWidth > el.clientWidth;
+    this.canScrollLeft = el.scrollLeft > 5;
+    this.canScrollRight = hasScroll && el.scrollLeft < el.scrollWidth - el.clientWidth - 5;
+  },
+  scrollRight() {
+    this.$refs.scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+  },
+  scrollLeft() {
+    this.$refs.scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
+  },
+}));
+
+Alpine.data("productGallery", () => ({
+  activeImg: "/src/assets/products/Image1.png",
+  images: [
+    "/src/assets/products/Image1.png",
+    "/src/assets/products/Image2.png",
+    "/src/assets/products/Image3.png",
+    "/src/assets/products/Image4.png",
+    "/src/assets/products/Image1.png",
+    "/src/assets/products/Image2.png",
+    "/src/assets/products/Image3.png",
+    "/src/assets/products/Image4.png",
+  ],
+  canScrollStart: false,
+  canScrollEnd: true,
+
+  init() {
+    this.$nextTick(() => {
+      this.checkScroll();
+      window.addEventListener("resize", () => this.checkScroll());
+    });
+    setTimeout(() => this.checkScroll(), 200);
+  },
+
+  checkScroll() {
+    const el = this.$refs.thumbsContainer;
+    if (!el) return;
+
+    const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
+
+    if (isVertical) {
+      const hasScroll = el.scrollHeight > el.clientHeight;
+      this.canScrollStart = el.scrollTop > 5;
+      this.canScrollEnd = hasScroll && el.scrollTop < el.scrollHeight - el.clientHeight - 5;
+    } else {
+      const hasScroll = el.scrollWidth > el.clientWidth;
+      this.canScrollStart = el.scrollLeft > 5;
+      this.canScrollEnd = hasScroll && el.scrollLeft < el.scrollWidth - el.clientWidth - 5;
+    }
+  },
+
+  scrollNext() {
+    const el = this.$refs.thumbsContainer;
+    const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
+
+    if (isVertical) {
+      el.scrollBy({ top: 150, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: 150, behavior: "smooth" });
+    }
+  },
+
+  scrollPrev() {
+    const el = this.$refs.thumbsContainer;
+    const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
+
+    if (isVertical) {
+      el.scrollBy({ top: -150, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: -150, behavior: "smooth" });
+    }
+  },
+}));
+
+Alpine.data("productsBar", () => ({
+  canScrollLeft: false,
+  canScrollRight: true,
+
+  products: [
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
+    { name: "Jabłoń Liset", image: "/src/assets/products/Image2.png", link: "#" },
+    { name: "Jabłoń - Malus", image: "/src/assets/products/Image3.png", link: "#" },
+    { name: "Jabłoń - Malus", image: "/src/assets/products/Image4.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image2.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image3.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image4.png", link: "#" },
+    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
+  ],
+
+  init() {
+    this.$nextTick(() => {
+      this.checkScroll();
+    });
+    setTimeout(() => this.checkScroll(), 200);
+  },
+
+  checkScroll() {
+    const el = this.$refs.scrollContainer;
+    if (!el) return;
+    const hasScroll = el.scrollWidth > el.clientWidth;
+    this.canScrollLeft = el.scrollLeft > 5;
+    this.canScrollRight = hasScroll && el.scrollLeft < el.scrollWidth - el.clientWidth - 5;
+  },
+  scrollRight() {
+    this.$refs.scrollContainer.scrollBy({ left: 620, behavior: "smooth" });
+  },
+  scrollLeft() {
+    this.$refs.scrollContainer.scrollBy({ left: -620, behavior: "smooth" });
+  },
+}));
+
 Alpine.start();
