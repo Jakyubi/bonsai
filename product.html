@@ -203,49 +203,36 @@
     <!-- PRODUCT -->
     <section class="bg-bonsai-bg1 relative w-full">
       <div class="grid h-full w-full grid-cols-1 xl:grid-cols-8">
-        <!-- Left side - galery -->
+        <!-- Left side - gallery -->
         <div
-          x-data="{ activeImg: '/src/assets/products/Image1.png' }"
-          class="flex w-full flex-col gap-px md:flex-row xl:col-span-3 xl:h-full xl:flex-col">
+          x-data="productGallery"
+          class="relative flex w-full flex-col gap-px overflow-hidden xl:col-span-3 xl:h-full xl:justify-between">
           <!-- Main photo -->
-          <div class="aspect-square w-full shrink-0 overflow-hidden md:w-4/5 xl:h-full xl:w-full xl:flex-1">
-            <img :src="activeImg" alt="Catalpa bignonioides Nana" class="h-full w-full object-cover" />
+          <div
+            class="relative aspect-square w-full shrink-0 overflow-hidden bg-white md:w-4/5 xl:aspect-auto xl:w-full xl:flex-1">
+            <img :src="activeImg" alt="Catalpa bignonioides Nana" class="absolute inset-0 h-full w-full object-cover" />
           </div>
 
-          <!-- Thumbnails -->
-          <div class="grid w-full shrink-0 grid-cols-4 gap-px md:w-1/5 md:grid-cols-1 xl:w-full xl:grid-cols-4">
-            <button
-              @click="activeImg = '/src/assets/products/Image1.png'"
-              class="aspect-square overflow-hidden focus:outline-none">
-              <img
-                src="/src/assets/products/Image1.png"
-                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image1.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
-            </button>
-            <button
-              @click="activeImg = '/src/assets/products/Image2.png'"
-              class="aspect-square overflow-hidden focus:outline-none">
-              <img
-                src="/src/assets/products/Image2.png"
-                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image2.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
-            </button>
-            <button
-              @click="activeImg = '/src/assets/products/Image3.png'"
-              class="aspect-square overflow-hidden focus:outline-none">
-              <img
-                src="/src/assets/products/Image3.png"
-                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image3.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
-            </button>
-            <button
-              @click="activeImg = '/src/assets/products/Image4.png'"
-              class="aspect-square overflow-hidden focus:outline-none">
-              <img
-                src="/src/assets/products/Image4.png"
-                class="h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                :class="activeImg === '/src/assets/products/Image4.png' ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
-            </button>
+          <!-- Thumbnails Container -->
+          <div
+            class="relative w-full shrink-0 md:absolute md:top-0 md:right-0 md:bottom-0 md:w-1/5 xl:relative xl:h-auto xl:w-full">
+            <div
+              x-ref="thumbsContainer"
+              @scroll.debounce.50ms="checkScroll()"
+              class="hide-scrollbar bg-bonsai-bg1 grid h-full w-full auto-cols-[25%] grid-flow-col gap-px overflow-x-auto overflow-y-hidden scroll-smooth md:auto-cols-auto md:grid-flow-row md:grid-cols-1 md:overflow-x-hidden md:overflow-y-auto xl:auto-cols-[25%] xl:grid-flow-col xl:overflow-x-auto xl:overflow-y-hidden">
+              <template x-for="(img, index) in images" :key="index">
+                <button
+                  @click="activeImg = img"
+                  type="button"
+                  class="relative aspect-square w-full shrink-0 bg-white focus:outline-none">
+                  <img
+                    :src="img"
+                    alt="Miniaturka produktu"
+                    class="absolute inset-0 h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                    :class="activeImg === img ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
+                </button>
+              </template>
+            </div>
           </div>
         </div>
 

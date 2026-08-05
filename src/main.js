@@ -120,10 +120,61 @@ Alpine.data("categoriesBar", () => ({
     this.$refs.scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
   },
 }));
-
 Alpine.data("productGallery", () => ({
-  activeImage: "/src/assets/photos/zdjecie-1.png",
-  images: ["/src/assets/photos/zdjecie-1.png", "/src/assets/photos/zdjecie-2.png", "/src/assets/photos/zdjecie-3.png"],
+  activeImg: "/src/assets/products/Image1.png",
+  images: [
+    "/src/assets/products/Image1.png",
+    "/src/assets/products/Image2.png",
+    "/src/assets/products/Image3.png",
+    "/src/assets/products/Image4.png",
+    "/src/assets/products/Image1.png",
+    "/src/assets/products/Image2.png",
+    "/src/assets/products/Image3.png",
+    "/src/assets/products/Image4.png",
+  ],
+  canScrollStart: false,
+  canScrollEnd: true,
+
+  init() {
+    this.$nextTick(() => this.checkScroll());
+  },
+
+  checkScroll() {
+    const el = this.$refs.thumbsContainer;
+    if (!el) return;
+
+    const isVertical = window.innerWidth >= 768;
+
+    if (isVertical) {
+      const hasScroll = el.scrollHeight > el.clientHeight;
+      this.canScrollStart = el.scrollTop > 5;
+      this.canScrollEnd = hasScroll && el.scrollTop < el.scrollHeight - el.clientHeight - 5;
+    } else {
+      const hasScroll = el.scrollWidth > el.clientWidth;
+      this.canScrollStart = el.scrollLeft > 5;
+      this.canScrollEnd = hasScroll && el.scrollLeft < el.scrollWidth - el.clientWidth - 5;
+    }
+  },
+
+  scrollNext() {
+    const el = this.$refs.thumbsContainer;
+    const isVertical = window.innerWidth >= 768;
+    if (isVertical) {
+      el.scrollBy({ top: 150, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: 150, behavior: "smooth" });
+    }
+  },
+
+  scrollPrev() {
+    const el = this.$refs.thumbsContainer;
+    const isVertical = window.innerWidth >= 768;
+    if (isVertical) {
+      el.scrollBy({ top: -150, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: -150, behavior: "smooth" });
+    }
+  },
 }));
 
 Alpine.data("productsBar", () => ({
