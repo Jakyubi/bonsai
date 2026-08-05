@@ -202,7 +202,7 @@
     <!-- TODO: FIX TABLET & SMALL LAPTOP RESPONSIVE FOR PRODUCT -->
     <!-- PRODUCT -->
     <section class="bg-bonsai-bg1 relative w-full">
-      <div class="grid h-full w-full grid-cols-1 xl:grid-cols-8">
+      <div class="mx-auto grid h-full w-full max-w-[1920px] grid-cols-1 xl:grid-cols-8">
         <!-- Left side - gallery -->
         <div
           x-data="productGallery"
@@ -232,6 +232,50 @@
                     :class="activeImg === img ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
                 </button>
               </template>
+            </div>
+
+            <!-- Scroll Left Button -->
+            <div
+              x-show="canScrollStart"
+              x-transition:enter="transition opacity duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              x-transition:leave="transition opacity duration-300"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 bottom-0 left-0 z-10 hidden w-16 items-center justify-center bg-gradient-to-r to-transparent md:right-0 md:bottom-auto md:flex md:h-20 md:w-full md:bg-gradient-to-b xl:right-auto xl:bottom-0 xl:h-full xl:w-20 xl:bg-gradient-to-r">
+              <button
+                @click="scrollPrev()"
+                type="button"
+                aria-label="Przewiń do tyłu"
+                class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+                <img
+                  src="/src/assets/icons/icon-arrow.svg"
+                  alt=""
+                  class="h-9 w-9 -rotate-135 invert transition-all duration-200 group-hover:opacity-80 md:-rotate-45 xl:-rotate-135" />
+              </button>
+            </div>
+
+            <!-- Scroll Right Button -->
+            <div
+              x-show="canScrollEnd"
+              x-transition:enter="transition opacity duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              x-transition:leave="transition opacity duration-300"
+              x-transition:leave-start="opacity-100"
+              x-transition:leave-end="opacity-0"
+              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-16 items-center justify-center bg-gradient-to-l to-transparent md:top-auto md:left-0 md:flex md:h-20 md:w-full md:bg-gradient-to-t xl:top-0 xl:left-auto xl:h-full xl:w-20 xl:bg-gradient-to-l">
+              <button
+                @click="scrollNext()"
+                type="button"
+                aria-label="Przewiń do przodu"
+                class="group pointer-events-auto flex h-9 w-9 items-center justify-center transition-transform duration-200 hover:scale-105">
+                <img
+                  src="/src/assets/icons/icon-arrow.svg"
+                  alt=""
+                  class="h-9 w-9 rotate-45 invert transition-all duration-200 group-hover:opacity-80 md:rotate-135 xl:rotate-45" />
+              </button>
             </div>
           </div>
         </div>
@@ -389,7 +433,7 @@
     </section>
 
     <!-- DISCOVER OTHER -->
-    <section class="flex w-full flex-col bg-white md:flex-row">
+    <section class="mx-auto flex w-full max-w-[1920px] flex-col bg-white md:flex-row">
       <!-- Left side -->
       <div class="relative z-10 hidden w-50 xl:block"></div>
 

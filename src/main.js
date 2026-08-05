@@ -120,6 +120,7 @@ Alpine.data("categoriesBar", () => ({
     this.$refs.scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
   },
 }));
+
 Alpine.data("productGallery", () => ({
   activeImg: "/src/assets/products/Image1.png",
   images: [
@@ -136,14 +137,18 @@ Alpine.data("productGallery", () => ({
   canScrollEnd: true,
 
   init() {
-    this.$nextTick(() => this.checkScroll());
+    this.$nextTick(() => {
+      this.checkScroll();
+      window.addEventListener("resize", () => this.checkScroll());
+    });
+    setTimeout(() => this.checkScroll(), 200);
   },
 
   checkScroll() {
     const el = this.$refs.thumbsContainer;
     if (!el) return;
 
-    const isVertical = window.innerWidth >= 768;
+    const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
 
     if (isVertical) {
       const hasScroll = el.scrollHeight > el.clientHeight;
@@ -158,7 +163,8 @@ Alpine.data("productGallery", () => ({
 
   scrollNext() {
     const el = this.$refs.thumbsContainer;
-    const isVertical = window.innerWidth >= 768;
+    const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
+
     if (isVertical) {
       el.scrollBy({ top: 150, behavior: "smooth" });
     } else {
@@ -168,7 +174,8 @@ Alpine.data("productGallery", () => ({
 
   scrollPrev() {
     const el = this.$refs.thumbsContainer;
-    const isVertical = window.innerWidth >= 768;
+    const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
+
     if (isVertical) {
       el.scrollBy({ top: -150, behavior: "smooth" });
     } else {
