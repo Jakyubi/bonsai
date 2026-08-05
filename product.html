@@ -206,14 +206,14 @@
         <!-- Left side - galery -->
         <div
           x-data="{ activeImg: '/src/assets/products/Image1.png' }"
-          class="flex w-full flex-col gap-px xl:col-span-3">
+          class="flex w-full gap-px md:flex-row xl:col-span-3 xl:flex-col">
           <!-- Main photo -->
-          <div class="aspect-square w-full overflow-hidden">
+          <div class="aspect-square w-full shrink-0 overflow-hidden md:w-4/5 xl:w-full">
             <img :src="activeImg" alt="Catalpa bignonioides Nana" class="h-full w-full object-cover" />
           </div>
 
           <!-- Thumbnails -->
-          <div class="grid grid-cols-4 gap-px">
+          <div class="grid w-full shrink-0 grid-cols-4 gap-px md:w-1/5 md:grid-cols-1 xl:w-full xl:grid-cols-4">
             <button
               @click="activeImg = '/src/assets/products/Image1.png'"
               class="aspect-square overflow-hidden focus:outline-none">
