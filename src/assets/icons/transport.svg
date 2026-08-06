@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g id="icon" transform="translate(-968 -3644)">
+    <g id="Ellipse_206" data-name="Ellipse 206" transform="translate(968 3644)" fill="rgba(255,255,255,0)" stroke="#231f20" stroke-width="1">
+      <circle cx="32" cy="32" r="32" stroke="none"/>
+      <circle cx="32" cy="32" r="31.5" fill="none"/>
+    </g>
+    <path id="shipping-fast" d="M24,10.5A4.505,4.505,0,0,0,19.5,6H17V3.5A2.5,2.5,0,0,0,14.5,1H12V2h2.5A1.5,1.5,0,0,1,16,3.5V18H1V12H0v7H2.176A2.92,2.92,0,0,0,2,20a3,3,0,0,0,6,0,2.92,2.92,0,0,0-.176-1h8.352A2.92,2.92,0,0,0,16,20a3,3,0,0,0,6,0,2.92,2.92,0,0,0-.176-1H24ZM7,20a2,2,0,0,1-4,0,1.95,1.95,0,0,1,.277-1H6.723A1.95,1.95,0,0,1,7,20ZM19.5,7A3.5,3.5,0,0,1,23,10.5V12H17V7ZM21,20a2,2,0,0,1-4,0,1.95,1.95,0,0,1,.277-1h3.446A1.95,1.95,0,0,1,21,20Zm-4-2V13h6v5ZM10,2H0V1H10ZM8,6H0V5H8ZM6,10H0V9H6Z" transform="translate(988 3664)"/>
+  </g>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="694" viewBox="0 0 1260 694">
+  <g id="content" transform="translate(-968 -3469)">
+    <g id="row" transform="translate(64 198)">
+      <g id="dlaczego" transform="translate(904 3735)">
+        <text id="Bogaty_asortyment_roślinny" data-name="Bogaty asortyment roślinny" transform="translate(0 176)" fill="#231f20" font-size="18" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="19">Bogaty asortyment </tspan><tspan x="0" y="49">roślinny</tspan></text>
+        <text id="Asortyment" transform="translate(0 104)" fill="#231f20" font-size="32" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="35">Asortyment</tspan></text>
+        <g id="icon" transform="translate(-968 -3644)">
+          <g id="Ellipse_206" data-name="Ellipse 206" transform="translate(968 3644)" fill="rgba(255,255,255,0)" stroke="#231f20" stroke-width="1">
+            <circle cx="32" cy="32" r="32" stroke="none"/>
+            <circle cx="32" cy="32" r="31.5" fill="none"/>
+          </g>
+          <path id="tree-sapling" d="M23.94,9.515,23.9,9.1c-3.1-.368-5.873.271-7.315,1.949-1.921,2.123-1.623,5.166-1.494,6.01L12.5,19.65V12.624c.468-.325,3.345-2.452,3.507-5.7.174-2.324-1.4-4.857-3.993-6.906C9.419,2.07,7.847,4.6,8.021,6.926c.16,3.2,2.947,5.3,3.479,5.679v7.046L8.906,17.057c.128-.844.427-3.888-1.494-6.01C5.972,9.367,3.2,8.728.1,9.1A11.338,11.338,0,0,0,0,10.659c0,2.453.654,4.558,2.046,5.753A7.558,7.558,0,0,0,8.3,17.864l3.2,3.2V24h1V21.065l3.2-3.2a7.555,7.555,0,0,0,6.253-1.452C23.337,15.161,24,13.245,24,10.706c0-.4-.024-.78-.06-1.191Zm-16.025,7.4c-.687.1-3.407.376-5.2-1.244C1.438,14.514.87,12.616,1.025,10.025c2.594-.151,4.489.413,5.646,1.692C8.291,13.508,8.017,16.226,7.915,16.915Zm4.1-5.173c-.567-.416-2.864-2.26-2.994-4.866-.092-1.841.915-3.7,2.994-5.543,2.079,1.839,3.086,3.7,2.994,5.543-.13,2.6-2.428,4.448-2.995,4.866Zm9.27,3.929c-1.792,1.621-4.511,1.347-5.2,1.244-.1-.688-.376-3.407,1.244-5.2,1.157-1.279,3.055-1.844,5.646-1.692C23.131,12.616,22.563,14.514,21.284,15.671Z" transform="translate(988 3663.98)"/>
+        </g>
+      </g>
+      <g id="dlaczego-2" data-name="dlaczego" transform="translate(1256 3735)">
+        <text id="Meble_firmy_Kler" data-name="Meble firmy Kler" transform="translate(0 176)" fill="#231f20" font-size="18" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="19">Meble firmy Kler</tspan></text>
+        <text id="Wypoczynek" transform="translate(0 104)" fill="#231f20" font-size="32" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="35">Wypoczynek</tspan></text>
+        <g id="icon-2" data-name="icon" transform="translate(-968 -3644)">
+          <g id="Ellipse_206-2" data-name="Ellipse 206" transform="translate(968 3644)" fill="rgba(255,255,255,0)" stroke="#231f20" stroke-width="1">
+            <circle cx="32" cy="32" r="32" stroke="none"/>
+            <circle cx="32" cy="32" r="31.5" fill="none"/>
+          </g>
+          <path id="bench-tree" d="M15,14a3,3,0,0,0-3-3H3a3,3,0,0,0-1,5.828V20H.5a.5.5,0,0,0,0,1H2v2.5a.5.5,0,0,0,1,0V21h9v2.5a.5.5,0,0,0,1,0V21h1.5a.5.5,0,0,0,0-1H13V16.828A3,3,0,0,0,15,14Zm-3,6H3V17h9Zm0-4H3a2,2,0,0,1,0-4h9a2,2,0,0,1,0,4Zm11.869-2.972A3.97,3.97,0,0,1,20.8,15.92a7.841,7.841,0,0,1-1.578.119c-.735,0-1.224.2-1.224,1.191V23.5a.5.5,0,0,1-1,0V17.23a2,2,0,0,1,2.224-2.191,7.018,7.018,0,0,0,1.383-.1,2.991,2.991,0,0,0,2.063-4.3,1.41,1.41,0,0,1,0-1.285A2.943,2.943,0,0,0,23,8a2.866,2.866,0,0,0-1.174-2.371,2.092,2.092,0,0,1-.857-1.608A3.131,3.131,0,0,0,19.357,1.5a3.76,3.76,0,0,0-3.549-.1,3.434,3.434,0,0,0-1.787,2.8,2,2,0,0,1-.847,1.427,2.982,2.982,0,0,0-1.143,2.8.5.5,0,1,1-.989.144A4,4,0,0,1,11,8a3.866,3.866,0,0,1,1.6-3.191,1,1,0,0,0,.425-.715A4.419,4.419,0,0,1,15.37.5a4.761,4.761,0,0,1,4.491.137,4.119,4.119,0,0,1,2.106,3.324,1.1,1.1,0,0,0,.432.851A3.869,3.869,0,0,1,24,8a3.946,3.946,0,0,1-.436,1.809.415.415,0,0,0,0,.373,3.978,3.978,0,0,1,.311,2.847Z" transform="translate(988 3663.999)"/>
+        </g>
+      </g>
+      <g id="dlaczego-3" data-name="dlaczego" transform="translate(1607 3735)">
+        <text id="altany_i_pergore_paleniska_donice" data-name="altany i pergore, paleniska, donice" transform="translate(0 176)" fill="#231f20" font-size="18" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="19">altany i pergore, paleniska, </tspan><tspan x="0" y="49">donice</tspan></text>
+        <text id="Architektura" transform="translate(0 104)" fill="#231f20" font-size="32" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="35">Architektura</tspan></text>
+        <g id="icon-3" data-name="icon" transform="translate(-968 -3644)">
+          <g id="Ellipse_206-3" data-name="Ellipse 206" transform="translate(968 3644)" fill="rgba(255,255,255,0)" stroke="#231f20" stroke-width="1">
+            <circle cx="32" cy="32" r="32" stroke="none"/>
+            <circle cx="32" cy="32" r="31.5" fill="none"/>
+          </g>
+          <path id="people-roof" d="M23.28,9.394,12.99,1.341a1.6,1.6,0,0,0-1.98,0L.72,9.394.1,8.607,10.393.554a2.6,2.6,0,0,1,3.215,0L23.9,8.606l-.617.787ZM1,20.5A1.5,1.5,0,0,1,2.5,19H5V18H2.5A2.5,2.5,0,0,0,0,20.5V24H1Zm6-7A2.5,2.5,0,1,0,4.5,16,2.5,2.5,0,0,0,7,13.5Zm-1,0A1.5,1.5,0,1,1,4.5,12,1.5,1.5,0,0,1,6,13.5Zm18,7A2.5,2.5,0,0,0,21.5,18H19v1h2.5A1.5,1.5,0,0,1,23,20.5V24h1Zm-2-7A2.5,2.5,0,1,0,19.5,16,2.5,2.5,0,0,0,22,13.5Zm-1,0A1.5,1.5,0,1,1,19.5,12,1.5,1.5,0,0,1,21,13.5ZM15,10a3,3,0,1,0-3,3A3,3,0,0,0,15,10Zm-1,0a2,2,0,1,1-2-2A2,2,0,0,1,14,10Zm3,7.5A2.5,2.5,0,0,0,14.5,15h-5A2.5,2.5,0,0,0,7,17.5V24H8V17.5A1.5,1.5,0,0,1,9.5,16h5A1.5,1.5,0,0,1,16,17.5V24h1Z" transform="translate(988 3664.002)"/>
+        </g>
+      </g>
+      <g id="dlaczego-4" data-name="dlaczego" transform="translate(1959 3735)">
+        <text id="donice_paleniska_grille" data-name="donice, paleniska, grille" transform="translate(0 176)" fill="#231f20" font-size="18" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="19">donice, paleniska, grille</tspan></text>
+        <text id="Dodatki" transform="translate(0 104)" fill="#231f20" font-size="32" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="35">Dodatki</tspan></text>
+        <g id="icon-4" data-name="icon" transform="translate(-968 -3644)">
+          <g id="Ellipse_206-4" data-name="Ellipse 206" transform="translate(968 3644)" fill="rgba(255,255,255,0)" stroke="#231f20" stroke-width="1">
+            <circle cx="32" cy="32" r="32" stroke="none"/>
+            <circle cx="32" cy="32" r="31.5" fill="none"/>
+          </g>
+          <path id="fireplace" d="M13.612,14.1a15.636,15.636,0,0,1-1.258-1.071l-.38-.38-.352.406a5.194,5.194,0,0,0-1.032,2.7C10.408,16.853,10.307,17,10,17c-.385,0-.5-.866-.5-1.08l-.038-1.181-.821.847A4.989,4.989,0,0,0,7,19a5,5,0,0,0,10,0c0-2.2-1.879-3.694-3.388-4.9Zm-.9,8.554a1,1,0,1,1-1.414-1.416L12,20.532l.707.707a1,1,0,0,1,0,1.416Zm1.208-.167a2,2,0,0,0-.5-1.955L12,19.119l-1.415,1.415a1.993,1.993,0,0,0-.5,1.955A3.985,3.985,0,0,1,8,19a3.324,3.324,0,0,1,.716-1.973A1.374,1.374,0,0,0,10,18c1.231,0,1.423-1.153,1.576-2.079a5.581,5.581,0,0,1,.506-1.78c.279.243.587.488.906.743C14.4,16.009,16,17.285,16,19a3.988,3.988,0,0,1-2.085,3.49ZM23,23V4.618l.9-1.78.038-.1A2.2,2.2,0,0,0,21.8,0H2.2A2.2,2.2,0,0,0,.067,2.735L1,4.613V23H0v1H5V12.261A13.524,13.524,0,0,1,12,10a13.524,13.524,0,0,1,7,2.262V24h5V23ZM1.255,1.462A1.2,1.2,0,0,1,2.2,1H21.8a1.2,1.2,0,0,1,1.177,1.443L22.192,4H1.808L1.025,2.443a1.194,1.194,0,0,1,.23-.981ZM20,23V11.749l-.2-.15A14.4,14.4,0,0,0,12,9a14.4,14.4,0,0,0-7.8,2.6l-.2.15V23H2V5H22V23Z" transform="translate(988 3664.002)"/>
+        </g>
+      </g>
+    </g>
+    <text id="To_też_Plenerowy_Showroom_pergoli_mebli_oświetlenia_oraz_prężnie_rozwijającym_się_sklepem_internetowym_Bonsai_Park_Store._Oferujemy_wszystko_co_niezbędne_do_założenia_i_umilenia_w_luksusowym_stylu_przydomowej_przestrzeni:" data-name="To też Plenerowy Showroom pergoli, mebli, oświetlenia oraz prężnie rozwijającym się sklepem internetowym Bonsai Park Store. Oferujemy wszystko, co niezbędne do założenia i umilenia w luksusowym stylu przydomowej przestrzeni:" transform="translate(1608 3719)" fill="#231f20" font-size="20" font-family="SegoeUI-Light, Segoe UI" font-weight="300"><tspan x="0" y="22">To też Plenerowy Showroom pergoli, mebli, oświetlenia oraz prężnie </tspan><tspan x="0" y="54">rozwijającym się sklepem internetowym Bonsai Park Store. Oferujemy </tspan><tspan x="0" y="86">wszystko, co niezbędne do założenia i umilenia w luksusowym stylu </tspan><tspan x="0" y="118">przydomowej przestrzeni:</tspan></text>
+    <text id="Bonsai_Park_to_nie_tylko_unikalne_drzewa." data-name="Bonsai Park to nie tylko unikalne drzewa." transform="translate(968 3719)" fill="#231f20" font-size="32" font-family="SegoeUI, Segoe UI" letter-spacing="0.02em"><tspan x="0" y="35">Bonsai Park to nie tylko unikalne </tspan><tspan x="0" y="78">drzewa.</tspan></text>
+    <g id="header_sekcja" data-name="header sekcja" transform="translate(968 3469)">
+      <text id="Kompleksowe_Zaopatrzenie_Twojego_Ogrodu" data-name="Kompleksowe Zaopatrzenie 
+Twojego Ogrodu" fill="#231f20" font-size="60" font-family="SegoeUI, Segoe UI" letter-spacing="0.04em"><tspan x="0" y="65">Kompleksowe Zaopatrzenie </tspan><tspan x="0" y="145">Twojego Ogrodu</tspan></text>
+    </g>
+  </g>
+</svg>
