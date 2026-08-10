@@ -284,75 +284,109 @@
     </section>
 
     <!-- PLANT'S CATEGORIES -->
-    <section class="flex w-full flex-col border-t border-gray-100 bg-white md:flex-row">
-      <!-- Main content -->
-      <div class="w-full divide-y divide-gray-100">
+    <section class="w-full border-t border-gray-100 bg-white">
+      <div class="divide-y divide-gray-100">
         <!-- First card -->
-        <div class="grid grid-cols-1 items-stretch overflow-hidden lg:min-h-125 lg:grid-cols-2 xl:min-h-162.5">
-          <div class="relative h-80 w-full sm:h-96 lg:h-full">
-            <img src="/src/assets/photos/klon1.png" alt="Rośliny liściaste" class="h-full w-full object-cover" />
+        <article class="group grid grid-cols-1 lg:grid-cols-2">
+          <!-- Image -->
+          <div class="relative overflow-hidden">
+            <img
+              src="/src/assets/photos/klon1.png"
+              alt="Rośliny liściaste"
+              class="h-64 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] lg:absolute lg:inset-0 lg:h-full" />
           </div>
 
           <!-- Content -->
-          <div class="flex flex-col items-start justify-center space-y-6 p-8 lg:p-12 xl:p-20 2xl:p-28">
-            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
-              Rośliny liściaste
-            </h3>
-            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl xl:text-3xl">
-              Wszystkie rośliny liściaste ozdobne, miododajne, krzewy i drzewa
-            </p>
-            <a
-              href="#"
-              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
-              Zobacz ofertę
-            </a>
+          <div class="flex items-center">
+            <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-70 2xl:pl-68">
+              <div class="max-w-xl space-y-6">
+                <h3
+                  class="text-bonsai-dark text-3xl font-normal tracking-wide sm:text-4xl lg:text-5xl xl:-translate-y-4 xl:text-6xl">
+                  Rośliny liściaste
+                </h3>
+
+                <p
+                  class="text-bonsai-dark max-w-md text-lg leading-normal font-normal tracking-wider sm:text-xl lg:text-2xl xl:translate-y-4 xl:text-3xl">
+                  Wszystkie rośliny liściaste ozdobne, miododajne, krzewy i drzewa
+                </p>
+
+                <a
+                  href="#"
+                  class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-5 text-base font-light tracking-wider text-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg xl:translate-y-4 xl:text-lg">
+                  Zobacz ofertę
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
 
         <!-- Second card -->
-        <div class="grid grid-cols-1 items-stretch overflow-hidden lg:min-h-125 lg:grid-cols-2 xl:min-h-162.5">
+        <article class="group grid grid-cols-1 lg:grid-cols-2">
           <!-- Content -->
-          <div
-            class="order-2 flex flex-col items-start justify-center space-y-6 p-8 lg:order-1 lg:p-12 xl:p-20 2xl:p-28">
-            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
-              Rośliny iglaste
-            </h3>
-            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl xl:text-3xl">
-              Szeroki wybór wyszukanych gatunków i odmian
-            </p>
-            <a
-              href="#"
-              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
-              Zobacz ofertę
-            </a>
+          <div class="order-2 flex items-center lg:order-1">
+            <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-75 2xl:pl-50">
+              <div class="max-w-xl space-y-6">
+                <h3
+                  class="text-bonsai-dark text-3xl font-normal tracking-wider sm:text-4xl lg:text-5xl xl:-translate-y-6 xl:text-6xl">
+                  Rośliny iglaste
+                </h3>
+
+                <p
+                  class="text-bonsai-dark max-w-md text-lg leading-normal font-normal tracking-wider sm:text-xl lg:text-2xl xl:translate-y-2 xl:text-3xl">
+                  Szeroki wybór wyszukanych gatunków i odmian
+                </p>
+
+                <a
+                  href="#"
+                  class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-5 text-base font-light tracking-wider text-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg xl:translate-y-6 xl:text-lg">
+                  Zobacz ofertę
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div class="relative order-1 h-80 w-full sm:h-96 lg:order-2 lg:h-full">
-            <img src="/src/assets/photos/klon2.png" alt="Rośliny iglaste" class="h-full w-full object-cover" />
+          <!-- Image -->
+          <div class="relative order-1 overflow-hidden lg:order-2">
+            <img
+              src="/src/assets/photos/klon2.png"
+              alt="Rośliny iglaste"
+              class="h-64 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] lg:absolute lg:inset-0 lg:h-full" />
           </div>
-        </div>
+        </article>
 
         <!-- Third card -->
-        <div class="grid grid-cols-1 items-stretch overflow-hidden lg:min-h-125 lg:grid-cols-2 xl:min-h-162.5">
-          <div class="relative h-80 w-full sm:h-96 lg:h-full">
-            <img src="/src/assets/photos/klon1.png" alt="Bonsai" class="h-full w-full object-cover" />
+        <article class="group grid grid-cols-1 lg:grid-cols-2">
+          <!-- Image -->
+          <div class="relative overflow-hidden">
+            <img
+              src="/src/assets/photos/klon1.png"
+              alt="Bonsai"
+              class="h-64 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] lg:absolute lg:inset-0 lg:h-full" />
           </div>
 
-          <!-- Content  -->
-          <div class="flex flex-col items-start justify-center space-y-6 p-8 lg:p-12 xl:p-20 2xl:p-28">
-            <h3 class="text-bonsai-dark text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
-              Bonsai
-            </h3>
-            <p class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal sm:text-xl lg:text-2xl xl:text-3xl">
-              Wszystkie rośliny liściaste, ozdobne, miododajne, krzewy i drzewa
-            </p>
-            <a
-              href="#"
-              class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-4 text-base font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
-              Zobacz ofertę
-            </a>
+          <!-- Content -->
+          <div class="flex items-center">
+            <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-70 2xl:pl-68">
+              <div class="max-w-xl space-y-6">
+                <h3
+                  class="text-bonsai-dark text-3xl font-normal tracking-wider sm:text-4xl lg:text-5xl xl:-translate-y-4 xl:text-6xl">
+                  Bonsai
+                </h3>
+
+                <p
+                  class="text-bonsai-dark max-w-md text-lg leading-relaxed font-normal tracking-wider sm:text-xl lg:text-2xl xl:translate-y-4 xl:text-3xl">
+                  Wszystkie rośliny liściaste, ozdobne, miododajne, krzewy i drzewa
+                </p>
+
+                <a
+                  href="#"
+                  class="bg-bonsai-dark inline-flex items-center rounded-full px-7 py-5 text-base font-light tracking-wider text-white shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg xl:translate-y-4 xl:text-lg">
+                  Zobacz ofertę
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
