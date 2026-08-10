@@ -171,7 +171,7 @@
         <!-- Photo counter -->
         <div class="absolute top-6 left-6 z-20 xl:static xl:top-auto xl:left-auto xl:translate-y-36">
           <span
-            class="bg-bonsai-green inline-flex items-center justify-center rounded-full px-3.5 py-2 text-xs font-light tracking-wider text-white shadow-sm transition-none"
+            class="bg-bonsai-green inline-flex items-center justify-center rounded-full px-3.5 py-2 text-xs font-light tracking-wider text-white shadow-sm transition-none select-none"
             x-text="`${activeSlide + 1} / ${slides.length}`"></span>
         </div>
 
@@ -183,7 +183,7 @@
               x-transition:enter="transition ease-out duration-500 delay-150"
               x-transition:enter-start="opacity-0 translate-y-4"
               x-transition:enter-end="opacity-100 translate-y-0"
-              class="max-w-4xl text-6xl leading-tight font-light text-white lg:text-7xl xl:text-8xl"
+              class="max-w-4xl text-6xl leading-tight font-light text-white select-none lg:text-7xl xl:text-8xl"
               x-text="slide.title"></h1>
           </template>
         </div>
@@ -365,7 +365,7 @@
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden px-4 text-center sm:h-112.5 md:min-h-250">
+          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden px-4 text-center sm:h-112.5 md:min-h-200">
           <img
             src="/src/assets/photos/zdjecie-2.png"
             alt="Instagram Japanese Garden"
@@ -390,7 +390,7 @@
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden border-t px-4 text-center sm:h-112.5 md:min-h-250 md:border-t-0">
+          class="group relative flex h-95 flex-col items-center justify-center overflow-hidden border-t px-4 text-center sm:h-112.5 md:min-h-200 md:border-t-0">
           <img
             src="/src/assets/photos/zdjecie-1.png"
             alt="TikTok Japanese Garden"
@@ -416,7 +416,7 @@
     <section
       x-data="timelineSlider"
       @mouseleave="hovered = false; isDown = false"
-      class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[95vh]">
+      class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[115vh]">
       <!-- Cover -->
       <div
         class="bg-bonsai-advice-overlay absolute inset-0 z-30 flex cursor-pointer flex-col items-center justify-center transition-all duration-700 ease-in-out"
@@ -431,10 +431,12 @@
         <!-- White cover stripe -->
         <div class="pointer-events-none absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2 bg-white/60"></div>
 
-        <div class="pointer-events-none relative z-40 flex flex-col items-center space-y-6 px-4 text-center">
-          <h2 class="py-8 text-6xl font-extralight tracking-wide text-white sm:py-16 lg:text-8xl">20 lat pasji</h2>
+        <div class="pointer-events-none relative z-40 flex flex-col items-center px-4 text-center">
+          <h2 class="py-8 text-6xl font-light tracking-normal text-white sm:py-16 lg:-mt-28 lg:text-[116px]">
+            20 lat pasji
+          </h2>
           <button
-            class="text-bonsai-dark pointer-events-auto rounded-full bg-white px-7 py-4 text-base font-light shadow-lg xl:text-lg">
+            class="text-bonsai-dark pointer-events-auto translate-y-8 rounded-full bg-white px-7 py-4 text-base font-light shadow-lg xl:text-lg">
             Poznaj naszą historię
           </button>
         </div>
