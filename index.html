@@ -229,10 +229,21 @@
     </section>
 
     <!-- ADVICE -->
-    <section class="bg-bonsai-advice-overlay relative flex w-full flex-col overflow-hidden text-white md:flex-row">
+    <section
+      x-data="{ activeImage: 1 }"
+      @mouseleave="activeImage = 1"
+      @mouseenter="activeImage = 2"
+      class="bg-bonsai-advice-overlay relative flex w-full flex-col overflow-hidden text-white md:flex-row">
       <!-- Background photo -->
-      <div class="pointer-events-none absolute inset-0 z-0 opacity-20">
+      <div
+        class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-700 ease-in-out"
+        :class="activeImage === 1 ? 'opacity-20' : 'opacity-0'">
         <img src="/src/assets/photos/zdjecie-1.png" alt="" class="h-full w-full object-cover" />
+      </div>
+      <div
+        class="pointer-events-none absolute inset-0 z-0 transition-opacity duration-700 ease-in-out"
+        :class="activeImage === 2 ? 'opacity-20' : 'opacity-0'">
+        <img src="/src/assets/photos/zdjecie-2.png" alt="" class="h-full w-full object-cover" />
       </div>
 
       <!-- Left side -->
