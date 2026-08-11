@@ -449,13 +449,13 @@
     <!-- TIMELINE -->
     <section
       x-data="timelineSlider"
-      @mouseleave="hovered = false; isDown = false"
+      @mouseleave="active = false; isDown = false"
       class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[115vh]">
       <!-- Cover -->
       <div
         class="bg-bonsai-advice-overlay absolute inset-0 z-30 flex cursor-pointer flex-col items-center justify-center transition-all duration-700 ease-in-out"
-        :class="hovered ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'"
-        @mouseenter="hovered = true">
+        :class="active ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'"
+        @click="openTimeline()">
         <img
           src="/src/assets/photos/zdjecie-1.png"
           alt="20 lat pasji"

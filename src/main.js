@@ -47,10 +47,12 @@ Alpine.data("heroSlider", () => ({
 }));
 
 Alpine.data("timelineSlider", () => ({
-  hovered: false,
+  active: false,
   isDown: false,
   startX: 0,
   scrollLeft: 0,
+  autoScrollSpeed: 1.4,
+  animationFrameId: null,
   timeline: [
     {
       year: "1996",
@@ -60,14 +62,46 @@ Alpine.data("timelineSlider", () => ({
     { year: "1998", text: "pierwsza szkółka\nogrodnicza pod\nKielcami", image: photos.photo2 },
     { year: "2012", text: "pierwsze rośliny\nBonsai w Kielcach", image: photos.photo3 },
   ],
+  openTimeline() {
+    this.active = true;
+    if (this.$refs.slider) {
+      this.$refs.slider.scrollLeft = 0;
+    }
+    this.startAutoScroll();
+  },
+
+  startAutoScroll() {
+    this.stopAutoScroll();
+
+    const step = () => {
+      if (this.active && !this.isDown && this.$refs.slider) {
+        this.$refs.slider.scrollLeft += this.autoScrollSpeed;
+
+        this.animationFrameId = requestAnimationFrame(step);
+      }
+    };
+
+    this.animationFrameId = requestAnimationFrame(step);
+  },
+
+  stopAutoScroll() {
+    if (this.animationFrameId) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
+    }
+  },
+
   startDrag(e) {
+    this.stopAutoScroll();
     this.isDown = true;
     this.startX = e.pageX - this.$refs.slider.offsetLeft;
     this.scrollLeft = this.$refs.slider.scrollLeft;
   },
+
   stopDrag() {
     this.isDown = false;
   },
+
   drag(e) {
     if (!this.isDown) return;
     e.preventDefault();
