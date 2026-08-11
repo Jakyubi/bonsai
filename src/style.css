@@ -1,5 +1,23 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "HelveticaLTD";
+  src: url("./assets/fonts/HELVETICALTSTD-ROMAN.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaLTD";
+  src: url("./assets/fonts/HELVETICALTSTD-LIGHT.OTF") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
+  --font-sans: "HelveticaLTD", sans-serif;
   --color-bonsai-bg1: #f2f2ec;
   --color-bonsai-bg2: #f8f8f5;
   --color-bonsai-green: #879232;
