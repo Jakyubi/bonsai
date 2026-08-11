@@ -169,14 +169,14 @@
       <div
         class="relative z-10 flex flex-1 flex-col justify-start px-6 py-6 sm:py-12 sm:pr-12 sm:pl-20 lg:pl-28 xl:py-16 xl:pr-16 xl:pl-36">
         <!-- Photo counter -->
-        <div class="absolute top-6 left-6 z-20 xl:static xl:top-auto xl:left-auto xl:translate-y-36">
+        <div class="mt-20 sm:mt-28 xl:mt-58">
           <span
             class="bg-bonsai-green inline-flex items-center justify-center rounded-full px-3.5 py-2 text-xs font-light tracking-wider text-white shadow-sm transition-none select-none"
             x-text="`${activeSlide + 1} / ${slides.length}`"></span>
         </div>
 
         <!-- Title change -->
-        <div class="my-auto py-12">
+        <div class="mt-6 sm:mt-8 xl:mt-10">
           <template x-for="(slide, index) in slides" :key="index">
             <h1
               x-show="activeSlide === index"
