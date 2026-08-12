@@ -282,4 +282,42 @@ Alpine.data("reveal", () => ({
   },
 }));
 
+Alpine.data("counter", (target, duration = 1500) => ({
+  current: 0,
+  target: target,
+  started: false,
+
+  init() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !this.started) {
+          this.started = true;
+          this.animate();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 },
+    );
+    observer.observe(this.$el);
+  },
+
+  animate() {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+
+      const easeOut = 1 - (1 - progress) * (1 - progress);
+
+      this.current = Math.floor(easeOut * this.target);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        this.current = this.target;
+      }
+    };
+    window.requestAnimationFrame(step);
+  },
+}));
 Alpine.start();
