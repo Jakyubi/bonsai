@@ -35,3 +35,19 @@
   -ms-overflow-style: none; /* IE oraz Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+@keyframes breath {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+.animate-breath {
+  animation: breath 3.5s ease-in-out infinite;
+}
