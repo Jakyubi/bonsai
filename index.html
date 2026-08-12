@@ -44,7 +44,7 @@
         <div class="ml-auto hidden items-center gap-10 lg:flex xl:gap-16">
           <!-- Desktop nav -->
           <nav
-            class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex xl:mr-10 xl:gap-18">
+            class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex 2xl:mr-10 2xl:gap-18">
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">Home</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">Bonsai</a>
@@ -175,7 +175,7 @@
 
       <!-- Cover slide -->
       <div
-        class="bg-bonsai-dark absolute inset-0 z-20 transition-transform duration-[1200ms] ease-out"
+        class="bg-bonsai-dark absolute inset-0 z-20 transition-transform duration-1200 ease-out"
         :class="ready ? 'translate-y-full' : 'translate-y-0'"></div>
 
       <!-- Left side -->
@@ -231,7 +231,7 @@
               x-transition:leave="transition duration-400 ease-in-out"
               x-transition:leave-start="opacity-100 translate-x-0 blur-0"
               x-transition:leave-end="opacity-0 -translate-x-24 blur-md"
-              class="col-start-1 row-start-1 max-w-4xl text-6xl leading-tight font-light text-white select-none lg:text-7xl xl:text-8xl"
+              class="col-start-1 row-start-1 max-w-4xl text-5xl leading-tight font-light text-white select-none md:text-7xl xl:text-8xl"
               x-text="slide.title"></h1>
           </template>
         </div>
