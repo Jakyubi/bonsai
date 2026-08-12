@@ -429,11 +429,8 @@
         <article x-data="reveal" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
           <!-- Image -->
           <div
-            x-show="shown"
-            x-transition:enter="transition-all duration-1000 ease-out"
-            x-transition:enter-start="opacity-0 -translate-x-12"
-            x-transition:enter-end="opacity-100 translate-x-0"
-            class="relative overflow-hidden">
+            :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+            class="relative overflow-hidden transition-all duration-1000 ease-out">
             <img
               src="/src/assets/photos/klon1.png"
               alt="Rośliny liściaste"
@@ -442,11 +439,8 @@
 
           <!-- Content  -->
           <div
-            x-show="shown"
-            x-transition:enter="transition-all duration-1000 ease-out delay-200"
-            x-transition:enter-start="opacity-0 translate-x-12"
-            x-transition:enter-end="opacity-100 translate-x-0"
-            class="flex items-center">
+            :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
+            class="flex items-center transition-all delay-200 duration-1000 ease-out">
             <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-70 2xl:pl-68">
               <div class="max-w-xl space-y-6">
                 <h3
@@ -471,11 +465,8 @@
         <article x-data="reveal" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
           <!-- Content  -->
           <div
-            x-show="shown"
-            x-transition:enter="transition-all duration-1000 ease-out delay-200"
-            x-transition:enter-start="opacity-0 -translate-x-12"
-            x-transition:enter-end="opacity-100 translate-x-0"
-            class="order-2 flex items-center lg:order-1">
+            :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+            class="order-2 flex items-center transition-all delay-200 duration-1000 ease-out lg:order-1">
             <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-75 2xl:pl-50">
               <div class="max-w-xl space-y-6">
                 <h3
@@ -497,11 +488,8 @@
 
           <!-- Image -->
           <div
-            x-show="shown"
-            x-transition:enter="transition-all duration-1000 ease-out"
-            x-transition:enter-start="opacity-0 translate-x-12"
-            x-transition:enter-end="opacity-100 translate-x-0"
-            class="relative order-1 overflow-hidden lg:order-2">
+            :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
+            class="relative order-1 overflow-hidden transition-all duration-1000 ease-out lg:order-2">
             <img
               src="/src/assets/photos/klon2.png"
               alt="Rośliny iglaste"
@@ -513,11 +501,8 @@
         <article x-data="reveal" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
           <!-- Image -->
           <div
-            x-show="shown"
-            x-transition:enter="transition-all duration-1000 ease-out"
-            x-transition:enter-start="opacity-0 -translate-x-12"
-            x-transition:enter-end="opacity-100 translate-x-0"
-            class="relative overflow-hidden">
+            :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
+            class="relative overflow-hidden transition-all duration-1000 ease-out">
             <img
               src="/src/assets/photos/klon1.png"
               alt="Bonsai"
@@ -526,11 +511,8 @@
 
           <!-- Content -->
           <div
-            x-show="shown"
-            x-transition:enter="transition-all duration-1000 ease-out delay-200"
-            x-transition:enter-start="opacity-0 translate-x-12"
-            x-transition:enter-end="opacity-100 translate-x-0"
-            class="flex items-center">
+            :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
+            class="flex items-center transition-all delay-200 duration-1000 ease-out">
             <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-70 2xl:pl-68">
               <div class="max-w-xl space-y-6">
                 <h3
