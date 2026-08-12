@@ -605,6 +605,7 @@
       class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[115vh]">
       <!-- Cover -->
       <div
+        x-data="reveal"
         class="bg-bonsai-advice-overlay absolute inset-0 z-30 flex cursor-pointer flex-col items-center justify-center transition-all duration-700 ease-in-out"
         :class="active ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'"
         @click="openTimeline()">
@@ -615,14 +616,19 @@
         <div class="bg-bonsai-green/80 pointer-events-none absolute inset-0 mix-blend-multiply"></div>
 
         <!-- White cover stripe -->
-        <div class="pointer-events-none absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2 bg-white/60"></div>
+        <div
+          :class="shown ? 'h-full opacity-100' : 'h-0 opacity-0'"
+          class="pointer-events-none absolute top-1/2 left-1/2 w-px -translate-x-1/2 -translate-y-1/2 bg-white/60 transition-all duration-1000 ease-out"></div>
 
         <div class="pointer-events-none relative z-40 flex flex-col items-center px-4 text-center">
-          <h2 class="py-8 text-6xl font-light tracking-normal text-white sm:py-16 lg:-mt-28 lg:text-[116px]">
+          <h2
+            :class="shown ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-95 blur-md'"
+            class="py-8 text-6xl font-light tracking-normal text-white transition-all duration-1000 ease-out sm:py-16 lg:-mt-28 lg:text-[116px]">
             20 lat pasji
           </h2>
           <button
-            class="text-bonsai-dark pointer-events-auto translate-y-8 rounded-full bg-white px-7 py-4 text-base font-light shadow-lg xl:text-lg">
+            :class="shown ? 'opacity-100 translate-y-8' : 'opacity-0 translate-y-16'"
+            class="text-bonsai-dark pointer-events-auto rounded-full bg-white px-7 py-4 text-base font-light shadow-lg transition-all delay-300 duration-1000 ease-out xl:text-lg">
             Poznaj naszą historię
           </button>
         </div>
