@@ -29,7 +29,6 @@
     </div>
 
     <!-- HEADER -->
-
     <header
       x-data="{ open: false, ready: false }"
       @page-ready.window="ready = true"
@@ -174,38 +173,60 @@
         </template>
       </div>
 
+      <!-- Cover slide -->
+      <div
+        class="bg-bonsai-dark absolute inset-0 z-20 transition-transform duration-[1200ms] ease-out"
+        :class="ready ? 'translate-y-full' : 'translate-y-0'">
+      </div>
+
       <!-- Left side -->
       <div
-        class="relative z-10 flex w-full shrink-0 items-center justify-center gap-3 border-b border-white/20 bg-black/20 px-4 py-4 backdrop-blur-md xl:w-50 xl:flex-col xl:border-r xl:border-b-0 xl:py-6">
-        <template x-for="(slide, index) in slides" :key="index">
-          <button
-            @click="activeSlide = index"
-            :aria-label="'Przejdź do slajdu ' + (index + 1)"
-            class="relative flex h-5 w-5 items-center justify-center rounded-full transition-all duration-300 focus:outline-none"
-            :class="activeSlide === index ? 'border border-white/40' : 'border border-transparent'">
-            <span
-              class="h-3.5 w-3.5 rounded-full transition-all duration-300"
-              :class="activeSlide === index ? 'bg-bonsai-green' : 'bg-white/30 hover:bg-white/80'"></span>
-          </button>
-        </template>
+        class="relative z-30 flex w-full shrink-0 items-center justify-center border-b border-white/20 bg-black/20 px-4 py-4 backdrop-blur-md xl:w-50 xl:flex-col xl:border-r xl:border-b-0 xl:py-6">
+        <!-- Inside wrapper with Alpine animation -->
+        <div
+          x-show="ready"
+          x-transition:enter="transition-all duration-1000 ease-out delay-500"
+          x-transition:enter-start="opacity-0 translate-y-8 xl:translate-y-0 xl:-translate-x-8"
+          x-transition:enter-end="opacity-100 translate-y-0 xl:translate-x-0"
+          class="flex gap-3 xl:flex-col">
+          <template x-for="(slide, index) in slides" :key="index">
+            <button
+              @click="activeSlide = index"
+              :aria-label="'Przejdź do slajdu ' + (index + 1)"
+              class="relative flex h-5 w-5 items-center justify-center rounded-full transition-all duration-300 focus:outline-none"
+              :class="activeSlide === index ? 'border border-white/40' : 'border border-transparent'">
+              <span
+                class="h-3.5 w-3.5 rounded-full transition-all duration-300"
+                :class="activeSlide === index ? 'bg-bonsai-green' : 'bg-white/30 hover:bg-white/80'"></span>
+            </button>
+          </template>
+        </div>
       </div>
 
       <!-- Hero main content -->
       <div
-        class="relative z-10 flex flex-1 flex-col justify-start px-6 py-6 sm:py-12 sm:pr-12 sm:pl-20 lg:pl-28 xl:py-16 xl:pr-16 xl:pl-36">
+        class="relative z-30 flex flex-1 flex-col justify-start px-6 py-6 sm:py-12 sm:pr-12 sm:pl-20 lg:pl-28 xl:py-16 xl:pr-16 xl:pl-36">
         <!-- Photo counter -->
         <div class="mt-20 sm:mt-28 xl:mt-58">
-          <span
-            class="bg-bonsai-green inline-flex items-center justify-center rounded-full px-3.5 py-2 text-xs font-light tracking-wider text-white shadow-sm transition-none select-none"
-            x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+          <!-- Inside wrapper with Alpine animation -->
+          <div
+            x-show="ready"
+            x-transition:enter="transition-all duration-700 ease-out delay-700"
+            x-transition:enter-start="opacity-0 -translate-x-8"
+            x-transition:enter-end="opacity-100 translate-x-0"
+            class="inline-block">
+            <span
+              class="bg-bonsai-green inline-flex items-center justify-center rounded-full px-3.5 py-2 text-xs font-light tracking-wider text-white shadow-sm transition-none select-none"
+              x-text="`${activeSlide + 1} / ${slides.length}`"></span>
+          </div>
         </div>
 
         <!-- Title change -->
         <div class="mt-6 grid grid-cols-1 grid-rows-1 items-start sm:mt-8 xl:mt-10">
           <template x-for="(slide, index) in slides" :key="index">
             <h1
-              x-show="activeSlide === index"
-              x-transition:enter="transition duration-700 cubic-bezier(0.23, 1, 0.32, 1) delay-150"
+              x-show="ready && activeSlide === index"
+              x-transition:enter="transition duration-700 cubic-bezier(0.23, 1, 0.32, 1) delay-500"
               x-transition:enter-start="opacity-0 translate-x-32 blur-lg scale-110"
               x-transition:enter-end="opacity-100 translate-x-0 blur-0 scale-100"
               x-transition:leave="transition duration-400 ease-in-out"
@@ -217,13 +238,21 @@
         </div>
 
         <!-- Chat button -->
-        <button
-          type="button"
-          aria-label="Otwórz czat"
-          class="absolute right-6 bottom-20 z-20 flex h-16 w-16 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105 sm:right-12 sm:bottom-36">
-          <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
-        </button>
-      </div>
+        <div class="absolute right-6 bottom-20 z-30 sm:right-12 sm:bottom-36">
+          <div
+            x-show="ready"
+            x-transition:enter="transition-all duration-700 ease-out delay-1000"
+            x-transition:enter-start="opacity-0 translate-y-12"
+            x-transition:enter-end="opacity-100 translate-y-0"
+          >
+            <button
+              type="button"
+              aria-label="Otwórz czat"
+              class="flex h-16 w-16 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105">
+              <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
+            </button>
+          </div>
+        </div>
     </section>
 
     <!-- STATS -->

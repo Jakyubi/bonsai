@@ -26,6 +26,7 @@ Alpine.data("heroSlider", () => ({
     },
   ],
   timer: null,
+  ready: false,
 
   startAutoplay() {
     this.timer = setInterval(() => {
@@ -42,7 +43,13 @@ Alpine.data("heroSlider", () => ({
   },
 
   init() {
-    this.startAutoplay();
+    window.addEventListener("page-ready", () => {
+      this.ready = true;
+
+      setTimeout(() => {
+        this.startAutoplay();
+      }, 2000);
+    });
   },
 }));
 
@@ -253,6 +260,25 @@ Alpine.data("productsBar", () => ({
   },
   scrollLeft() {
     this.$refs.scrollContainer.scrollBy({ left: -620, behavior: "smooth" });
+  },
+}));
+
+Alpine.data("reveal", () => ({
+  shown: false,
+  init() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.shown = true;
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(this.$el);
   },
 }));
 
