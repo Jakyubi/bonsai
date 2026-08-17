@@ -29,17 +29,26 @@ Alpine.data("heroSlider", () => ({
   ready: false,
 
   startAutoplay() {
+    this.stopAutoplay();
     this.timer = setInterval(() => {
       this.nextSlide();
     }, 5000);
   },
 
   stopAutoplay() {
-    clearInterval(this.timer);
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
   },
 
   nextSlide() {
     this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+  },
+
+  goToSlide(index) {
+    this.activeSlide = index;
+    this.startAutoplay();
   },
 
   init() {
