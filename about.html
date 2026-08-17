@@ -565,6 +565,210 @@
       </div>
     </section>
 
+    <!-- FOOTER -->
+    <footer x-data="reveal" class="bg-bonsai-bg1 text-bonsai-dark relative w-full overflow-hidden">
+      <div
+        :class="shown ? '-translate-x-full opacity-0' : 'translate-x-0 opacity-100'"
+        class="bg-bonsai-dark pointer-events-none absolute top-0 bottom-0 left-0 z-40 w-1/2 transition-all duration-1000 ease-in-out"></div>
+
+      <div
+        :class="shown ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-100'"
+        class="bg-bonsai-dark pointer-events-none absolute top-0 right-0 bottom-0 z-40 w-1/2 transition-all duration-1000 ease-in-out"></div>
+
+      <div
+        :class="shown ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-95 blur-sm'"
+        class="transition-all delay-200 duration-1000 ease-out">
+        <!-- Main container -->
+        <div class="flex w-full flex-col xl:flex-row">
+          <!-- Left side -->
+          <aside
+            class="relative flex w-full shrink-0 flex-row items-center justify-between border-b border-gray-300 p-6 xl:w-50 xl:flex-col xl:justify-end xl:border-r xl:border-b-0 xl:py-12">
+            <!-- Social media icons-->
+            <div class="my-auto flex gap-4 xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:flex-col">
+              <!-- TikTok -->
+              <a
+                href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+                aria-label="TikTok">
+                <img src="/src/assets/icons/tt.svg" alt="TikTok" />
+              </a>
+              <!-- Facebook -->
+              <a
+                href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+                aria-label="Facebook">
+                <img src="/src/assets/icons/fb.svg" alt="Facebook" />
+              </a>
+              <!-- Instagram -->
+              <a
+                href="#"
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-400 text-gray-700 transition-all duration-200 hover:scale-105"
+                aria-label="Instagram">
+                <img src="/src/assets/icons/instagram.svg" alt="Instagram" />
+              </a>
+            </div>
+
+            <!-- Logo -->
+            <div class="xl:mt-auto">
+              <img src="/src/assets/logo/logo-dark.png" alt="Japanese Garden" class="h-auto w-24" />
+            </div>
+          </aside>
+
+          <!-- Main content -->
+          <div class="flex min-w-0 flex-1 flex-col justify-between">
+            <div>
+              <!-- Google opinions -->
+              <div
+                class="flex flex-col items-center justify-between gap-6 border-gray-300 px-6 py-8 md:p-10 md:py-12 lg:flex-row lg:py-18 lg:pl-20 xl:border-b xl:pl-32">
+                <div class="flex items-center gap-3">
+                  <img src="/src/assets/icons/logo-google.svg" alt="Google Logo" class="grayscale" />
+                  <div class="flex flex-col">
+                    <div class="flex space-x-1 tracking-widest">
+                      <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                      <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                      <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                      <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                      <img src="/src/assets/icons/Polygon3.svg" alt="star" />
+                    </div>
+                    <span class="text-bonsai-gray mt-0.5 text-xs font-normal">5.0 | 19 opinii</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-right xl:gap-24">
+                  <span class="text-bonsai-dark text-lg font-light"
+                    >Zapraszamy do podzielenia się opinią na Google</span
+                  >
+                  <a
+                    href="#"
+                    class="bg-bonsai-dark rounded-full px-8 py-4 text-lg font-light whitespace-nowrap text-white transition-all duration-200 hover:scale-105 xl:mr-42">
+                    Dodaj opinię
+                  </a>
+                </div>
+              </div>
+
+              <!-- Links and data -->
+              <div
+                class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 font-light md:grid-cols-12 md:pl-16 xl:gap-16 xl:pl-32">
+                <!-- Contact -->
+                <div class="text-bonsai-dark space-y-2.5 text-base leading-relaxed md:col-span-3 xl:text-lg">
+                  <h4 class="mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Dane kontaktowe</h4>
+                  <p class="lg:text-lg">Japanese Garden</p>
+                  <p class="lg:text-base">Górki Szczukowskie 1,</p>
+                  <p class="lg:text-base">26-065 Piekoszów</p>
+
+                  <div class="space-y-1.5 pt-4">
+                    <p>
+                      <a
+                        href="mailto:Bonsaipark.kielce@gmail.com"
+                        class="text-bonsai-green transition-all hover:underline lg:text-lg"
+                        >Bonsaipark.kielce@gmail.com</a
+                      >
+                    </p>
+                    <p>
+                      <a href="tel:728106796" class="text-bonsai-green transition-all hover:underline lg:text-lg"
+                        >728 106 796</a
+                      >
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Nav -->
+                <div class="space-y-3 md:col-span-2 md:pl-8">
+                  <h4 class="mb-8 text-xl font-light text-gray-800 lg:mb-16 lg:text-2xl">Nawigacja</h4>
+                  <p>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">O nas</a>
+                  </p>
+                  <p>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Realizacje</a>
+                  </p>
+                  <p>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Oferta</a>
+                  </p>
+                  <p>
+                    <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Kontakt</a>
+                  </p>
+                </div>
+
+                <!-- Categories -->
+                <div class="md:col-span-7 md:pl-16">
+                  <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h4>
+                  <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Zwisające</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Kolumnowe</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Pnącza</a>
+                    </div>
+
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Drzewa</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Inne formy</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Róże</a>
+                    </div>
+
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Drzewka</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Liściaste</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Byliny</a>
+                    </div>
+
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Krzewy</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Iglaste</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Owocowe</a>
+                    </div>
+
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Płożące</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Wrzosowate</a>
+                    </div>
+                    <div>
+                      <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Warzywa</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="relative h-72 w-full shrink-0 overflow-hidden lg:mt-8 lg:h-112">
+              <img
+                src="/src/assets/photos/mapa.png"
+                alt="Mapa Kielce - Górki Szczukowskie"
+                class="h-full w-full object-cover opacity-90 grayscale" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div>
+        <div class="text-bonsai-dark w-full bg-white px-6 py-10 text-base sm:px-12">
+          <div class="flex flex-col items-center justify-between gap-2 sm:flex-row">
+            <p class="font-normal">© Copyright 2026 - Japanese Garden</p>
+            <p class="font-light tracking-wider">Made with <span class="text-bonsai-green">♥</span> by NET-atak.pl</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
