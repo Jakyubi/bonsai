@@ -298,7 +298,7 @@ Alpine.data("reveal", (repeat = false, threshold = 0.15) => ({
   },
 }));
 
-Alpine.data("counter", (target, duration = 1500) => ({
+Alpine.data("counter", (target, duration = 1500, delay = 0) => ({
   current: 0,
   target: target,
   started: false,
@@ -308,7 +308,9 @@ Alpine.data("counter", (target, duration = 1500) => ({
       (entries) => {
         if (entries[0].isIntersecting && !this.started) {
           this.started = true;
-          this.animate();
+          setTimeout(() => {
+            this.animate();
+          }, delay);
           observer.disconnect();
         }
       },
