@@ -428,7 +428,7 @@
           <div class="w-full max-w-7xl">
             <!-- Title -->
             <h2
-              x-data="reveal"
+              x-data="revealRepeat"
               :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
               class="text-bonsai-dark text-4xl leading-relaxed tracking-wider transition-all duration-700 ease-out sm:text-5xl lg:text-6xl">
               Opis produktu
@@ -437,14 +437,14 @@
             <div
               class="text-bonsai-dark mt-10 flex flex-col space-y-6 text-base leading-loose font-light md:mt-16 xl:mt-22">
               <p
-                x-data="reveal"
+                x-data="revealRepeat"
                 :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
                 class="text-bonsai-dark text-xl font-normal transition-all duration-700 ease-out">
                 Karłowa odmiana dorastająca do wysokości 2-3 m, plus oczywiście wysokość podkładki. Korona
                 płaskokulista, bardzo gęsta, osiągająca średnicę do 5 m.
               </p>
               <p
-                x-data="reveal"
+                x-data="revealRepeat"
                 :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
                 class="transition-all duration-700 ease-out">
                 Liście drobniejsze niż u gatunku, długości 8-15 cm, sercowate, na wierzchołku krótko zaostrzone, bez
@@ -453,7 +453,7 @@
                 przymrozkach. Po roztarciu nieprzyjemnie pachną. <br />Odmiana nie kwitnie.
               </p>
               <p
-                x-data="reveal"
+                x-data="revealRepeat"
                 :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
                 class="transition-all duration-700 ease-out">
                 Odmiana wrażliwa na mrozy (strefa 6b), szczególnie w młodym wieku, dlatego powinna być sadzona w
@@ -466,14 +466,14 @@
                 </span>
               </p>
               <p
-                x-data="reveal"
+                x-data="revealRepeat"
                 :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
                 class="transition-all duration-700 ease-out">
                 Polecana do parków, zieleni osiedlowej i większych ogrodów przydomowych. Najlepiej wygląda posadzona
                 pojedynczo na trawniku lub rabacie.
               </p>
               <p
-                x-data="reveal"
+                x-data="revealRepeat"
                 :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
                 class="transition-all duration-700 ease-out">
                 Drzewo ze względu na późny rozwój liści i wczesne ich zrzucanie pozostaje w stanie bezlistnym niemal
@@ -505,7 +505,7 @@
               class="mt-8 flex flex-col md:mt-10 xl:mt-12">
               <template x-for="spec in specs">
                 <div
-                  x-data="reveal"
+                  x-data="revealRepeat"
                   :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
                   class="flex flex-col border-b border-gray-100 py-6 transition-all duration-700 ease-out last:border-b-0 md:flex-row md:py-9">
                   <!-- Left column -->

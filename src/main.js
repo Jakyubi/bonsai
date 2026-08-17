@@ -285,6 +285,22 @@ Alpine.data("reveal", () => ({
   },
 }));
 
+Alpine.data("revealRepeat", () => ({
+  shown: false,
+  init() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          this.shown = entry.isIntersecting;
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(this.$el);
+  },
+}));
+
 Alpine.data("counter", (target, duration = 1500) => ({
   current: 0,
   target: target,
