@@ -101,12 +101,12 @@
         class="absolute top-full left-0 z-50 w-full space-y-3 border-b border-gray-200 bg-white px-6 pt-2 pb-6 shadow-lg lg:hidden">
         <nav class="space-y-1">
           <a
-            href="#"
+            href="index.html"
             class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >Home</a
           >
           <a
-            href="#"
+            href="about.html"
             class="text-bonsai-dark block rounded-lg px-2 py-3 text-center text-lg font-light transition-colors duration-150 hover:bg-gray-50 focus:bg-gray-100 focus:outline-none active:bg-gray-100 active:text-black"
             >O nas</a
           >
@@ -139,7 +139,7 @@
             Jak dojechać?
           </a>
           <a
-            href="#"
+            href="product.html"
             class="text-bonsai-dark border-bonsai-dark active:bg-bonsai-dark focus:bg-bonsai-dark w-full rounded-full border py-3 text-center text-base font-light transition-all duration-150 focus:text-white focus:outline-none active:text-white">
             Katalog roślin
           </a>
@@ -148,8 +148,8 @@
     </header>
 
     <!-- CATEGORIES BAR -->
-    <section x-data="{ ...categoriesBar(), ...reveal() }" class="relative w-full border-b border-gray-100 bg-white">
-      <div class="relative mx-auto flex h-20 max-w-[1920px] items-center md:h-24">
+    <section x-data="reveal()" class="relative w-full border-b border-gray-100 bg-white">
+      <div x-data="categoriesBar()" class="relative mx-auto flex h-20 max-w-[1920px] items-center md:h-24">
         <!-- List container -->
         <div
           :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 -translate-y-4'"
