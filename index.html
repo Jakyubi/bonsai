@@ -32,8 +32,8 @@
     <header
       x-data="{ open: false, ready: false }"
       @page-ready.window="ready = true"
-      class="relative z-50 w-full border-b border-gray-100 bg-white transition-all duration-1000 ease-out"
-      :class="ready ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'">
+      class="relative z-50 w-full border-b border-gray-100 bg-white"
+      :class="ready ? 'translate-y-0 duration-1000 ease-out transition-all opacity-100' : '-translate-y-full opacity-0'">
       <!-- Main Container -->
       <div class="mx-auto flex h-20 max-w-[1920px] items-center justify-between px-4 xl:px-12">
         <!-- Logo  -->
@@ -45,7 +45,7 @@
           <!-- Desktop nav -->
           <nav
             class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex 2xl:mr-10 2xl:gap-18">
-            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Home</a>
+            <a href="index.html" class="transition-colors duration-200 hover:text-gray-500">Home</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">Bonsai</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">Rośliny</a>
@@ -260,7 +260,7 @@
       <div class="hidden w-50 shrink-0 border-r border-gray-100 xl:block"></div>
 
       <!-- Main content -->
-      <div x-data="reveal" class="max-w-[1920px] flex-1 px-6 py-16 lg:px-32 lg:py-32">
+      <div x-data="reveal()" class="max-w-[1920px] flex-1 px-6 py-16 lg:px-32 lg:py-32">
         <div class="grid grid-cols-1 gap-12 text-left md:grid-cols-3 lg:gap-24">
           <div
             x-show="shown"
@@ -333,7 +333,7 @@
       <div class="relative z-10 hidden w-50 shrink-0 border-r border-white/20 xl:block"></div>
 
       <!-- Main section content -->
-      <div x-data="reveal" class="relative z-10 grid w-full flex-1 grid-rows-2 divide-y divide-white/20">
+      <div x-data="reveal()" class="relative z-10 grid w-full flex-1 grid-rows-2 divide-y divide-white/20">
         <!-- First tile  -->
         <div
           class="flex flex-col justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-72 xl:pl-32 2xl:py-32">
@@ -391,7 +391,7 @@
     </section>
 
     <!-- DISCOVER WHAT'S NEW -->
-    <section x-data="reveal" class="flex w-full flex-col bg-white md:flex-row">
+    <section x-data="reveal(true)" class="flex w-full flex-col bg-white md:flex-row">
       <!-- Left side -->
       <div class="relative z-10 hidden w-50 xl:block"></div>
 
@@ -426,7 +426,7 @@
     <section class="w-full border-t border-gray-100 bg-white">
       <div class="divide-y divide-gray-100">
         <!-- First card -->
-        <article x-data="reveal" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+        <article x-data="reveal(true)" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
           <!-- Image -->
           <div
             :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
@@ -462,7 +462,7 @@
         </article>
 
         <!-- Second card -->
-        <article x-data="reveal" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+        <article x-data="reveal(true)" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
           <!-- Content  -->
           <div
             :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
@@ -498,7 +498,7 @@
         </article>
 
         <!-- Third card -->
-        <article x-data="reveal" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+        <article x-data="reveal(true)" class="group grid grid-cols-1 overflow-hidden lg:grid-cols-2">
           <!-- Image -->
           <div
             :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
@@ -544,7 +544,7 @@
       <div class="grid w-full grid-cols-1 md:grid-cols-2">
         <!-- First tile: instagram -->
         <a
-          x-data="reveal"
+          x-data="reveal(true)"
           :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-12 blur-sm'"
           href="#"
           target="_blank"
@@ -571,7 +571,7 @@
 
         <!-- Second tile: Tik Tok -->
         <a
-          x-data="reveal"
+          x-data="reveal(true)"
           :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-12 blur-sm'"
           href="#"
           target="_blank"
@@ -605,7 +605,7 @@
       class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[115vh]">
       <!-- Cover -->
       <div
-        x-data="reveal"
+        x-data="reveal()"
         class="bg-bonsai-advice-overlay absolute inset-0 z-30 flex cursor-pointer flex-col items-center justify-center transition-all duration-700 ease-in-out"
         :class="active ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'"
         @click="openTimeline()">
@@ -682,7 +682,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer x-data="reveal" class="bg-bonsai-bg1 text-bonsai-dark relative w-full overflow-hidden">
+    <footer x-data="reveal()" class="bg-bonsai-bg1 text-bonsai-dark relative w-full overflow-hidden">
       <div
         :class="shown ? '-translate-x-full opacity-0' : 'translate-x-0 opacity-100'"
         class="bg-bonsai-dark pointer-events-none absolute top-0 bottom-0 left-0 z-40 w-1/2 transition-all duration-1000 ease-in-out"></div>
