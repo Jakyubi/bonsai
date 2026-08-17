@@ -177,6 +177,7 @@ Alpine.data("productGallery", () => ({
   ],
   canScrollStart: false,
   canScrollEnd: true,
+  ready: false,
 
   init() {
     this.$nextTick(() => {

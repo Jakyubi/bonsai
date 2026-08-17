@@ -238,15 +238,30 @@
         <!-- Left side - gallery -->
         <div
           x-data="productGallery"
+          @page-ready.window="ready = true"
           class="relative flex w-full flex-col gap-px overflow-hidden xl:col-span-3 xl:h-full xl:justify-between">
           <!-- Main photo -->
           <div
+            :class="ready ? 'opacity-100 translate-x-0 transition-all duration-1000 ease-out' : 'opacity-0 -translate-x-12'"
             class="relative aspect-square w-full shrink-0 overflow-hidden bg-white md:w-4/5 xl:aspect-auto xl:w-full xl:flex-1">
-            <img :src="activeImg" alt="Catalpa bignonioides Nana" class="absolute inset-0 h-full w-full object-cover" />
+            <template x-for="(img, index) in images" :key="index">
+              <img
+                x-show="activeImg === img"
+                x-transition:enter="transition duration-700 ease-out"
+                x-transition:enter-start="opacity-0 scale-105 blur-sm"
+                x-transition:enter-end="opacity-100 scale-100 blur-0"
+                x-transition:leave="transition duration-500 ease-in"
+                x-transition:leave-start="opacity-100 scale-100 blur-0"
+                x-transition:leave-end="opacity-0 scale-95 blur-sm"
+                :src="img"
+                alt="Catalpa bignonioides Nana"
+                class="absolute inset-0 h-full w-full object-cover" />
+            </template>
           </div>
 
           <!-- Thumbnails Container -->
           <div
+            :class="ready ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 ease-out delay-300' : 'opacity-0 translate-y-6 blur-sm'"
             class="relative w-full shrink-0 md:absolute md:top-0 md:right-0 md:bottom-0 md:w-1/5 xl:relative xl:h-auto xl:w-full">
             <div
               x-ref="thumbsContainer"
@@ -256,12 +271,15 @@
                 <button
                   @click="activeImg = img"
                   type="button"
-                  class="relative aspect-square w-full shrink-0 bg-white focus:outline-none">
+                  class="group relative aspect-square w-full shrink-0 overflow-hidden bg-white focus:outline-none">
                   <img
                     :src="img"
                     alt="Miniaturka produktu"
-                    class="absolute inset-0 h-full w-full object-cover transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-                    :class="activeImg === img ? 'grayscale-0 opacity-100' : 'grayscale opacity-50'" />
+                    class="absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
+                    :class="activeImg === img ? 'grayscale-0 opacity-100 scale-105' : 'grayscale opacity-50 scale-100'" />
+                  <div
+                    class="bg-bonsai-green pointer-events-none absolute bottom-0 left-0 h-1 w-full transition-all duration-500 ease-out"
+                    :class="activeImg === img ? 'scale-x-100 opacity-0' : 'scale-x-0 opacity-100 group-hover:scale-x-50'"></div>
                 </button>
               </template>
             </div>
@@ -313,10 +331,15 @@
         </div>
 
         <!-- Right side - content -->
-        <div class="flex flex-col justify-start px-6 py-12 md:px-12 md:py-16 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-32">
+        <div
+          x-data="{ ready: false }"
+          @page-ready.window="ready = true"
+          class="flex flex-col justify-start px-6 py-12 md:px-12 md:py-16 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-32">
           <div class="mx-auto w-full max-w-4xl xl:mx-0">
             <!-- Nav -->
-            <div class="text-bonsai-dark flex items-center space-x-3 text-xs font-light tracking-wide sm:text-sm">
+            <div
+              :class="ready ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-100' : 'opacity-0 -translate-y-4'"
+              class="text-bonsai-dark flex items-center space-x-3 text-xs font-light tracking-wide sm:text-sm">
               <span>Bonsai Park</span>
               <span>&mdash;</span>
               <span>Rośliny</span>
@@ -325,10 +348,16 @@
             </div>
 
             <!-- Text -->
-            <h1 class="text-bonsai-dark mt-16 text-4xl tracking-wide sm:text-5xl lg:text-6xl">
+            <h1
+              :class="ready ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 -translate-y-4'"
+              class="text-bonsai-dark mt-16 text-4xl tracking-wide sm:text-5xl lg:text-6xl">
               Catalpa bignonioides 'Nana'
             </h1>
-            <p class="text-bonsai-dark mt-4 text-lg tracking-wide sm:text-3xl">Surmia bignoniowa 'Nana'</p>
+            <p
+              :class="ready ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-300' : 'opacity-0 -translate-y-4'"
+              class="text-bonsai-dark mt-4 text-lg tracking-wide sm:text-3xl">
+              Surmia bignoniowa 'Nana'
+            </p>
 
             <!-- Specs -->
             <div
@@ -342,6 +371,7 @@
                   { icon: '/src/assets/icons/lopatka.svg', label: 'Ilość przesadzeń', value: '2' }
                 ]
               }"
+              :class="ready ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-500' : 'opacity-0 -translate-y-4'"
               class="mt-16 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 xl:mt-18 xl:grid-cols-3 xl:gap-x-2 xl:gap-y-10">
               <template x-for="feature in features">
                 <div class="flex items-center">
@@ -360,7 +390,9 @@
             </div>
 
             <!-- Button -->
-            <div class="mt-20">
+            <div
+              :class="ready ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-700' : 'opacity-0 -translate-y-4'"
+              class="mt-20">
               <a
                 href="#"
                 class="bg-bonsai-dark inline-flex items-center rounded-full px-8 py-4 text-lg font-light text-white shadow-sm transition-all duration-300 hover:scale-105">
@@ -372,17 +404,23 @@
       </div>
 
       <!-- Chat button -->
-      <button
-        type="button"
-        aria-label="Otwórz czat"
-        class="fixed right-4 bottom-8 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105 sm:right-8 sm:bottom-16 sm:h-16 sm:w-16">
-        <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
-      </button>
+      <div
+        x-data="{ ready: false }"
+        @page-ready.window="ready = true"
+        :class="ready ? 'opacity-100 translate-x-0 transition-all duration-1000 ease-out delay-1000' : 'opacity-0 translate-x-24'"
+        class="fixed right-4 bottom-8 z-50 sm:right-8 sm:bottom-16">
+        <button
+          type="button"
+          aria-label="Otwórz czat"
+          class="flex h-14 w-14 items-center justify-center rounded-full bg-white text-black shadow-2xl transition-transform duration-200 hover:scale-105 sm:h-16 sm:w-16">
+          <img src="/src/assets/icons/comment-alt-dots.svg" alt="chat" class="h-5 w-5" />
+        </button>
+      </div>
     </section>
 
     <!-- PRODUCT DESC -->
     <section class="relative flex w-full bg-white">
-      <div class="mx-auto max-w-[1920px]">
+      <div class="mx-auto flex w-full max-w-[1920px]">
         <!-- Left side  -->
         <div class="hidden shrink-0 border-r border-b border-gray-100 xl:block xl:w-50"></div>
         <!-- Right side - content -->
