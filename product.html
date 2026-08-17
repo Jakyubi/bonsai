@@ -304,10 +304,10 @@
         </div>
 
         <!-- Right side - content -->
-        <div class="flex flex-col justify-start px-6 py-12 md:px-12 md:py-16 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-36">
+        <div class="flex flex-col justify-start px-6 py-12 md:px-12 md:py-16 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-32">
           <div class="mx-auto w-full max-w-4xl xl:mx-0">
             <!-- Nav -->
-            <div class="text-bonsai-dark flex items-center space-x-3 text-xs font-light sm:text-sm">
+            <div class="text-bonsai-dark flex items-center space-x-3 text-xs font-light tracking-wide sm:text-sm">
               <span>Bonsai Park</span>
               <span>&mdash;</span>
               <span>Rośliny</span>
@@ -316,8 +316,10 @@
             </div>
 
             <!-- Text -->
-            <h1 class="text-bonsai-dark mt-16 text-4xl sm:text-5xl lg:text-6xl">Catalpa bignonioides 'Nana'</h1>
-            <p class="text-bonsai-dark mt-2 text-lg sm:text-3xl">Surmia bignoniowa 'Nana'</p>
+            <h1 class="text-bonsai-dark mt-16 text-4xl tracking-wide sm:text-5xl lg:text-6xl">
+              Catalpa bignonioides 'Nana'
+            </h1>
+            <p class="text-bonsai-dark mt-4 text-lg tracking-wide sm:text-3xl">Surmia bignoniowa 'Nana'</p>
 
             <!-- Specs -->
             <div
@@ -331,11 +333,11 @@
                   { icon: '/src/assets/icons/lopatka.svg', label: 'Ilość przesadzeń', value: '2' }
                 ]
               }"
-              class="mt-16 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 xl:mt-20 xl:grid-cols-3 xl:gap-x-2 xl:gap-y-10">
+              class="mt-16 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 xl:mt-18 xl:grid-cols-3 xl:gap-x-2 xl:gap-y-10">
               <template x-for="feature in features">
                 <div class="flex items-center">
                   <!-- Icon -->
-                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full xl:h-12 xl:w-12">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full xl:h-10 xl:w-10">
                     <img :src="feature.icon" :alt="feature.label" class="h-full w-full object-contain" />
                   </div>
 
@@ -397,10 +399,14 @@
             </p>
             <p>
               Odmiana wrażliwa na mrozy (strefa 6b), szczególnie w młodym wieku, dlatego powinna być sadzona w miejscach
-              zacisznych i osłoniętych od wiatru. Starsze egzemplarze są odporniejsze. Wymaga gleb żyznych, głęboko
-              uprawionych, przepuszczalnych, ale dość wilgotnych, o odczynie od lekko kwaśnego po obojętny, a nawet
-              lekko zasadowy. Najlepiej rośnie w pełnym słońcu. Dobrze znosi zanieczyszczenie powietrza i słabe
-              zasolenie. Można używać jej do obsadzania ulic, ale tylko w najcieplejszych rejonach kraju.
+              zacisznych i osłoniętych od wiatru. Starsze egzemplarze są odporniejsze.
+
+              <span class="block">
+                Wymaga gleb żyznych, głęboko uprawionych, przepuszczalnych, ale dość wilgotnych, o odczynie od lekko
+                kwaśnego po obojętny, a nawet lekko zasadowy. Najlepiej rośnie w pełnym słońcu. Dobrze znosi
+                zanieczyszczenie powietrza i słabe zasolenie. Można używać jej do obsadzania ulic, ale tylko w
+                najcieplejszych rejonach kraju.
+              </span>
             </p>
             <p>
               Polecana do parków, zieleni osiedlowej i większych ogrodów przydomowych. Najlepiej wygląda posadzona
@@ -434,7 +440,7 @@
             { label: 'Polecamy zastosowanie', values: ['Ogrody przydomowe, Zieleń publiczna, Zieleń osiedlowa, Aleje uliczne, Aleje parkowe, Szpaler, Duże ogrody'] }
           ]
         }"
-            class="mt-16 flex flex-col md:mt-24 xl:mt-32">
+            class="mt-8 flex flex-col md:mt-10 xl:mt-12">
             <template x-for="spec in specs">
               <div class="flex flex-col border-b border-gray-100 py-6 last:border-b-0 md:flex-row md:py-9">
                 <!-- Left column -->
