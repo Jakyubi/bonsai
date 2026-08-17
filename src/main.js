@@ -163,13 +163,12 @@ Alpine.data("categoriesBar", () => ({
 }));
 
 Alpine.data("productGallery", () => ({
-  activeImg: "/src/assets/products/Image1.png",
+  activeImg: 0,
   images: [
     "/src/assets/products/Image1.png",
     "/src/assets/products/Image2.png",
     "/src/assets/products/Image3.png",
     "/src/assets/products/Image4.png",
-    "/src/assets/products/Image1.png",
     "/src/assets/photos/zdjecie-2.png",
     "/src/assets/photos/bonsai_.png",
     "/src/assets/plants/drzewa.png",
