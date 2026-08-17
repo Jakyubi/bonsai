@@ -207,9 +207,9 @@ Alpine.data("productGallery", () => ({
     const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
 
     if (isVertical) {
-      el.scrollBy({ top: 150, behavior: "smooth" });
+      el.scrollBy({ top: 300, behavior: "smooth" });
     } else {
-      el.scrollBy({ left: 150, behavior: "smooth" });
+      el.scrollBy({ left: 300, behavior: "smooth" });
     }
   },
 
@@ -218,9 +218,9 @@ Alpine.data("productGallery", () => ({
     const isVertical = window.innerWidth >= 768 && window.innerWidth < 1280;
 
     if (isVertical) {
-      el.scrollBy({ top: -150, behavior: "smooth" });
+      el.scrollBy({ top: -300, behavior: "smooth" });
     } else {
-      el.scrollBy({ left: -150, behavior: "smooth" });
+      el.scrollBy({ left: -300, behavior: "smooth" });
     }
   },
 }));

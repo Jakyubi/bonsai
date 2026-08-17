@@ -45,7 +45,7 @@
           <!-- Desktop nav -->
           <nav
             class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex 2xl:mr-10 2xl:gap-18">
-            <a href="#" class="transition-colors duration-200 hover:text-gray-500">Home</a>
+            <a href="index.html" class="transition-colors duration-200 hover:text-gray-500">Home</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">Bonsai</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">Rośliny</a>
@@ -373,89 +373,86 @@
 
     <!-- PRODUCT DESC -->
     <section class="relative flex w-full bg-white">
-      <!-- Left side  -->
-      <div class="hidden shrink-0 border-r border-b border-gray-100 xl:block xl:w-50"></div>
-
-      <!-- Right side - content -->
-      <div class="w-full border-b border-gray-100 px-6 pt-16 pb-24 md:px-10 xl:pt-38 xl:pl-32">
-        <div class="w-full max-w-7xl">
-          <!-- Title -->
-          <h2 class="text-bonsai-dark text-4xl leading-relaxed tracking-wider sm:text-5xl lg:text-6xl">
-            Opis produktu
-          </h2>
-
-          <!-- Text description -->
-          <div
-            class="text-bonsai-dark mt-10 flex flex-col space-y-6 text-base leading-loose font-light md:mt-16 xl:mt-22">
-            <p class="text-bonsai-dark text-xl font-normal">
-              Karłowa odmiana dorastająca do wysokości 2-3 m, plus oczywiście wysokość podkładki. Korona płaskokulista,
-              bardzo gęsta, osiągająca średnicę do 5 m.
-            </p>
-            <p>
-              Liście drobniejsze niż u gatunku, długości 8-15 cm, sercowate, na wierzchołku krótko zaostrzone, bez klap,
-              zielone, na spodzie gęsto owłosione, całobrzegie. Wiosną późno się rozwijają, a zaraz po rozwinięciu są
-              purpurowe. Jesienią przebarwiają się na żółtozielono, szybko opadają, zaraz po pierwszych przymrozkach. Po
-              roztarciu nieprzyjemnie pachną. <br />Odmiana nie kwitnie.
-            </p>
-            <p>
-              Odmiana wrażliwa na mrozy (strefa 6b), szczególnie w młodym wieku, dlatego powinna być sadzona w miejscach
-              zacisznych i osłoniętych od wiatru. Starsze egzemplarze są odporniejsze.
-
-              <span class="block">
-                Wymaga gleb żyznych, głęboko uprawionych, przepuszczalnych, ale dość wilgotnych, o odczynie od lekko
-                kwaśnego po obojętny, a nawet lekko zasadowy. Najlepiej rośnie w pełnym słońcu. Dobrze znosi
-                zanieczyszczenie powietrza i słabe zasolenie. Można używać jej do obsadzania ulic, ale tylko w
-                najcieplejszych rejonach kraju.
-              </span>
-            </p>
-            <p>
-              Polecana do parków, zieleni osiedlowej i większych ogrodów przydomowych. Najlepiej wygląda posadzona
-              pojedynczo na trawniku lub rabacie.
-            </p>
-            <p>
-              Drzewo ze względu na późny rozwój liści i wczesne ich zrzucanie pozostaje w stanie bezlistnym niemal przez
-              7 miesięcy w roku. Pędy przemarznięte należy wiosną wycinać. Sadzi się ją przy podporach. Nie lubi
-              przesadzania.
-            </p>
-          </div>
-
-          <!-- Specs table -->
-          <div
-            x-data="{
-          specs: [
-            { label: 'Grupa roślin', values: ['Liściaste'] },
-            { label: 'Rodzina', values: ['Bignoniaceae - bignoniowate'] },
-            { label: 'Charakterystyka Gatunku', values: ['Pokrój: Kulisty, Płasko kulisty', 'Wysokość: Od 2 m do 3 m, Zależy od wysokości podkładki', 'Szerokość: Od 2 m do 5 m'] },
-            { label: 'Kwiaty', values: ['Rodzaj kwiatów: Brak kwitnienia'] },
-            { label: 'Liście', values: ['Trwałość liści: Sezonowe', 'Kolor liści: Zielone', 'Kolor liści jesienią: Żółty', 'Kształt liści: Sercowaty, Drobniejsze niż u gatunku, Dł. 8-15 cm'] },
-            { label: 'Owoce', values: ['Rodzaj owoców: Brak owocowania'] },
-            { label: 'Pędy', values: ['Rodzaj pędów: Pędy proste, Niedekoracyjne', 'Kolor pędów: Oliwkowy, Szary, Brązowy', 'Kolor pędów zimą: Bez zmian'] },
-            { label: 'System korzeniowy', values: ['Głęboki, Rozległy, Mięsiste korzenie, Korzeń główny'] },
-            { label: 'Podłoże', values: ['Rodzaj gleby: Przepuszczalna, Żyzna', 'Odczyn gleby: Kwaśny (pH 4,0-5,5), Obojętne (pH 5,0-6,0) (w tym lekko kwaśne)', 'Wilgotność: Podłoże wilgotne'] },
-            { label: 'Stanowisko', values: ['Półcieniste, Słoneczne'] },
-            { label: 'Formowanie', values: ['Delikatne'] },
-            { label: 'Siła wzrostu', values: ['Typowy dla gatunku'] },
-            { label: 'Strefa klimatyczna', values: ['6a od -23.3°C do -20.6°C'] },
-            { label: 'Dodatkowe informacje', values: ['Warunki uprawy: Małe wymagania', 'Cechy Użytkowe: Konary podatne na wyłamywanie, W gęstej koronie chętnie gniazdują ptaki', 'Pora największej atrakcyjności: Późna wiosna, Lato, Jesień', 'Walory: Ozdobne z liści lub igieł, Ciekawy pokrój', 'Występowanie gatunku: Europa, Ameryka, Azja', 'Pochodzenie odmiany: Francja, Znaleziona w 1850 roku w szkółkach Massona we Francji.'] },
-            { label: 'Polecamy zastosowanie', values: ['Ogrody przydomowe, Zieleń publiczna, Zieleń osiedlowa, Aleje uliczne, Aleje parkowe, Szpaler, Duże ogrody'] }
-          ]
-        }"
-            class="mt-8 flex flex-col md:mt-10 xl:mt-12">
-            <template x-for="spec in specs">
-              <div class="flex flex-col border-b border-gray-100 py-6 last:border-b-0 md:flex-row md:py-9">
-                <!-- Left column -->
-                <div
-                  class="text-bonsai-dark mb-2 w-full shrink-0 text-lg font-normal md:mb-0 md:w-64 lg:w-80"
-                  x-text="spec.label"></div>
-
-                <!-- Right column -->
-                <div class="text-bonsai-dark flex flex-col space-y-2 text-lg font-light">
-                  <template x-for="val in spec.values">
-                    <span x-text="val"></span>
-                  </template>
+      <div class="mx-auto max-w-[1920px]">
+        <!-- Left side  -->
+        <div class="hidden shrink-0 border-r border-b border-gray-100 xl:block xl:w-50"></div>
+        <!-- Right side - content -->
+        <div class="w-full border-b border-gray-100 px-6 pt-16 pb-2 sm:pb-24 md:px-10 xl:pt-38 xl:pb-36 xl:pl-32">
+          <div class="w-full max-w-7xl">
+            <!-- Title -->
+            <h2 class="text-bonsai-dark text-4xl leading-relaxed tracking-wider sm:text-5xl lg:text-6xl">
+              Opis produktu
+            </h2>
+            <!-- Text description -->
+            <div
+              class="text-bonsai-dark mt-10 flex flex-col space-y-6 text-base leading-loose font-light md:mt-16 xl:mt-22">
+              <p class="text-bonsai-dark text-xl font-normal">
+                Karłowa odmiana dorastająca do wysokości 2-3 m, plus oczywiście wysokość podkładki. Korona
+                płaskokulista, bardzo gęsta, osiągająca średnicę do 5 m.
+              </p>
+              <p>
+                Liście drobniejsze niż u gatunku, długości 8-15 cm, sercowate, na wierzchołku krótko zaostrzone, bez
+                klap, zielone, na spodzie gęsto owłosione, całobrzegie. Wiosną późno się rozwijają, a zaraz po
+                rozwinięciu są purpurowe. Jesienią przebarwiają się na żółtozielono, szybko opadają, zaraz po pierwszych
+                przymrozkach. Po roztarciu nieprzyjemnie pachną. <br />Odmiana nie kwitnie.
+              </p>
+              <p>
+                Odmiana wrażliwa na mrozy (strefa 6b), szczególnie w młodym wieku, dlatego powinna być sadzona w
+                miejscach zacisznych i osłoniętych od wiatru. Starsze egzemplarze są odporniejsze.
+                <span class="block">
+                  Wymaga gleb żyznych, głęboko uprawionych, przepuszczalnych, ale dość wilgotnych, o odczynie od lekko
+                  kwaśnego po obojętny, a nawet lekko zasadowy. Najlepiej rośnie w pełnym słońcu. Dobrze znosi
+                  zanieczyszczenie powietrza i słabe zasolenie. Można używać jej do obsadzania ulic, ale tylko w
+                  najcieplejszych rejonach kraju.
+                </span>
+              </p>
+              <p>
+                Polecana do parków, zieleni osiedlowej i większych ogrodów przydomowych. Najlepiej wygląda posadzona
+                pojedynczo na trawniku lub rabacie.
+              </p>
+              <p>
+                Drzewo ze względu na późny rozwój liści i wczesne ich zrzucanie pozostaje w stanie bezlistnym niemal
+                przez 7 miesięcy w roku. Pędy przemarznięte należy wiosną wycinać. Sadzi się ją przy podporach. Nie lubi
+                przesadzania.
+              </p>
+            </div>
+            <!-- Specs table -->
+            <div
+              x-data="{
+            specs: [
+              { label: 'Grupa roślin', values: ['Liściaste'] },
+              { label: 'Rodzina', values: ['Bignoniaceae - bignoniowate'] },
+              { label: 'Charakterystyka Gatunku', values: ['Pokrój: Kulisty, Płasko kulisty', 'Wysokość: Od 2 m do 3 m, Zależy od wysokości podkładki', 'Szerokość: Od 2 m do 5 m'] },
+              { label: 'Kwiaty', values: ['Rodzaj kwiatów: Brak kwitnienia'] },
+              { label: 'Liście', values: ['Trwałość liści: Sezonowe', 'Kolor liści: Zielone', 'Kolor liści jesienią: Żółty', 'Kształt liści: Sercowaty, Drobniejsze niż u gatunku, Dł. 8-15 cm'] },
+              { label: 'Owoce', values: ['Rodzaj owoców: Brak owocowania'] },
+              { label: 'Pędy', values: ['Rodzaj pędów: Pędy proste, Niedekoracyjne', 'Kolor pędów: Oliwkowy, Szary, Brązowy', 'Kolor pędów zimą: Bez zmian'] },
+              { label: 'System korzeniowy', values: ['Głęboki, Rozległy, Mięsiste korzenie, Korzeń główny'] },
+              { label: 'Podłoże', values: ['Rodzaj gleby: Przepuszczalna, Żyzna', 'Odczyn gleby: Kwaśny (pH 4,0-5,5), Obojętne (pH 5,0-6,0) (w tym lekko kwaśne)', 'Wilgotność: Podłoże wilgotne'] },
+              { label: 'Stanowisko', values: ['Półcieniste, Słoneczne'] },
+              { label: 'Formowanie', values: ['Delikatne'] },
+              { label: 'Siła wzrostu', values: ['Typowy dla gatunku'] },
+              { label: 'Strefa klimatyczna', values: ['6a od -23.3°C do -20.6°C'] },
+              { label: 'Dodatkowe informacje', values: ['Warunki uprawy: Małe wymagania', 'Cechy Użytkowe: Konary podatne na wyłamywanie, W gęstej koronie chętnie gniazdują ptaki', 'Pora największej atrakcyjności: Późna wiosna, Lato, Jesień', 'Walory: Ozdobne z liści lub igieł, Ciekawy pokrój', 'Występowanie gatunku: Europa, Ameryka, Azja', 'Pochodzenie odmiany: Francja, Znaleziona w 1850 roku w szkółkach Massona we Francji.'] },
+              { label: 'Polecamy zastosowanie', values: ['Ogrody przydomowe, Zieleń publiczna, Zieleń osiedlowa, Aleje uliczne, Aleje parkowe, Szpaler, Duże ogrody'] }
+            ]
+          }"
+              class="mt-8 flex flex-col md:mt-10 xl:mt-12">
+              <template x-for="spec in specs">
+                <div class="flex flex-col border-b border-gray-100 py-6 last:border-b-0 md:flex-row md:py-9">
+                  <!-- Left column -->
+                  <div
+                    class="text-bonsai-dark mb-2 w-full shrink-0 text-lg font-normal md:mb-0 md:w-64 lg:w-80"
+                    x-text="spec.label"></div>
+                  <!-- Right column -->
+                  <div class="text-bonsai-dark flex flex-col space-y-2 text-lg font-light">
+                    <template x-for="val in spec.values">
+                      <span x-text="val"></span>
+                    </template>
+                  </div>
                 </div>
-              </div>
-            </template>
+              </template>
+            </div>
           </div>
         </div>
       </div>
@@ -472,7 +469,7 @@
         <h2 class="text-bonsai-dark text-3xl tracking-wider sm:text-4xl lg:text-6xl">Zobacz inne rośliny liściaste</h2>
         <a
           href="#"
-          class="text-bonsai-dark hover:bg-bonsai-dark border-bonsai-dark mr-11 inline-flex shrink-0 items-center justify-center self-start rounded-full border px-8 py-4 text-lg font-light transition-all duration-300 hover:text-white sm:self-auto">
+          class="text-bonsai-dark hover:bg-bonsai-dark border-bonsai-dark mr-11 inline-flex shrink-0 items-center justify-center self-start rounded-full border px-8 py-4 text-lg font-light transition-all duration-300 hover:text-white sm:self-auto xl:mr-32">
           Zobacz całą ofertę
         </a>
       </div>
