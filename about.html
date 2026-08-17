@@ -322,7 +322,7 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="bg-bonsai-bg2 relative flex w-full flex-col overflow-hidden xl:flex-row">
+    <section x-data="reveal(true)" class="bg-bonsai-bg2 relative flex w-full flex-col overflow-hidden xl:flex-row">
       <!-- Left margin -->
       <div
         class="relative z-10 hidden w-full shrink-0 items-center justify-center gap-3 border-b border-zinc-200 bg-transparent px-4 py-4 xl:flex xl:w-50 xl:flex-col xl:border-r xl:border-b-0 xl:py-6"></div>
@@ -331,7 +331,9 @@
       <div class="relative z-10 flex flex-1 flex-col px-6 py-12 sm:px-12 md:py-32 lg:px-20 xl:py-36 xl:pr-16 xl:pl-32">
         <div class="flex max-w-[1920px] flex-col lg:pt-2">
           <!-- Title -->
-          <h2 class="text-bonsai-dark text-4xl leading-tight font-normal tracking-wide sm:text-5xl lg:text-6xl">
+          <h2
+            :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1)' : 'opacity-0 translate-y-8 blur-sm'"
+            class="text-bonsai-dark text-4xl leading-tight font-normal tracking-wide sm:text-5xl lg:text-6xl">
             Kompleksowe Zaopatrzenie <br />
             Twojego Ogrodu
           </h2>
@@ -339,7 +341,9 @@
           <!-- Descriptions -->
           <div class="mt-16 flex flex-col gap-10 lg:mt-20 lg:flex-row lg:gap-16 xl:mt-24 xl:gap-38">
             <!-- Short text -->
-            <div class="w-full lg:w-5/12 xl:w-4/12">
+            <div
+              :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 translate-y-6 blur-sm'"
+              class="w-full lg:w-5/12 xl:w-4/12">
               <p class="text-bonsai-dark text-2xl leading-snug font-normal sm:text-3xl">
                 Bonsai Park to nie tylko unikalne<br class="hidden sm:block lg:hidden xl:block" />
                 drzewa.
@@ -347,7 +351,9 @@
             </div>
 
             <!-- Long text -->
-            <div class="w-full lg:w-7/12 xl:w-6/12">
+            <div
+              :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 ease-out delay-300' : 'opacity-0 translate-y-6 blur-sm'"
+              class="w-full lg:w-7/12 xl:w-6/12">
               <p class="text-bonsai-dark text-base leading-relaxed font-light sm:text-xl lg:max-w-xl">
                 To też Plenerowy Showroom pergoli, mebli, oświetlenia oraz prężnie rozwijającym się sklepem internetowym
                 Bonsai Park Store. Oferujemy wszystko, co niezbędne do założenia i umilenia w luksusowym stylu
@@ -359,7 +365,9 @@
           <!-- Icons -->
           <div class="mt-20 grid grid-cols-2 gap-12 sm:grid-cols-2 md:grid-cols-4 lg:mt-22 lg:gap-2 lg:pb-6 xl:pr-18">
             <!-- Assortment -->
-            <div class="flex flex-col items-start">
+            <div
+              :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-400' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
+              class="flex flex-col items-start">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/plant.svg" alt="Asortyment" class="h-16 w-16" />
               </div>
@@ -370,7 +378,9 @@
             </div>
 
             <!-- Rest -->
-            <div class="flex flex-col items-start">
+            <div
+              :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-500' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
+              class="flex flex-col items-start">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/rest.svg" alt="Wypoczynek" class="h-16 w-16" />
               </div>
@@ -381,7 +391,9 @@
             </div>
 
             <!-- Architecture -->
-            <div class="flex flex-col items-start">
+            <div
+              :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-600' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
+              class="flex flex-col items-start">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/architecture.svg" alt="Architektura" class="h-16 w-16" />
               </div>
@@ -392,7 +404,9 @@
             </div>
 
             <!-- Accessories -->
-            <div class="flex flex-col items-start">
+            <div
+              :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-700' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
+              class="flex flex-col items-start">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/fireplace.svg" alt="Dodatki" class="h-16 w-16" />
               </div>
