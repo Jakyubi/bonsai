@@ -148,10 +148,17 @@
     </header>
 
     <!-- CATEGORIES BAR -->
-    <section x-data="categoriesBar" class="relative w-full border-b border-gray-100 bg-white">
+    <section
+      x-data="categoriesBar"
+      @page-ready.window="ready = true"
+      class="relative w-full border-b border-gray-100 bg-white">
       <div class="relative mx-auto flex h-20 max-w-[1920px] items-center md:h-24">
         <!-- List container -->
         <div
+          x-show="ready"
+          x-transition:enter="transition-all duration-1000 ease-out delay-200"
+          x-transition:enter-start="opacity-0 -translate-y-4"
+          x-transition:enter-end="opacity-100 translate-y-0"
           x-ref="scrollContainer"
           x-init="checkScroll()"
           @scroll.debounce.50ms="checkScroll()"
@@ -159,13 +166,13 @@
           <template x-for="(cat, index) in categories" :key="index">
             <a
               :href="cat.link"
-              class="group flex h-full shrink-0 items-center justify-center gap-5 border-r border-gray-100 px-8 transition-colors first:border-l hover:bg-gray-50/80">
+              class="group relative flex h-full shrink-0 items-center justify-center gap-5 border-r border-gray-100 px-8 transition-colors first:border-l hover:bg-gray-50/80">
               <!-- Image -->
               <div class="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden">
                 <img
                   :src="cat.image"
                   :alt="cat.name"
-                  class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" />
+                  class="max-h-full max-w-full object-contain transition-transform duration-300 ease-out group-hover:scale-110" />
               </div>
 
               <!-- Text -->
@@ -173,6 +180,8 @@
                 class="text-bonsai-dark text-xs leading-tight font-light tracking-wide whitespace-pre-line transition-colors group-hover:text-black sm:text-sm"
                 x-text="cat.name">
               </span>
+              <div
+                class="bg-bonsai-green pointer-events-none absolute bottom-0 left-0 h-0.5 w-full scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></div>
             </a>
           </template>
         </div>
@@ -195,7 +204,7 @@
             <img
               src="/src/assets/icons/icon-arrow.svg"
               alt=""
-              class="h-9 w-9 -rotate-135 invert transition-all duration-200 group-hover:opacity-80" />
+              class="h-9 w-9 -rotate-135 invert transition-all duration-200 group-hover:-translate-x-1 group-hover:opacity-80" />
           </button>
         </div>
 
@@ -217,7 +226,7 @@
             <img
               src="/src/assets/icons/icon-arrow.svg"
               alt=""
-              class="h-9 w-9 rotate-45 invert transition-all duration-200 group-hover:opacity-80" />
+              class="h-9 w-9 rotate-45 invert transition-all duration-200 group-hover:translate-x-1 group-hover:opacity-80" />
           </button>
         </div>
       </div>

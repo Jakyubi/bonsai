@@ -119,6 +119,7 @@ Alpine.data("timelineSlider", () => ({
 }));
 
 Alpine.data("categoriesBar", () => ({
+  ready: false,
   canScrollLeft: false,
   canScrollRight: true,
 
