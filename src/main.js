@@ -150,10 +150,12 @@ Alpine.data("categoriesBar", () => ({
   ],
 
   init() {
-    this.$nextTick(() => {
-      this.checkScroll();
+    this.$nextTick(() => this.checkScroll());
+
+    window.addEventListener("page-ready", () => {
+      setTimeout(() => this.checkScroll(), 100);
     });
-    setTimeout(() => this.checkScroll(), 200);
+    window.addEventListener("resize", () => this.checkScroll());
   },
 
   checkScroll() {
