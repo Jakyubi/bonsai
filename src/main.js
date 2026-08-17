@@ -229,6 +229,7 @@ Alpine.data("productGallery", () => ({
 Alpine.data("productsBar", () => ({
   canScrollLeft: false,
   canScrollRight: true,
+  ready: false,
 
   products: [
     { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
