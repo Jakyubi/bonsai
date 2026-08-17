@@ -119,7 +119,6 @@ Alpine.data("timelineSlider", () => ({
 }));
 
 Alpine.data("categoriesBar", () => ({
-  ready: false,
   canScrollLeft: false,
   canScrollRight: true,
 
@@ -177,7 +176,6 @@ Alpine.data("productGallery", () => ({
   ],
   canScrollStart: false,
   canScrollEnd: true,
-  ready: false,
 
   init() {
     this.$nextTick(() => {
@@ -230,7 +228,6 @@ Alpine.data("productGallery", () => ({
 Alpine.data("productsBar", () => ({
   canScrollLeft: false,
   canScrollRight: true,
-  ready: false,
 
   products: [
     { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
@@ -266,38 +263,38 @@ Alpine.data("productsBar", () => ({
   },
 }));
 
-Alpine.data("reveal", () => ({
+Alpine.data("reveal", (repeat = false, threshold = 0.15) => ({
   shown: false,
+  pageReady: window.__pageIsReady || false,
+  isIntersecting: false,
+
   init() {
+    window.addEventListener("page-ready", () => {
+      this.pageReady = true;
+      window.__pageIsReady = true;
+      this.updateState();
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.shown = true;
-            observer.disconnect();
-          }
+          this.isIntersecting = entry.isIntersecting;
+          this.updateState(observer);
         });
       },
-      { threshold: 0.15 },
+      { threshold: threshold },
     );
 
     observer.observe(this.$el);
   },
-}));
 
-Alpine.data("revealRepeat", () => ({
-  shown: false,
-  init() {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          this.shown = entry.isIntersecting;
-        });
-      },
-      { threshold: 0.15 },
-    );
-
-    observer.observe(this.$el);
+  updateState(observer) {
+    if (this.pageReady && this.isIntersecting) {
+      this.shown = true;
+      if (!repeat && observer) observer.disconnect();
+    } else if (repeat && !this.isIntersecting) {
+      this.shown = false;
+    }
   },
 }));
 
