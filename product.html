@@ -489,19 +489,28 @@
     </section>
 
     <!-- DISCOVER OTHER -->
-    <section class="mx-auto flex w-full max-w-[1920px] flex-col bg-white md:flex-row">
+    <section x-data="reveal" class="mx-auto flex w-full max-w-[1920px] flex-col bg-white md:flex-row">
       <!-- Left side -->
       <div class="relative z-10 hidden w-50 xl:block"></div>
 
       <!-- Main content -->
       <div
         class="flex flex-1 flex-col justify-between gap-6 py-12 pr-6 pl-6 sm:flex-row sm:items-center lg:py-16 lg:pr-16 lg:pl-16 xl:pt-38 xl:pb-28 xl:pl-0">
-        <h2 class="text-bonsai-dark text-3xl tracking-wider sm:text-4xl lg:text-6xl">Zobacz inne rośliny liściaste</h2>
-        <a
-          href="#"
-          class="text-bonsai-dark hover:bg-bonsai-dark border-bonsai-dark mr-11 inline-flex shrink-0 items-center justify-center self-start rounded-full border px-8 py-4 text-lg font-light transition-all duration-300 hover:text-white sm:self-auto xl:mr-32">
-          Zobacz całą ofertę
-        </a>
+        <h2
+          :class="shown ? 'opacity-100 translate-x-0 blur-0 scale-100 tracking-wider' : 'opacity-0 -translate-x-4 blur-md scale-95 tracking-tighter'"
+          class="text-bonsai-dark text-3xl transition-all duration-1000 ease-out sm:text-4xl lg:text-6xl">
+          Zobacz inne rośliny liściaste
+        </h2>
+
+        <div
+          :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+          class="self-start transition-all delay-500 duration-700 ease-out sm:self-auto xl:mr-32">
+          <a
+            href="#"
+            class="text-bonsai-dark hover:bg-bonsai-dark border-bonsai-dark inline-flex shrink-0 items-center justify-center rounded-full border px-8 py-4 text-lg font-light transition-all duration-300 hover:text-white">
+            Zobacz całą ofertę
+          </a>
+        </div>
       </div>
     </section>
 
