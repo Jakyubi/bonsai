@@ -355,16 +355,7 @@
 
             <!-- Specs -->
             <div
-              x-data="{
-                features: [
-                  { icon: '/src/assets/icons/exchange.svg', label: 'Wysokość', value: '175 - 200 cm' },
-                  { icon: '/src/assets/icons/exchange2.svg', label: 'Szerokość/średnica', value: '100 - 125 cm' },
-                  { icon: '/src/assets/icons/size.svg', label: 'Wielkość doniczki', value: 'C90' },
-                  { icon: '/src/assets/icons/leaf.svg', label: 'Forma', value: 'Pienna' },
-                  { icon: '/src/assets/icons/konewka.svg', label: 'Typ uprawy', value: 'Doniczka' },
-                  { icon: '/src/assets/icons/lopatka.svg', label: 'Ilość przesadzeń', value: '2' }
-                ]
-              }"
+              x-data="productSpecs"
               :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-500' : 'opacity-0 -translate-y-4'"
               class="mt-16 grid max-w-3xl grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 xl:mt-18 xl:grid-cols-3 xl:gap-x-2 xl:gap-y-10">
               <template x-for="feature in features">

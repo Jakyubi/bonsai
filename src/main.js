@@ -7,7 +7,53 @@ const photos = {
   photo1: new URL("./assets/photos/zdjecie-1.png", import.meta.url).href,
   photo2: new URL("./assets/photos/zdjecie-2.png", import.meta.url).href,
   photo3: new URL("./assets/photos/zdjecie-3.png", import.meta.url).href,
+  bonsai: new URL("./assets/photos/bonsai_.png", import.meta.url).href,
 };
+
+const plantImages = {
+  zwisajace: new URL("./assets/plants/zwisajace.png", import.meta.url).href,
+  drzewa: new URL("./assets/plants/drzewa.png", import.meta.url).href,
+  drzewka: new URL("./assets/plants/drzewka.png", import.meta.url).href,
+  krzewy: new URL("./assets/plants/krzewy.png", import.meta.url).href,
+  plozace: new URL("./assets/plants/plozace.png", import.meta.url).href,
+  kolumnowe: new URL("./assets/plants/kolumnowe.png", import.meta.url).href,
+  inne: new URL("./assets/plants/inne.png", import.meta.url).href,
+  lisciaste: new URL("./assets/plants/lisciaste.png", import.meta.url).href,
+  iglaste: new URL("./assets/plants/iglaste.png", import.meta.url).href,
+  wrzosowate: new URL("./assets/plants/wrzosowate.png", import.meta.url).href,
+  pnacza: new URL("./assets/plants/pnacza.png", import.meta.url).href,
+  roze: new URL("./assets/plants/roze.png", import.meta.url).href,
+  byliny: new URL("./assets/plants/byliny.png", import.meta.url).href,
+  owocowe: new URL("./assets/plants/owocowe.png", import.meta.url).href,
+  warzywa: new URL("./assets/plants/warzywa.png", import.meta.url).href,
+};
+
+const productImages = {
+  img1: new URL("./assets/products/Image1.png", import.meta.url).href,
+  img2: new URL("./assets/products/Image2.png", import.meta.url).href,
+  img3: new URL("./assets/products/Image3.png", import.meta.url).href,
+  img4: new URL("./assets/products/Image4.png", import.meta.url).href,
+};
+
+const specIcons = {
+  exchange: new URL("./assets/icons/exchange.svg", import.meta.url).href,
+  exchange2: new URL("./assets/icons/exchange2.svg", import.meta.url).href,
+  size: new URL("./assets/icons/size.svg", import.meta.url).href,
+  leaf: new URL("./assets/icons/leaf.svg", import.meta.url).href,
+  konewka: new URL("./assets/icons/konewka.svg", import.meta.url).href,
+  lopatka: new URL("./assets/icons/lopatka.svg", import.meta.url).href,
+};
+
+Alpine.data("productSpecs", () => ({
+  features: [
+    { icon: specIcons.exchange, label: "Wysokość", value: "175 - 200 cm" },
+    { icon: specIcons.exchange2, label: "Szerokość/średnica", value: "100 - 125 cm" },
+    { icon: specIcons.size, label: "Wielkość doniczki", value: "C90" },
+    { icon: specIcons.leaf, label: "Forma", value: "Pienna" },
+    { icon: specIcons.konewka, label: "Typ uprawy", value: "Doniczka" },
+    { icon: specIcons.lopatka, label: "Ilość przesadzeń", value: "2" },
+  ],
+}));
 
 Alpine.data("heroSlider", () => ({
   activeSlide: 0,
@@ -132,21 +178,21 @@ Alpine.data("categoriesBar", () => ({
   canScrollRight: true,
 
   categories: [
-    { name: "Zwisające\n(płaczące)", image: "/src/assets/plants/zwisajace.png", link: "#" },
-    { name: "Drzewa", image: "/src/assets/plants/drzewa.png", link: "#" },
-    { name: "Drzewka", image: "/src/assets/plants/drzewka.png", link: "#" },
-    { name: "Krzewy", image: "/src/assets/plants/krzewy.png", link: "#" },
-    { name: "Płożące", image: "/src/assets/plants/plozace.png", link: "#" },
-    { name: "Kolumnowe", image: "/src/assets/plants/kolumnowe.png", link: "#" },
-    { name: "Inne\nformy", image: "/src/assets/plants/inne.png", link: "#" },
-    { name: "Liściaste", image: "/src/assets/plants/lisciaste.png", link: "#" },
-    { name: "Iglaste", image: "/src/assets/plants/iglaste.png", link: "#" },
-    { name: "Wrzosowate", image: "/src/assets/plants/wrzosowate.png", link: "#" },
-    { name: "Pnącza", image: "/src/assets/plants/pnacza.png", link: "#" },
-    { name: "Róże", image: "/src/assets/plants/roze.png", link: "#" },
-    { name: "Byliny", image: "/src/assets/plants/byliny.png", link: "#" },
-    { name: "Owocowe", image: "/src/assets/plants/owocowe.png", link: "#" },
-    { name: "Warzywa", image: "/src/assets/plants/warzywa.png", link: "#" },
+    { name: "Zwisające\n(płaczące)", image: plantImages.zwisajace, link: "#" },
+    { name: "Drzewa", image: plantImages.drzewa, link: "#" },
+    { name: "Drzewka", image: plantImages.drzewka, link: "#" },
+    { name: "Krzewy", image: plantImages.krzewy, link: "#" },
+    { name: "Płożące", image: plantImages.plozace, link: "#" },
+    { name: "Kolumnowe", image: plantImages.kolumnowe, link: "#" },
+    { name: "Inne\nformy", image: plantImages.inne, link: "#" },
+    { name: "Liściaste", image: plantImages.lisciaste, link: "#" },
+    { name: "Iglaste", image: plantImages.iglaste, link: "#" },
+    { name: "Wrzosowate", image: plantImages.wrzosowate, link: "#" },
+    { name: "Pnącza", image: plantImages.pnacza, link: "#" },
+    { name: "Róże", image: plantImages.roze, link: "#" },
+    { name: "Byliny", image: plantImages.byliny, link: "#" },
+    { name: "Owocowe", image: plantImages.owocowe, link: "#" },
+    { name: "Warzywa", image: plantImages.warzywa, link: "#" },
   ],
 
   init() {
@@ -176,13 +222,13 @@ Alpine.data("categoriesBar", () => ({
 Alpine.data("productGallery", () => ({
   activeImg: 0,
   images: [
-    "/src/assets/products/Image1.png",
-    "/src/assets/products/Image2.png",
-    "/src/assets/products/Image3.png",
-    "/src/assets/products/Image4.png",
-    "/src/assets/photos/zdjecie-2.png",
-    "/src/assets/photos/bonsai_.png",
-    "/src/assets/plants/drzewa.png",
+    productImages.img1,
+    productImages.img2,
+    productImages.img3,
+    productImages.img4,
+    photos.photo2,
+    photos.bonsai,
+    plantImages.drzewa,
   ],
   canScrollStart: false,
   canScrollEnd: true,
@@ -240,15 +286,15 @@ Alpine.data("productsBar", () => ({
   canScrollRight: true,
 
   products: [
-    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
-    { name: "Jabłoń Liset", image: "/src/assets/products/Image2.png", link: "#" },
-    { name: "Jabłoń - Malus", image: "/src/assets/products/Image3.png", link: "#" },
-    { name: "Jabłoń - Malus", image: "/src/assets/products/Image4.png", link: "#" },
-    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
-    { name: "Wiśnia wonna", image: "/src/assets/products/Image2.png", link: "#" },
-    { name: "Wiśnia wonna", image: "/src/assets/products/Image3.png", link: "#" },
-    { name: "Wiśnia wonna", image: "/src/assets/products/Image4.png", link: "#" },
-    { name: "Wiśnia wonna", image: "/src/assets/products/Image1.png", link: "#" },
+    { name: "Wiśnia wonna", image: productImages.img1, link: "#" },
+    { name: "Jabłoń Liset", image: productImages.img2, link: "#" },
+    { name: "Jabłoń - Malus", image: productImages.img3, link: "#" },
+    { name: "Jabłoń - Malus", image: productImages.img4, link: "#" },
+    { name: "Wiśnia wonna", image: productImages.img1, link: "#" },
+    { name: "Wiśnia wonna", image: productImages.img2, link: "#" },
+    { name: "Wiśnia wonna", image: productImages.img3, link: "#" },
+    { name: "Wiśnia wonna", image: productImages.img4, link: "#" },
+    { name: "Wiśnia wonna", image: productImages.img1, link: "#" },
   ],
 
   init() {
