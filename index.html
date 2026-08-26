@@ -177,8 +177,6 @@
     <section
       @resize.window.debounce.100ms="checkScroll()"
       x-data="heroSlider"
-      @mouseenter="stopAutoplay()"
-      @mouseleave="startAutoplay()"
       class="relative flex min-h-[75vh] w-full flex-col overflow-hidden bg-black sm:min-h-[85vh] xl:min-h-[105vh] xl:flex-row">
       <!-- Background image -->
       <div class="absolute inset-0 z-0 overflow-hidden">
