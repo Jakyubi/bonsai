@@ -30,10 +30,36 @@
 
     <!-- HEADER -->
     <header
-      x-data="{ open: false, ready: false }"
+      x-data="{ 
+          open: false, 
+          ready: false,
+          isVisible: true,
+          lastScrollY: 0,
+          handleScroll() {
+            const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (this.open) return;
+
+            if (currentScrollY <= 80) {
+              this.isVisible = true;
+            } 
+            else if (currentScrollY > this.lastScrollY && currentScrollY - this.lastScrollY > 10) {
+              this.isVisible = false;
+            } 
+            else if (currentScrollY < this.lastScrollY && this.lastScrollY - currentScrollY > 5) {
+              this.isVisible = true;
+            }
+            
+            this.lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+          }
+        }"
       @page-ready.window="ready = true"
-      class="relative z-50 w-full border-b border-gray-100 bg-white"
-      :class="ready ? 'translate-y-0 duration-1000 ease-out transition-all opacity-100' : '-translate-y-full opacity-0'">
+      @scroll.window.debounce.10ms="handleScroll()"
+      class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white transition-all duration-500 ease-in-out"
+      :class="{
+          'translate-y-0 opacity-100 shadow-sm': ready && isVisible,
+          '-translate-y-full opacity-0 pointer-events-none': !ready || !isVisible
+        }">
       <!-- Main Container -->
       <div class="mx-auto flex h-20 max-w-[1920px] items-center justify-between px-4 xl:px-12">
         <!-- Logo  -->
