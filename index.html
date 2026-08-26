@@ -538,10 +538,9 @@
         class="pointer-events-none absolute top-0 bottom-0 left-1/2 z-20 hidden w-px -translate-x-1/2 bg-white/60 md:block"></div>
 
       <!-- Main content -->
-      <div class="grid w-full grid-cols-1 md:grid-cols-2">
+      <div x-data="reveal(true)" class="grid w-full grid-cols-1 md:grid-cols-2">
         <!-- First tile: instagram -->
         <a
-          x-data="reveal(true)"
           :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-12 blur-sm'"
           href="#"
           target="_blank"
@@ -569,7 +568,6 @@
 
         <!-- Second tile: Tik Tok -->
         <a
-          x-data="reveal(true)"
           :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-12 blur-sm'"
           href="#"
           target="_blank"
