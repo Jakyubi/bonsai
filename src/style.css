@@ -16,6 +16,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "HelveticaLTD";
+  src: url("./assets/fonts/HELVETICANEUELTCOM-TH.TTF") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: "HelveticaLTD", sans-serif;
   --color-bonsai-bg1: #f2f2ec;
