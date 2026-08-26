@@ -236,8 +236,8 @@
           <!-- Main photo -->
           <div
             x-data="reveal(true, 0.01)"
-            :class="shown ? 'opacity-100 translate-x-0 transition-all duration-1000 ease-out' : 'opacity-0 -translate-x-12'"
-            class="relative aspect-square w-full shrink-0 overflow-hidden bg-white md:w-4/5 xl:aspect-auto xl:w-full xl:flex-1">
+            :class="shown ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-12'"
+            class="relative aspect-square w-full shrink-0 overflow-hidden bg-white transition-all duration-1000 ease-out md:w-4/5 xl:aspect-auto xl:w-full xl:flex-1">
             <template x-for="(img, index) in images" :key="index">
               <img
                 x-show="activeImg === index"
@@ -256,8 +256,8 @@
           <!-- Thumbnails Container -->
           <div
             x-data="reveal(true)"
-            :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 ease-out delay-300' : 'opacity-0 translate-y-6 blur-sm'"
-            class="relative w-full shrink-0 md:absolute md:top-0 md:right-0 md:bottom-0 md:w-1/5 xl:relative xl:h-auto xl:w-full">
+            :class="shown ? 'opacity-100 translate-y-0 blur-0  delay-300' : 'opacity-0 translate-y-6 blur-sm'"
+            class="relative w-full shrink-0 transition-all duration-1000 ease-out md:absolute md:top-0 md:right-0 md:bottom-0 md:w-1/5 xl:relative xl:h-auto xl:w-full">
             <div
               x-ref="thumbsContainer"
               @scroll.debounce.50ms="checkScroll()"
@@ -411,59 +411,65 @@
         <div class="w-full border-b border-gray-100 px-6 pt-16 pb-2 sm:pb-24 md:px-10 xl:pt-38 xl:pb-36 xl:pl-32">
           <div class="w-full max-w-7xl">
             <!-- Title -->
-            <h2
-              x-data=" reveal(true)"
-              :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-              class="text-bonsai-dark text-4xl leading-relaxed font-extralight tracking-wider transition-all duration-700 ease-out sm:text-5xl lg:text-6xl">
-              Opis produktu
-            </h2>
+            <div x-data=" reveal(true)">
+              <h2
+                :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
+                class="text-bonsai-dark text-4xl leading-relaxed font-extralight tracking-wider transition-all duration-700 ease-out sm:text-5xl lg:text-6xl">
+                Opis produktu
+              </h2>
+            </div>
             <!-- Text description -->
             <div
               class="text-bonsai-dark mt-10 flex flex-col space-y-6 text-base leading-loose font-light md:mt-16 xl:mt-22">
-              <p
-                x-data="reveal(true)"
-                :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-                class="text-bonsai-dark text-xl font-normal transition-all duration-700 ease-out">
-                Karłowa odmiana dorastająca do wysokości 2-3 m, plus oczywiście wysokość podkładki. Korona
-                płaskokulista, bardzo gęsta, osiągająca średnicę do 5 m.
-              </p>
-              <p
-                x-data="reveal(true)"
-                :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-                class="transition-all duration-700 ease-out">
-                Liście drobniejsze niż u gatunku, długości 8-15 cm, sercowate, na wierzchołku krótko zaostrzone, bez
-                klap, zielone, na spodzie gęsto owłosione, całobrzegie. Wiosną późno się rozwijają, a zaraz po
-                rozwinięciu są purpurowe. Jesienią przebarwiają się na żółtozielono, szybko opadają, zaraz po pierwszych
-                przymrozkach. Po roztarciu nieprzyjemnie pachną. <br />Odmiana nie kwitnie.
-              </p>
-              <p
-                x-data="reveal(true)"
-                :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-                class="transition-all duration-700 ease-out">
-                Odmiana wrażliwa na mrozy (strefa 6b), szczególnie w młodym wieku, dlatego powinna być sadzona w
-                miejscach zacisznych i osłoniętych od wiatru. Starsze egzemplarze są odporniejsze.
-                <span class="block">
-                  Wymaga gleb żyznych, głęboko uprawionych, przepuszczalnych, ale dość wilgotnych, o odczynie od lekko
-                  kwaśnego po obojętny, a nawet lekko zasadowy. Najlepiej rośnie w pełnym słońcu. Dobrze znosi
-                  zanieczyszczenie powietrza i słabe zasolenie. Można używać jej do obsadzania ulic, ale tylko w
-                  najcieplejszych rejonach kraju.
-                </span>
-              </p>
-              <p
-                x-data="reveal(true)"
-                :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-                class="transition-all duration-700 ease-out">
-                Polecana do parków, zieleni osiedlowej i większych ogrodów przydomowych. Najlepiej wygląda posadzona
-                pojedynczo na trawniku lub rabacie.
-              </p>
-              <p
-                x-data="reveal(true)"
-                :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-                class="transition-all duration-700 ease-out">
-                Drzewo ze względu na późny rozwój liści i wczesne ich zrzucanie pozostaje w stanie bezlistnym niemal
-                przez 7 miesięcy w roku. Pędy przemarznięte należy wiosną wycinać. Sadzi się ją przy podporach. Nie lubi
-                przesadzania.
-              </p>
+              <div x-data="reveal(true)">
+                <p
+                  :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
+                  class="text-bonsai-dark text-xl font-normal transition-all duration-700 ease-out">
+                  Karłowa odmiana dorastająca do wysokości 2-3 m, plus oczywiście wysokość podkładki. Korona
+                  płaskokulista, bardzo gęsta, osiągająca średnicę do 5 m.
+                </p>
+              </div>
+              <div x-data="reveal(true)">
+                <p
+                  :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
+                  class="transition-all duration-700 ease-out">
+                  Liście drobniejsze niż u gatunku, długości 8-15 cm, sercowate, na wierzchołku krótko zaostrzone, bez
+                  klap, zielone, na spodzie gęsto owłosione, całobrzegie. Wiosną późno się rozwijają, a zaraz po
+                  rozwinięciu są purpurowe. Jesienią przebarwiają się na żółtozielono, szybko opadają, zaraz po
+                  pierwszych przymrozkach. Po roztarciu nieprzyjemnie pachną. <br />Odmiana nie kwitnie.
+                </p>
+              </div>
+              <div x-data="reveal(true)">
+                <p
+                  :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
+                  class="transition-all duration-700 ease-out">
+                  Odmiana wrażliwa na mrozy (strefa 6b), szczególnie w młodym wieku, dlatego powinna być sadzona w
+                  miejscach zacisznych i osłoniętych od wiatru. Starsze egzemplarze są odporniejsze.
+                  <span class="block">
+                    Wymaga gleb żyznych, głęboko uprawionych, przepuszczalnych, ale dość wilgotnych, o odczynie od lekko
+                    kwaśnego po obojętny, a nawet lekko zasadowy. Najlepiej rośnie w pełnym słońcu. Dobrze znosi
+                    zanieczyszczenie powietrza i słabe zasolenie. Można używać jej do obsadzania ulic, ale tylko w
+                    najcieplejszych rejonach kraju.
+                  </span>
+                </p>
+              </div>
+              <div x-data="reveal(true)">
+                <p
+                  :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
+                  class="transition-all duration-700 ease-out">
+                  Polecana do parków, zieleni osiedlowej i większych ogrodów przydomowych. Najlepiej wygląda posadzona
+                  pojedynczo na trawniku lub rabacie.
+                </p>
+              </div>
+              <div x-data="reveal(true)">
+                <p
+                  :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
+                  class="transition-all duration-700 ease-out">
+                  Drzewo ze względu na późny rozwój liści i wczesne ich zrzucanie pozostaje w stanie bezlistnym niemal
+                  przez 7 miesięcy w roku. Pędy przemarznięte należy wiosną wycinać. Sadzi się ją przy podporach. Nie
+                  lubi przesadzania.
+                </p>
+              </div>
             </div>
             <!-- Specs table -->
             <div
@@ -487,20 +493,25 @@
             ]
           }"
               class="mt-8 flex flex-col md:mt-10 xl:mt-12">
-              <template x-for="spec in specs">
-                <div
-                  x-data=" reveal(true)"
-                  :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-                  class="flex flex-col border-b border-gray-100 py-6 transition-all duration-700 ease-out last:border-b-0 md:flex-row md:py-9">
-                  <!-- Left column -->
+              <template x-for="(spec, index) in specs">
+                <div x-data=" reveal(true)">
                   <div
-                    class="text-bonsai-dark mb-2 w-full shrink-0 text-lg font-normal md:mb-0 md:w-64 lg:w-80"
-                    x-text="spec.label"></div>
-                  <!-- Right column -->
-                  <div class="text-bonsai-dark flex flex-col space-y-2 text-lg font-light">
-                    <template x-for="val in spec.values">
-                      <span x-text="val"></span>
-                    </template>
+                    :class="{
+                      'opacity-100 translate-y-0 blur-0': shown,
+                      'opacity-0 translate-y-8 blur-sm': !shown,
+                      'border-b border-gray-100': index !== specs.length - 1
+                    }"
+                    class="flex flex-col py-6 transition-all duration-700 ease-out md:flex-row md:py-9">
+                    <!-- Left column -->
+                    <div
+                      class="text-bonsai-dark mb-2 w-full shrink-0 text-lg font-normal md:mb-0 md:w-64 lg:w-80"
+                      x-text="spec.label"></div>
+                    <!-- Right column -->
+                    <div class="text-bonsai-dark flex flex-col space-y-2 text-lg font-light">
+                      <template x-for="val in spec.values">
+                        <span x-text="val"></span>
+                      </template>
+                    </div>
                   </div>
                 </div>
               </template>
