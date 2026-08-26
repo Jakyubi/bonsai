@@ -533,7 +533,7 @@
     </section>
 
     <!-- SOCIAL MEDIA -->
-    <section class="relative flex w-full flex-col border-t border-gray-100 bg-white md:flex-row">
+    <section class="relative flex w-full flex-col bg-white md:flex-row">
       <div
         class="pointer-events-none absolute top-0 bottom-0 left-1/2 z-20 hidden w-px -translate-x-1/2 bg-white/60 md:block"></div>
 
@@ -548,10 +548,11 @@
           rel="noopener noreferrer"
           class="group relative flex flex-col items-center justify-center overflow-hidden p-12 text-center transition-all duration-1000 ease-out md:p-20 lg:p-24 xl:p-32 2xl:py-64">
           <img
-            src="/src/assets/photos/zdjecie-2.png"
+            src="/src/assets/photos/social_ig.png"
             alt="Instagram Japanese Garden"
             class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/50"></div>
+          <div
+            class="bg-bonsai-dark/84 group-hover:bg-bonsai-dark/70 absolute inset-0 transition-colors duration-300"></div>
 
           <div class="relative z-10 flex flex-col items-center gap-6">
             <h3 class="text-3xl leading-tight font-normal tracking-wide text-white sm:text-4xl lg:text-5xl">
@@ -575,11 +576,11 @@
           rel="noopener noreferrer"
           class="group relative flex flex-col items-center justify-center overflow-hidden border-t p-12 text-center transition-all delay-200 duration-1000 ease-out md:border-t-0 md:p-20 lg:p-24 xl:p-32 2xl:py-64">
           <img
-            src="/src/assets/photos/zdjecie-1.png"
+            src="/src/assets/photos/social_tt.png"
             alt="TikTok Japanese Garden"
             class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-black/60 transition-colors duration-300 group-hover:bg-black/50"></div>
-
+          <div
+            class="bg-bonsai-dark/84 group-hover:bg-bonsai-dark/70 absolute inset-0 transition-colors duration-300"></div>
           <div class="relative z-10 flex flex-col items-center gap-6">
             <h3 class="text-3xl leading-tight font-normal tracking-wide text-white sm:text-4xl lg:text-5xl">
               Obserwuj nas <span class="block">na Tik Tok</span>
@@ -599,7 +600,7 @@
     <section
       x-data="timelineSlider"
       @mouseleave="active = false; isDown = false"
-      class="relative h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[115vh]">
+      class="relative -mt-px h-[85vh] min-h-125 w-full overflow-hidden bg-white select-none sm:h-[90vh] lg:h-[115vh]">
       <!-- Cover -->
       <div
         x-data="reveal()"
