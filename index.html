@@ -349,10 +349,10 @@
       <div x-data="reveal()" class="relative z-10 grid w-full flex-1 grid-rows-2 divide-y divide-white/20">
         <!-- First tile  -->
         <div
-          class="flex flex-col justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-72 xl:pl-32 2xl:py-32">
+          class="flex flex-col items-center justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-72 xl:pl-32 2xl:py-32">
           <div
             :class="shown ? 'opacity-100 translate-x-0 blur-0 transition-all duration-1000 ease-out' : 'opacity-0 -translate-x-8 blur-sm'"
-            class="max-w-xl">
+            class="max-w-xl text-center sm:text-left">
             <h2 class="text-3xl leading-tight font-extralight sm:text-4xl lg:text-5xl">
               Pomagamy dobrać rośliny do warunków glebowych
             </h2>
@@ -360,7 +360,7 @@
 
           <div
             :class="shown ? 'opacity-100 translate-y-0 transition-all duration-700 ease-out delay-300' : 'opacity-0 translate-y-6'"
-            class="self-start sm:self-auto">
+            class="self-center sm:self-auto">
             <a
               href="#"
               class="text-bonsai-dark inline-flex shrink-0 items-center justify-center rounded-full bg-white px-8 py-3.5 text-lg font-light whitespace-nowrap shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-100">
@@ -371,16 +371,16 @@
 
         <!-- Second tile -->
         <div
-          class="flex flex-col justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-72 xl:pl-32 2xl:py-32">
+          class="flex flex-col items-center justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-72 xl:pl-32 2xl:py-32">
           <div
             :class="shown ? 'opacity-100 translate-x-0 blur-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 -translate-x-8 blur-sm'"
-            class="max-w-xl">
+            class="max-w-xl text-center sm:text-left">
             <h2 class="text-3xl leading-tight font-extralight sm:text-4xl lg:text-5xl">Szczegóły transportu HDS</h2>
           </div>
 
           <div
             :class="shown ? 'opacity-100 translate-y-0 transition-all duration-700 ease-out delay-500' : 'opacity-0 translate-y-6'"
-            class="self-start sm:self-auto">
+            class="self-center sm:self-auto">
             <a
               @mouseleave="activeImage = 1"
               @mouseenter="activeImage = 2"
@@ -400,16 +400,16 @@
 
       <!-- Main content -->
       <div
-        class="flex max-w-[1600px] flex-1 flex-col justify-between gap-6 py-12 pr-6 pl-6 sm:flex-row sm:items-center lg:py-16 lg:pr-26 lg:pl-16 xl:pt-36 xl:pb-28 xl:pl-0">
+        class="flex max-w-[1600px] flex-1 flex-col items-center justify-between gap-6 py-12 pr-6 pl-6 sm:flex-row sm:items-center lg:py-16 lg:pr-26 lg:pl-16 xl:pt-36 xl:pb-28 xl:pl-0">
         <h2
           :class="shown ? 'opacity-100 translate-x-0 blur-0 scale-100 tracking-wide transition-all duration-1000 ease-out' : 'opacity-0 -translate-x-4 blur-md scale-95 tracking-tighter'"
-          class="text-bonsai-dark inline-block text-3xl font-extralight tracking-wide sm:text-4xl lg:text-6xl">
+          class="text-bonsai-dark inline-block text-center text-3xl font-extralight tracking-wide sm:text-left sm:text-4xl lg:text-6xl">
           Odkryj nowości
         </h2>
 
         <div
           :class="shown ? 'opacity-100 translate-y-0 transition-all duration-700 ease-out delay-500' : 'opacity-0 translate-y-8'"
-          class="self-start sm:self-auto">
+          class="self-center sm:self-auto">
           <a
             href="#"
             class="text-bonsai-dark hover:bg-bonsai-dark inline-flex shrink-0 items-center justify-center rounded-full border border-gray-400 px-8 py-4 text-lg font-light transition-all duration-300 hover:text-white">
@@ -439,7 +439,8 @@
             :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
             class="flex items-center transition-all delay-200 duration-1000 ease-out">
             <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-70 2xl:pl-68">
-              <div class="max-w-xl space-y-6">
+              <div
+                class="mx-auto flex max-w-xl flex-col items-center space-y-6 text-center lg:mx-0 lg:items-start lg:text-left">
                 <h3
                   class="text-bonsai-dark text-3xl font-extralight tracking-wide sm:text-4xl lg:text-5xl xl:-translate-y-4 xl:text-6xl">
                   Rośliny liściaste
@@ -465,7 +466,8 @@
             :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'"
             class="order-2 flex items-center transition-all delay-200 duration-1000 ease-out lg:order-1">
             <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-75 2xl:pl-50">
-              <div class="max-w-xl space-y-6">
+              <div
+                class="mx-auto flex max-w-xl flex-col items-center space-y-6 text-center lg:mx-0 lg:items-start lg:text-left">
                 <h3
                   class="text-bonsai-dark text-3xl font-extralight tracking-wider sm:text-4xl lg:text-5xl xl:-translate-y-6 xl:text-6xl">
                   Rośliny iglaste
@@ -511,7 +513,8 @@
             :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'"
             class="flex items-center transition-all delay-200 duration-1000 ease-out">
             <div class="w-full p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:py-70 2xl:pl-68">
-              <div class="max-w-xl space-y-6">
+              <div
+                class="mx-auto flex max-w-xl flex-col items-center space-y-6 text-center lg:mx-0 lg:items-start lg:text-left">
                 <h3
                   class="text-bonsai-dark text-3xl font-extralight tracking-wider sm:text-4xl lg:text-5xl xl:-translate-y-4 xl:text-6xl">
                   Bonsai
@@ -760,9 +763,10 @@
 
               <!-- Links and data -->
               <div
-                class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 font-light md:grid-cols-12 md:pl-16 xl:gap-16 xl:pl-32">
+                class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 text-center font-light md:grid-cols-12 md:pl-16 md:text-left xl:gap-16 xl:pl-32">
                 <!-- Contact -->
-                <div class="text-bonsai-dark space-y-2.5 text-base leading-relaxed md:col-span-3 xl:text-lg">
+                <div
+                  class="text-bonsai-dark flex flex-col items-center space-y-2.5 text-base leading-relaxed md:col-span-3 md:items-start xl:text-lg">
                   <h4 class="mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Dane kontaktowe</h4>
                   <p class="lg:text-lg">Japanese Garden</p>
                   <p class="lg:text-base">Górki Szczukowskie 1,</p>
@@ -785,7 +789,7 @@
                 </div>
 
                 <!-- Nav -->
-                <div class="space-y-3 md:col-span-2 md:pl-8">
+                <div class="flex flex-col items-center space-y-3 md:col-span-2 md:items-start md:pl-8">
                   <h4 class="mb-8 text-xl font-light text-gray-800 lg:mb-16 lg:text-2xl">Nawigacja</h4>
                   <p>
                     <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">O nas</a>
@@ -802,7 +806,7 @@
                 </div>
 
                 <!-- Categories -->
-                <div class="md:col-span-7 md:pl-16">
+                <div class="flex flex-col items-center md:col-span-7 md:items-start md:pl-16">
                   <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h4>
                   <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
                     <div>

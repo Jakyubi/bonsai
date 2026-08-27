@@ -30,10 +30,36 @@
 
     <!-- HEADER -->
     <header
-      x-data="{ open: false, ready: false }"
+      x-data="{ 
+          open: false, 
+          ready: false,
+          isVisible: true,
+          lastScrollY: 0,
+          handleScroll() {
+            const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (this.open) return;
+
+            if (currentScrollY <= 80) {
+              this.isVisible = true;
+            } 
+            else if (currentScrollY > this.lastScrollY && currentScrollY - this.lastScrollY > 10) {
+              this.isVisible = false;
+            } 
+            else if (currentScrollY < this.lastScrollY && this.lastScrollY - currentScrollY > 5) {
+              this.isVisible = true;
+            }
+            
+            this.lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+          }
+        }"
       @page-ready.window="ready = true"
-      class="relative z-50 w-full border-b border-gray-100 bg-white"
-      :class="ready ? 'translate-y-0 duration-1000 ease-out transition-all opacity-100' : '-translate-y-full opacity-0'">
+      @scroll.window.debounce.10ms="handleScroll()"
+      class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white transition-all duration-500 ease-in-out"
+      :class="{
+          'translate-y-0 opacity-100 shadow-sm': ready && isVisible,
+          '-translate-y-full opacity-0 pointer-events-none': !ready || !isVisible
+        }">
       <!-- Main Container -->
       <div class="mx-auto flex h-20 max-w-[1920px] items-center justify-between px-4 xl:px-12">
         <!-- Logo  -->
@@ -44,7 +70,7 @@
         <div class="ml-auto hidden items-center gap-10 lg:flex xl:gap-16">
           <!-- Desktop nav -->
           <nav
-            class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex 2xl:mr-10 2xl:gap-18">
+            class="text-bonsai-dark hidden items-center gap-8 text-sm font-light tracking-wide lg:flex lg:-translate-y-px xl:text-base 2xl:mr-10 2xl:gap-18">
             <a href="index.html" class="transition-colors duration-200 hover:text-gray-500">Home</a>
             <a href="about.html" class="transition-colors duration-200 hover:text-gray-500">O nas</a>
             <a href="#" class="transition-colors duration-200 hover:text-gray-500">Bonsai</a>
@@ -57,12 +83,12 @@
           <div class="flex shrink-0 items-center gap-3 xl:gap-6 xl:pr-4">
             <a
               href="#"
-              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white lg:-translate-y-px xl:text-base">
               Jak dojechać?
             </a>
             <a
               href="product.html"
-              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white xl:text-sm">
+              class="text-bonsai-dark border-bonsai-dark hover:bg-bonsai-dark rounded-full border px-6 py-2 font-light whitespace-nowrap transition-all duration-300 hover:text-white lg:-translate-y-px xl:text-base">
               Katalog roślin
             </a>
           </div>
@@ -247,7 +273,8 @@
         x-data="reveal(true)"
         class="relative z-10 order-1 flex flex-1 flex-col px-6 sm:px-12 lg:px-20 xl:col-start-2 xl:row-start-1 xl:pl-32 2xl:order-none">
         <div class="mx-auto flex h-full w-full max-w-[1920px] flex-col lg:flex-row">
-          <div class="relative z-10 flex w-full flex-col pt-8 pb-1 2xl:pt-16 2xl:pb-70">
+          <div
+            class="relative z-10 flex w-full flex-col items-center pt-8 pb-1 text-center lg:items-start lg:text-left 2xl:pt-16 2xl:pb-70">
             <h2
               :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 translate-y-8 blur-sm'"
               class="text-bonsai-dark text-3xl leading-tight font-extralight tracking-wide sm:text-4xl lg:text-4xl xl:pb-12 xl:text-6xl xl:whitespace-nowrap">
@@ -339,7 +366,7 @@
           <!-- Title -->
           <h2
             :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1)' : 'opacity-0 translate-y-8 blur-sm'"
-            class="text-bonsai-dark text-4xl leading-tight font-extralight tracking-wide sm:text-5xl lg:text-6xl">
+            class="text-bonsai-dark text-center text-4xl leading-tight font-extralight tracking-wide sm:text-5xl lg:text-left lg:text-6xl">
             Kompleksowe Zaopatrzenie <br />
             Twojego Ogrodu
           </h2>
@@ -349,7 +376,7 @@
             <!-- Short text -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 translate-y-6 blur-sm'"
-              class="w-full lg:w-5/12 xl:w-4/12">
+              class="w-full text-center lg:w-5/12 lg:text-left xl:w-4/12">
               <p class="text-bonsai-dark text-2xl leading-snug font-extralight sm:text-3xl">
                 Bonsai Park to nie tylko unikalne<br class="hidden sm:block lg:hidden xl:block" />
                 drzewa.
@@ -359,7 +386,7 @@
             <!-- Long text -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 blur-0 transition-all duration-1000 ease-out delay-300' : 'opacity-0 translate-y-6 blur-sm'"
-              class="w-full lg:w-7/12 xl:w-6/12">
+              class="w-full text-center lg:w-7/12 lg:text-left xl:w-6/12">
               <p class="text-bonsai-dark text-base leading-relaxed font-light sm:text-xl lg:max-w-xl">
                 To też Plenerowy Showroom pergoli, mebli, oświetlenia oraz prężnie rozwijającym się sklepem internetowym
                 Bonsai Park Store. Oferujemy wszystko, co niezbędne do założenia i umilenia w luksusowym stylu
@@ -373,7 +400,7 @@
             <!-- Assortment -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-400' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
-              class="flex flex-col items-start">
+              class="flex flex-col items-center text-center md:items-start md:text-left">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/plant.svg" alt="Asortyment" class="h-16 w-16" />
               </div>
@@ -386,7 +413,7 @@
             <!-- Rest -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-500' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
-              class="flex flex-col items-start">
+              class="flex flex-col items-center text-center md:items-start md:text-left">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/rest.svg" alt="Wypoczynek" class="h-16 w-16" />
               </div>
@@ -399,7 +426,7 @@
             <!-- Architecture -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-600' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
-              class="flex flex-col items-start">
+              class="flex flex-col items-center text-center md:items-start md:text-left">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/architecture.svg" alt="Architektura" class="h-16 w-16" />
               </div>
@@ -412,7 +439,7 @@
             <!-- Accessories -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 scale-100 blur-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-700' : 'opacity-0 translate-y-12 scale-95 blur-sm'"
-              class="flex flex-col items-start">
+              class="flex flex-col items-center text-center md:items-start md:text-left">
               <div class="flex h-16 w-16 items-center justify-center rounded-full">
                 <img src="/src/assets/icons/fireplace.svg" alt="Dodatki" class="h-16 w-16" />
               </div>
@@ -510,24 +537,24 @@
           <!-- Title -->
           <h2
             :class="shown ? 'opacity-100 translate-x-0 blur-0 tracking-wider transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1)' : 'opacity-0 -translate-x-8 blur-sm tracking-normal'"
-            class="text-bonsai-dark text-4xl leading-tight font-extralight tracking-wider sm:text-5xl lg:text-6xl">
+            class="text-bonsai-dark text-center text-4xl leading-tight font-extralight tracking-wider sm:text-5xl lg:text-left lg:text-6xl">
             Dlaczego warto nam zaufać?
           </h2>
 
           <div
-            class="mt-16 grid max-w-7xl grid-cols-1 gap-x-12 gap-y-0 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-x-16 xl:gap-x-16">
+            class="mt-16 grid max-w-7xl grid-cols-1 gap-x-12 gap-y-0 lg:mt-20 lg:grid-cols-3 lg:gap-x-16 xl:gap-x-16">
             <!-- Tile 1 -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 blur-0 scale-100 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-200' : 'opacity-0 translate-y-10 blur-sm scale-95'"
-              class="row-span-3 grid grid-rows-subgrid tracking-wider">
-              <div class="flex h-16 w-16 items-center justify-center self-start rounded-full">
+              class="row-span-3 grid grid-rows-subgrid justify-items-center text-center tracking-wider lg:justify-items-start lg:text-left">
+              <div class="flex h-16 w-16 items-center justify-center rounded-full lg:self-start">
                 <img src="/src/assets/icons/quality.svg" alt="Jakość materiału" class="h-16 w-16" />
               </div>
-              <h3 class="text-bonsai-dark mt-12 self-start text-2xl font-light tracking-wide xl:text-3xl">
+              <h3 class="text-bonsai-dark mt-12 text-2xl font-light tracking-wide lg:self-start xl:text-3xl">
                 Najwyższa jakość materiału
               </h3>
               <p
-                class="text-bonsai-dark mt-6 mb-12 self-start text-sm leading-relaxed font-light sm:text-base lg:mb-0 xl:mt-8 xl:text-lg">
+                class="text-bonsai-dark mt-6 mb-12 text-sm leading-relaxed font-light sm:text-base lg:mb-0 lg:self-start xl:mt-8 xl:text-lg">
                 Dbamy o to, aby każda roślina w naszej ofercie była zdrowa, doskonale ukorzeniona i gotowa do adaptacji
                 w nowym gruncie. Stawiamy na ekologiczne i naturalne metody wspierania wzrostu.
               </p>
@@ -536,15 +563,15 @@
             <!-- Tile 2 -->
             <div
               :class="shown ? 'opacity-100 translate-y-0 blur-0 scale-100 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-400' : 'opacity-0 translate-y-10 blur-sm scale-95'"
-              class="row-span-3 grid grid-rows-subgrid">
-              <div class="flex h-16 w-16 items-center justify-center self-start rounded-full">
+              class="row-span-3 grid grid-rows-subgrid justify-items-center text-center lg:justify-items-start lg:text-left">
+              <div class="flex h-16 w-16 items-center justify-center rounded-full lg:self-start">
                 <img src="/src/assets/icons/tech.svg" alt="Wsparcie techniczne" class="h-16 w-16" />
               </div>
-              <h3 class="text-bonsai-dark mt-12 self-start text-2xl font-light tracking-wide xl:text-3xl">
-                Wsparcie i doradztwo<br class="hidden lg:block" />techniczne
+              <h3 class="text-bonsai-dark mt-12 text-2xl font-light tracking-wide lg:self-start xl:text-3xl">
+                Wsparcie i doradztwo <br class="hidden lg:block" />techniczne
               </h3>
               <p
-                class="text-bonsai-dark mt-6 mb-12 self-start text-sm leading-relaxed font-light sm:text-base lg:mb-0 xl:mt-8 xl:text-lg">
+                class="text-bonsai-dark mt-6 mb-12 text-sm leading-relaxed font-light sm:text-base lg:mb-0 lg:self-start xl:mt-8 xl:text-lg">
                 Nie tylko sprzedajemy - przede wszystkim dzielimy się wiedzą. Oferujemy porady kuratora zieleni,
                 wsparcie techniczne na każdym etapie oraz pomoc w doborze odpowiedniego asortymentu do warunków w Twoim
                 ogrodzie.
@@ -554,15 +581,15 @@
             <!-- Tile 3-->
             <div
               :class="shown ? 'opacity-100 translate-y-0 blur-0 scale-100 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) delay-600' : 'opacity-0 translate-y-10 blur-sm scale-95'"
-              class="row-span-3 grid grid-rows-subgrid">
-              <div class="flex h-16 w-16 items-center justify-center self-start rounded-full">
+              class="row-span-3 grid grid-rows-subgrid justify-items-center text-center lg:justify-items-start lg:text-left">
+              <div class="flex h-16 w-16 items-center justify-center rounded-full lg:self-start">
                 <img src="/src/assets/icons/transport.svg" alt="Usługi dodatkowe" class="h-16 w-16" />
               </div>
-              <h3 class="text-bonsai-dark mt-12 self-start text-2xl font-light tracking-wide xl:text-3xl">
+              <h3 class="text-bonsai-dark mt-12 text-2xl font-light tracking-wide lg:self-start xl:text-3xl">
                 Usługi <br class="hidden lg:block" />dodatkowe
               </h3>
               <p
-                class="text-bonsai-dark mt-6 mb-12 self-start text-sm leading-relaxed font-light sm:text-base lg:mb-0 xl:mt-8 xl:text-lg">
+                class="text-bonsai-dark mt-6 mb-12 text-sm leading-relaxed font-light sm:text-base lg:mb-0 lg:self-start xl:mt-8 xl:text-lg">
                 Dla wygody naszych klientów oferujemy m.in. w strefie obsługi klienta doradcę botanicznego, usługi
                 przycinania bonsai oraz bezpieczny transport zakupionych u nas dużych drzew.
               </p>
@@ -573,7 +600,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer x-data="reveal" class="bg-bonsai-bg1 text-bonsai-dark relative w-full overflow-hidden">
+    <footer x-data="reveal()" class="bg-bonsai-bg1 text-bonsai-dark relative w-full overflow-hidden">
       <div
         :class="shown ? '-translate-x-full opacity-0' : 'translate-x-0 opacity-100'"
         class="bg-bonsai-dark pointer-events-none absolute top-0 bottom-0 left-0 z-40 w-1/2 transition-all duration-1000 ease-in-out"></div>
@@ -655,9 +682,10 @@
 
               <!-- Links and data -->
               <div
-                class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 font-light md:grid-cols-12 md:pl-16 xl:gap-16 xl:pl-32">
+                class="text-bonsai-dark grid grid-cols-1 gap-12 px-8 pt-16 pb-16 text-center font-light md:grid-cols-12 md:pl-16 md:text-left xl:gap-16 xl:pl-32">
                 <!-- Contact -->
-                <div class="text-bonsai-dark space-y-2.5 text-base leading-relaxed md:col-span-3 xl:text-lg">
+                <div
+                  class="text-bonsai-dark flex flex-col items-center space-y-2.5 text-base leading-relaxed md:col-span-3 md:items-start xl:text-lg">
                   <h4 class="mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Dane kontaktowe</h4>
                   <p class="lg:text-lg">Japanese Garden</p>
                   <p class="lg:text-base">Górki Szczukowskie 1,</p>
@@ -680,7 +708,7 @@
                 </div>
 
                 <!-- Nav -->
-                <div class="space-y-3 md:col-span-2 md:pl-8">
+                <div class="flex flex-col items-center space-y-3 md:col-span-2 md:items-start md:pl-8">
                   <h4 class="mb-8 text-xl font-light text-gray-800 lg:mb-16 lg:text-2xl">Nawigacja</h4>
                   <p>
                     <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">O nas</a>
@@ -697,7 +725,7 @@
                 </div>
 
                 <!-- Categories -->
-                <div class="md:col-span-7 md:pl-16">
+                <div class="flex flex-col items-center md:col-span-7 md:items-start md:pl-16">
                   <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h4>
                   <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
                     <div>
