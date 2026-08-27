@@ -177,7 +177,7 @@
     <section
       @resize.window.debounce.100ms="checkScroll()"
       x-data="heroSlider"
-      class="relative flex min-h-[75vh] w-full flex-col overflow-hidden bg-black sm:min-h-[85vh] xl:min-h-[105vh] xl:flex-row">
+      class="relative flex h-[calc(100dvh-5rem)] w-full flex-col overflow-hidden bg-black xl:h-auto xl:min-h-[105vh] xl:flex-row">
       <!-- Background image -->
       <div class="absolute inset-0 z-0 overflow-hidden">
         <template x-for="(slide, index) in slides" :key="index">
@@ -204,7 +204,7 @@
 
       <!-- Left side -->
       <div
-        class="relative z-30 flex w-full shrink-0 items-center justify-center border-b border-white/20 bg-black/20 px-4 py-4 backdrop-blur-md xl:w-50 xl:flex-col xl:border-r xl:border-b-0 xl:py-6">
+        class="relative z-30 order-2 flex w-full shrink-0 items-center justify-center border-t border-white/20 bg-black/20 px-4 py-4 backdrop-blur-md xl:order-1 xl:w-50 xl:flex-col xl:border-t-0 xl:border-r xl:py-6">
         <!-- Inside wrapper with Alpine animation -->
         <div
           x-show="ready"
@@ -228,7 +228,7 @@
 
       <!-- Hero main content -->
       <div
-        class="relative z-30 flex flex-1 flex-col justify-start px-6 py-6 sm:py-12 sm:pr-12 sm:pl-20 lg:pl-28 xl:py-16 xl:pr-16 xl:pl-36">
+        class="relative z-30 order-1 flex flex-1 flex-col justify-start px-6 py-6 sm:py-12 sm:pr-12 sm:pl-20 lg:pl-28 xl:order-2 xl:py-16 xl:pr-16 xl:pl-36">
         <!-- Photo counter -->
         <div class="mt-20 sm:mt-28 xl:mt-58">
           <!-- Inside wrapper with Alpine animation -->
