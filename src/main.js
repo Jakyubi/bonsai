@@ -221,6 +221,7 @@ Alpine.data("categoriesBar", () => ({
 
 Alpine.data("productGallery", () => ({
   activeImg: 0,
+  touchStartX: 0,
   images: [
     productImages.img1,
     productImages.img2,
@@ -232,6 +233,21 @@ Alpine.data("productGallery", () => ({
   ],
   canScrollStart: false,
   canScrollEnd: true,
+
+  handleTouchStart(e) {
+    this.touchStartX = e.touches[0].clientX;
+  },
+
+  handleTouchEnd(e) {
+    const touchEndX = e.changedTouches[0].clientX;
+    const swipeDistance = this.touchStartX - touchEndX;
+
+    if (swipeDistance > 50) {
+      this.activeImg = this.activeImg === this.images.length - 1 ? 0 : this.activeImg + 1;
+    } else if (swipeDistance < -50) {
+      this.activeImg = this.activeImg === 0 ? this.images.length - 1 : this.activeImg - 1;
+    }
+  },
 
   init() {
     this.$nextTick(() => {

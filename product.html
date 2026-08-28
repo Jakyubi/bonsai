@@ -255,13 +255,45 @@
     <!-- PRODUCT -->
     <section class="bg-bonsai-bg1 relative w-full">
       <div class="mx-auto grid h-full w-full max-w-[1920px] grid-cols-1 xl:grid-cols-8">
-        <!-- Left side - gallery -->
+        <div
+          x-data="reveal(true)"
+          class="order-1 flex flex-col justify-start px-6 pt-12 pb-8 md:px-12 md:pt-16 md:pb-12 xl:col-span-5 xl:col-start-4 xl:row-start-1 xl:pt-32 xl:pb-0 xl:pl-32">
+          <div class="mx-auto w-full max-w-4xl xl:mx-0">
+            <!-- Nav -->
+            <div
+              :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-100' : 'opacity-0 -translate-y-4'"
+              class="text-bonsai-dark flex items-center space-x-3 text-xs font-light tracking-wide sm:text-sm">
+              <span>Bonsai Park</span>
+              <span>&mdash;</span>
+              <span>Rośliny</span>
+              <span>&mdash;</span>
+              <span>Liściaste</span>
+            </div>
+
+            <!-- Text -->
+            <h1
+              :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 -translate-y-4'"
+              class="text-bonsai-dark mt-8 text-4xl font-extralight tracking-wide sm:text-5xl lg:text-6xl xl:mt-16">
+              Catalpa bignonioides 'Nana'
+            </h1>
+            <p
+              :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-300' : 'opacity-0 -translate-y-4'"
+              class="text-bonsai-dark mt-4 text-lg font-extralight tracking-wide sm:text-3xl">
+              Surmia bignoniowa 'Nana'
+            </p>
+          </div>
+        </div>
+
         <div
           x-data="productGallery"
-          class="relative flex w-full flex-col gap-px overflow-hidden xl:col-span-3 xl:h-full xl:justify-between">
+          class="relative order-2 flex w-full flex-col gap-px overflow-hidden xl:col-span-3 xl:col-start-1 xl:row-span-2 xl:row-start-1 xl:h-full xl:justify-between">
           <!-- Main photo -->
           <div
             x-data="reveal(true, 0.01)"
+            @touchstart="handleTouchStart($event)"
+            @touchend="handleTouchEnd($event)"
+            @mousedown="handleTouchStart($event)"
+            @mouseup="handleTouchEnd($event)"
             :class="shown ? 'opacity-100 translate-x-0 ' : 'opacity-0 -translate-x-12'"
             class="relative aspect-square w-full shrink-0 overflow-hidden bg-white transition-all duration-1000 ease-out md:w-4/5 xl:aspect-auto xl:w-full xl:flex-1">
             <template x-for="(img, index) in images" :key="index">
@@ -314,7 +346,7 @@
               x-transition:leave="transition opacity duration-300"
               x-transition:leave-start="opacity-100"
               x-transition:leave-end="opacity-0"
-              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 bottom-0 left-0 z-10 hidden w-16 items-center justify-center bg-gradient-to-r to-transparent md:right-0 md:bottom-auto md:flex md:h-20 md:w-full md:bg-gradient-to-b xl:right-auto xl:bottom-0 xl:h-full xl:w-20 xl:bg-gradient-to-r">
+              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 bottom-0 left-0 z-10 flex w-16 items-center justify-center bg-gradient-to-r to-transparent md:right-0 md:bottom-auto md:h-20 md:w-full md:bg-gradient-to-b xl:right-auto xl:bottom-0 xl:h-full xl:w-20 xl:bg-gradient-to-r">
               <button
                 @click="scrollPrev()"
                 type="button"
@@ -336,7 +368,7 @@
               x-transition:leave="transition opacity duration-300"
               x-transition:leave-start="opacity-100"
               x-transition:leave-end="opacity-0"
-              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 right-0 bottom-0 z-10 hidden w-16 items-center justify-center bg-gradient-to-l to-transparent md:top-auto md:left-0 md:flex md:h-20 md:w-full md:bg-gradient-to-t xl:top-0 xl:left-auto xl:h-full xl:w-20 xl:bg-gradient-to-l">
+              class="from-bonsai-bg1 via-bonsai-bg1/90 pointer-events-none absolute top-0 right-0 bottom-0 z-10 flex w-16 items-center justify-center bg-gradient-to-l to-transparent md:top-auto md:left-0 md:h-20 md:w-full md:bg-gradient-to-t xl:top-0 xl:left-auto xl:h-full xl:w-20 xl:bg-gradient-to-l">
               <button
                 @click="scrollNext()"
                 type="button"
@@ -351,34 +383,10 @@
           </div>
         </div>
 
-        <!-- Right side - content -->
         <div
           x-data="reveal(true)"
-          class="flex flex-col justify-start px-6 py-12 md:px-12 md:py-16 xl:col-span-5 xl:pt-32 xl:pb-48 xl:pl-32">
+          class="order-3 flex flex-col justify-start px-6 pb-12 md:px-12 md:pb-16 xl:col-span-5 xl:col-start-4 xl:row-start-2 xl:pb-48 xl:pl-32">
           <div class="mx-auto w-full max-w-4xl xl:mx-0">
-            <!-- Nav -->
-            <div
-              :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-100' : 'opacity-0 -translate-y-4'"
-              class="text-bonsai-dark flex items-center space-x-3 text-xs font-light tracking-wide sm:text-sm">
-              <span>Bonsai Park</span>
-              <span>&mdash;</span>
-              <span>Rośliny</span>
-              <span>&mdash;</span>
-              <span>Liściaste</span>
-            </div>
-
-            <!-- Text -->
-            <h1
-              :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-200' : 'opacity-0 -translate-y-4'"
-              class="text-bonsai-dark mt-16 text-4xl font-extralight tracking-wide sm:text-5xl lg:text-6xl">
-              Catalpa bignonioides 'Nana'
-            </h1>
-            <p
-              :class="shown ? 'opacity-100 translate-y-0 transition-all duration-1000 ease-out delay-300' : 'opacity-0 -translate-y-4'"
-              class="text-bonsai-dark mt-4 text-lg font-extralight tracking-wide sm:text-3xl">
-              Surmia bignoniowa 'Nana'
-            </p>
-
             <!-- Specs -->
             <div
               x-data="productSpecs"
