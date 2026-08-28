@@ -410,4 +410,56 @@ Alpine.data("counter", (target, duration = 1500, delay = 0) => ({
     window.requestAnimationFrame(step);
   },
 }));
+
+let actualScrollY = window.scrollY || 0;
+let lerpedScrollY = window.scrollY || 0;
+
+window.addEventListener(
+  "scroll",
+  () => {
+    actualScrollY = window.scrollY;
+  },
+  { passive: true },
+);
+
+const globalScrollLoop = () => {
+  lerpedScrollY += (actualScrollY - lerpedScrollY) * 0.02;
+  requestAnimationFrame(globalScrollLoop);
+};
+globalScrollLoop();
+
+Alpine.data("scrollLine", () => ({
+  offsetTop: 0,
+  heightPx: 0,
+
+  init() {
+    const calcOffset = () => {
+      if (window.innerWidth < 1280) return;
+
+      const rect = this.$el.parentElement.getBoundingClientRect();
+      this.offsetTop = window.scrollY + rect.top;
+      this.heightPx = rect.height;
+    };
+
+    window.addEventListener("resize", calcOffset, { passive: true });
+    window.addEventListener("page-ready", () => setTimeout(calcOffset, 200));
+    setTimeout(calcOffset, 100);
+
+    const update = () => {
+      if (window.innerWidth >= 1280 && this.heightPx > 0) {
+        const penPosition = lerpedScrollY + window.innerHeight * 1.0;
+
+        let progress = (penPosition - this.offsetTop) / this.heightPx;
+
+        if (progress < 0) progress = 0;
+        if (progress > 1) progress = 1;
+
+        this.$el.style.transform = `scaleY(${progress})`;
+      }
+      requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  },
+}));
+
 Alpine.start();

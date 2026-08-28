@@ -204,7 +204,14 @@
 
       <!-- Left side -->
       <div
-        class="relative z-30 order-2 flex w-full shrink-0 items-center justify-center border-t border-white/15 bg-black/20 px-4 py-4 backdrop-blur-md xl:order-1 xl:w-50 xl:flex-col xl:border-t-0 xl:border-r xl:py-6">
+        class="relative z-30 order-2 flex w-full shrink-0 items-center justify-center bg-black/20 px-4 py-4 backdrop-blur-md xl:order-1 xl:w-50 xl:flex-col xl:py-6">
+        <div
+          class="absolute top-0 left-0 h-px w-full origin-center scale-x-0 bg-white/15 transition-transform duration-1000 ease-out xl:hidden"
+          :class="ready ? 'scale-x-100!' : ''"></div>
+
+        <div
+          class="absolute top-0 right-0 hidden h-full w-px origin-top scale-y-0 bg-white/15 transition-transform delay-300 duration-1000 ease-out xl:block"
+          :class="ready ? 'scale-y-100!' : ''"></div>
         <!-- Inside wrapper with Alpine animation -->
         <div
           x-show="ready"
@@ -265,8 +272,12 @@
     <!-- STATS -->
     <section class="flex w-full flex-col bg-white md:flex-row">
       <!-- Left side -->
-      <div class="hidden w-50 shrink-0 border-r border-[#eee] xl:block"></div>
-
+      <div class="relative hidden w-50 shrink-0 xl:block">
+        <div
+          x-data="scrollLine"
+          class="absolute top-0 right-0 h-full w-px origin-top bg-[#eee]"
+          style="transform: scaleY(0)"></div>
+      </div>
       <!-- Main content -->
       <div x-data="reveal(true)" class="max-w-[1920px] flex-1 px-6 py-16 lg:px-32 lg:py-32">
         <div class="grid grid-cols-1 gap-12 text-left md:grid-cols-3 lg:gap-24">
@@ -327,7 +338,12 @@
       </div>
 
       <!-- Left side -->
-      <div class="relative z-10 hidden w-50 shrink-0 border-r border-white/26 xl:block"></div>
+      <div class="relative z-10 hidden w-50 shrink-0 xl:block">
+        <div
+          x-data="scrollLine"
+          class="absolute top-0 right-0 h-full w-px origin-top bg-white/26"
+          style="transform: scaleY(0)"></div>
+      </div>
       <!-- Main section content -->
       <div x-data="reveal()" class="relative z-10 grid w-full flex-1 grid-rows-2 divide-y divide-white/26">
         <!-- First tile  -->
@@ -809,7 +825,7 @@
                 <!-- Categories -->
                 <div class="flex flex-col items-center md:col-span-7 md:items-start md:pl-16">
                   <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h4>
-                  <div class="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
+                  <div class="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-3 xl:gap-x-16 2xl:gap-x-36">
                     <div>
                       <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Zwisające</a>
                     </div>
