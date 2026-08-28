@@ -204,7 +204,7 @@
 
       <!-- Left side -->
       <div
-        class="relative z-30 order-2 flex w-full shrink-0 items-center justify-center border-t border-white/20 bg-black/20 px-4 py-4 backdrop-blur-md xl:order-1 xl:w-50 xl:flex-col xl:border-t-0 xl:border-r xl:py-6">
+        class="relative z-30 order-2 flex w-full shrink-0 items-center justify-center border-t border-white/15 bg-black/20 px-4 py-4 backdrop-blur-md xl:order-1 xl:w-50 xl:flex-col xl:border-t-0 xl:border-r xl:py-6">
         <!-- Inside wrapper with Alpine animation -->
         <div
           x-show="ready"
@@ -265,7 +265,7 @@
     <!-- STATS -->
     <section class="flex w-full flex-col bg-white md:flex-row">
       <!-- Left side -->
-      <div class="hidden w-50 shrink-0 border-r border-gray-100 xl:block"></div>
+      <div class="hidden w-50 shrink-0 border-r border-[#eee] xl:block"></div>
 
       <!-- Main content -->
       <div x-data="reveal(true)" class="max-w-[1920px] flex-1 px-6 py-16 lg:px-32 lg:py-32">
@@ -327,10 +327,9 @@
       </div>
 
       <!-- Left side -->
-      <div class="relative z-10 hidden w-50 shrink-0 border-r border-white/20 xl:block"></div>
-
+      <div class="relative z-10 hidden w-50 shrink-0 border-r border-white/26 xl:block"></div>
       <!-- Main section content -->
-      <div x-data="reveal()" class="relative z-10 grid w-full flex-1 grid-rows-2 divide-y divide-white/20">
+      <div x-data="reveal()" class="relative z-10 grid w-full flex-1 grid-rows-2 divide-y divide-white/26">
         <!-- First tile  -->
         <div
           class="flex flex-col items-center justify-between gap-6 px-6 py-20 sm:flex-row sm:items-center lg:px-16 lg:py-28 lg:pr-32 xl:pr-72 xl:pl-32 2xl:py-32">
@@ -522,8 +521,7 @@
     <!-- SOCIAL MEDIA -->
     <section class="relative flex w-full flex-col bg-white md:flex-row">
       <div
-        class="pointer-events-none absolute top-0 bottom-0 left-1/2 z-20 hidden w-px -translate-x-1/2 bg-white/60 md:block"></div>
-
+        class="pointer-events-none absolute top-0 bottom-0 left-1/2 z-20 hidden w-px -translate-x-1/2 bg-white/9 md:block"></div>
       <!-- Main content -->
       <div x-data="reveal(true)" class="grid w-full grid-cols-1 md:grid-cols-2">
         <!-- First tile: instagram -->
@@ -559,7 +557,7 @@
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          class="group relative flex flex-col items-center justify-center overflow-hidden border-t p-12 text-center transition-all delay-200 duration-1000 ease-out md:border-t-0 md:p-20 lg:p-24 xl:p-32 2xl:py-64">
+          class="group relative flex flex-col items-center justify-center overflow-hidden border-t border-white/9 p-12 text-center transition-all delay-200 duration-1000 ease-out md:border-t-0 md:p-20 lg:p-24 xl:p-32 2xl:py-64">
           <img
             src="/src/assets/photos/social_tt.png"
             alt="TikTok Japanese Garden"
@@ -700,7 +698,7 @@
         <div class="flex w-full flex-col xl:flex-row">
           <!-- Left side -->
           <aside
-            class="relative flex w-full shrink-0 flex-row items-center justify-between border-b border-gray-300 p-6 xl:w-50 xl:flex-col xl:justify-end xl:border-r xl:border-b-0 xl:py-12">
+            class="relative flex w-full shrink-0 flex-row items-center justify-between border-b border-black/9 p-6 xl:w-50 xl:flex-col xl:justify-end xl:border-r xl:border-b-0 xl:py-12">
             <!-- Social media icons-->
             <div class="my-auto flex gap-4 xl:absolute xl:top-1/2 xl:-translate-y-1/2 xl:flex-col">
               <!-- TikTok -->

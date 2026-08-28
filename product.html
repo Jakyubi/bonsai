@@ -440,9 +440,9 @@
     <section class="relative flex w-full bg-white">
       <div class="mx-auto flex w-full max-w-[1920px]">
         <!-- Left side  -->
-        <div class="hidden shrink-0 border-r border-b border-gray-100 xl:block xl:w-50"></div>
+        <div class="hidden shrink-0 border-r border-b border-[#eee] xl:block xl:w-50"></div>
         <!-- Right side - content -->
-        <div class="w-full border-b border-gray-100 px-6 pt-16 pb-2 sm:pb-24 md:px-10 xl:pt-38 xl:pb-36 xl:pl-32">
+        <div class="w-full border-b border-[#eee] px-6 pt-16 pb-2 sm:pb-24 md:px-10 xl:pt-38 xl:pb-36 xl:pl-32">
           <div class="w-full max-w-7xl">
             <!-- Title -->
             <div x-data=" reveal(true)">
@@ -533,7 +533,7 @@
                     :class="{
                       'opacity-100 translate-y-0 blur-0': shown,
                       'opacity-0 translate-y-8 blur-sm': !shown,
-                      'border-b border-gray-100': index !== specs.length - 1
+                      'border-b border-[#eee]': index !== specs.length - 1
                     }"
                     class="flex flex-col py-6 transition-all duration-700 ease-out md:flex-row md:py-9">
                     <!-- Left column -->
