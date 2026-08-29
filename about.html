@@ -422,11 +422,13 @@
           <img
             src="/src/assets/plants/bonsai-branch-mobile.png"
             alt="Bonsai / Niwaki"
+            loading="lazy"
             class="pointer-events-none h-full w-full object-contain object-right select-none 2xl:hidden" />
 
           <img
             src="/src/assets/plants/bonsai-branch.png"
             alt="Bonsai / Niwaki"
+            loading="lazy"
             class="pointer-events-none hidden h-full w-full object-cover object-right select-none 2xl:block" />
         </div>
       </div>
@@ -483,7 +485,11 @@
         <div
           :class="shown ? 'opacity-100 scale-100 blur-0 transition-all duration-1200 ease-out' : 'opacity-0 scale-110 blur-sm'"
           class="h-full w-full">
-          <img src="/src/assets/photos/zdjecie-2.png" alt="Sadzonka w dłoniach" class="h-full w-full object-cover" />
+          <img
+            src="/src/assets/photos/zdjecie-2.png"
+            alt="Sadzonka w dłoniach"
+            loading="lazy"
+            class="h-full w-full object-cover" />
           <div class="absolute inset-0 bg-black/60"></div>
         </div>
       </div>
@@ -637,6 +643,7 @@
           <img
             src="/src/assets/photos/zdjecie-1.png"
             alt="Gwarancja wysokiej jakości"
+            loading="lazy"
             class="h-full w-full object-cover opacity-80" />
           <div class="absolute inset-0 bg-black/50"></div>
         </div>
