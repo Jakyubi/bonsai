@@ -8,6 +8,9 @@ const photos = {
   photo2: new URL("./assets/photos/zdjecie-2.png", import.meta.url).href,
   photo3: new URL("./assets/photos/zdjecie-3.png", import.meta.url).href,
   bonsai: new URL("./assets/photos/bonsai_.png", import.meta.url).href,
+  timeline1: new URL("./assets/photos/timeline1.png", import.meta.url).href,
+  timeline2: new URL("./assets/photos/timeline2.png", import.meta.url).href,
+  timeline3: new URL("./assets/photos/timeline3.png", import.meta.url).href,
 };
 
 const plantImages = {
@@ -119,10 +122,10 @@ Alpine.data("timelineSlider", () => ({
     {
       year: "1996",
       text: "sprzedaż roślin\nna placu targowym\nw Piekoszowie",
-      image: photos.photo1,
+      image: photos.timeline1,
     },
-    { year: "1998", text: "pierwsza szkółka\nogrodnicza pod\nKielcami", image: photos.photo2 },
-    { year: "2012", text: "pierwsze rośliny\nBonsai w Kielcach", image: photos.photo3 },
+    { year: "1998", text: "pierwsza szkółka\nogrodnicza pod\nKielcami", image: photos.timeline2 },
+    { year: "2012", text: "pierwsze rośliny\nBonsai w Kielcach", image: photos.timeline3 },
   ],
   openTimeline() {
     this.active = true;
