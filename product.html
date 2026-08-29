@@ -1,18 +1,45 @@
 <!doctype html>
-<html lang="pl">
+<html class="is-loading" lang="pl">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>product</title>
     <link rel="stylesheet" href="/src/style.css" />
+
+    <style>
+      html.is-loading,
+      body.is-loading {
+        overflow: hidden;
+      }
+
+      .preloader-class {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+      }
+
+      .preloader-logo {
+        display: block;
+        width: 16rem;
+        height: auto;
+      }
+
+      @media (min-width: 640px) {
+        .preloader-logo {
+          width: 24rem;
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="is-loading">
     <!-- PRELOADER -->
     <div
       x-data="{ isLoading: true }"
       x-init="
-    document.body.style.overflow = 'hidden';
     
     const minDisplayTime = 2500; 
     const startTime = Date.now();
@@ -23,7 +50,8 @@
 
         setTimeout(() => {
             isLoading = false;
-            document.body.style.overflow = '';
+              document.body.classList.remove('is-loading');
+  document.documentElement.classList.remove('is-loading');
             setTimeout(() => { $dispatch('page-ready') }, 500);
         }, remainingTime);
     });
@@ -32,7 +60,7 @@
       x-transition:leave="transition ease-in-out duration-1000"
       x-transition:leave-start="opacity-100"
       x-transition:leave-end="opacity-0"
-      class="fixed inset-0 z-100 flex items-center justify-center bg-white">
+      class="preloader-class fixed inset-0 z-100 flex items-center justify-center bg-white">
       <style>
         .logo-anim-path {
           stroke-dasharray: 100;
@@ -88,7 +116,7 @@
         }
       </style>
 
-      <svg class="h-auto w-64 sm:w-96" viewBox="0 0 591 591" xmlns="http://www.w3.org/2000/svg">
+      <svg class="preloader-logo h-auto w-64 sm:w-96" viewBox="0 0 591 591" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path
             class="logo-anim-path path-red animate-img"
