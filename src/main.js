@@ -47,6 +47,7 @@ const specIcons = {
   lopatka: new URL("./assets/icons/lopatka.svg", import.meta.url).href,
 };
 
+// Product specifications used in product page
 Alpine.data("productSpecs", () => ({
   features: [
     { icon: specIcons.exchange, label: "Wysokość", value: "175 - 200 cm" },
@@ -58,6 +59,7 @@ Alpine.data("productSpecs", () => ({
   ],
 }));
 
+// Manages hero section image slider
 Alpine.data("heroSlider", () => ({
   activeSlide: 0,
   slides: [
@@ -111,6 +113,7 @@ Alpine.data("heroSlider", () => ({
   },
 }));
 
+// Timeline slider in homepage
 Alpine.data("timelineSlider", () => ({
   active: false,
   isDown: false,
@@ -176,6 +179,7 @@ Alpine.data("timelineSlider", () => ({
   },
 }));
 
+// Plant categories bar in product and catalog page
 Alpine.data("categoriesBar", () => ({
   canScrollLeft: false,
   canScrollRight: true,
@@ -222,6 +226,7 @@ Alpine.data("categoriesBar", () => ({
   },
 }));
 
+// Manages product photos in product page
 Alpine.data("productGallery", () => ({
   activeImg: 0,
   touchStartX: 0,
@@ -300,6 +305,7 @@ Alpine.data("productGallery", () => ({
   },
 }));
 
+// Other products in product page
 Alpine.data("productsBar", () => ({
   canScrollLeft: false,
   canScrollRight: true,
@@ -338,6 +344,7 @@ Alpine.data("productsBar", () => ({
   },
 }));
 
+// Catalog of products
 Alpine.data("productCatalogGrid", () => ({
   products: [
     { id: 1, name: "Wiśnia wonna", image: productImages.img1, link: "product.html" },
@@ -398,6 +405,7 @@ Alpine.data("reveal", (repeat = false, threshold = 0.15) => ({
   },
 }));
 
+// Animates a number counter
 Alpine.data("counter", (target, duration = 1500, delay = 0) => ({
   current: 0,
   target: target,
@@ -456,6 +464,7 @@ const globalScrollLoop = () => {
 };
 globalScrollLoop();
 
+// Draws decoration line based on user's scroll
 Alpine.data("scrollLine", () => ({
   offsetTop: 0,
   heightPx: 0,
