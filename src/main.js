@@ -370,6 +370,37 @@ Alpine.data("productCatalogGrid", () => ({
   ],
 }));
 
+// Photos for projects page
+Alpine.data("projectsGallery", () => ({
+  lightboxOpen: false,
+  currentImg: "",
+  images: [photos.photo1, photos.photo2, photos.photo3, photos.timeline1, photos.timeline2, photos.timeline3],
+  captions: [
+    { title: "Ogród Japoński", desc: "Lorem ipsum dolor sit amet." },
+    { title: "Klon Palmowy", desc: "consectetur adipiscing elit, sed do eiusmod tempor incididunt." },
+    { title: "Bonsai", desc: "ut labore et dolore magna aliqua." },
+    { title: "Sadzonka", desc: "Ut enim ad minim veniam, quis nostrud exercitation." },
+    { title: "Formowane Iglaki", desc: "ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+    {
+      title: "Bonsai Park",
+      desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    },
+  ],
+  openLightbox(img) {
+    this.currentImg = img;
+    this.lightboxOpen = true;
+    document.body.style.overflow = "hidden";
+  },
+  closeLightbox() {
+    this.lightboxOpen = false;
+    setTimeout(() => {
+      this.currentImg = "";
+      document.body.style.overflow = "";
+    }, 300);
+  },
+}));
+
+// Used for entrance animations
 Alpine.data("reveal", (repeat = false, threshold = 0.15) => ({
   shown: false,
   pageReady: window.__pageIsReady || false,

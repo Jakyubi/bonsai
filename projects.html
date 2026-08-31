@@ -353,40 +353,7 @@
         </p>
       </section>
 
-      <section
-        x-data="{
-          lightboxOpen: false,
-          currentImg: '',
-          images: [
-            '/src/assets/photos/zdjecie-1.png',
-            '/src/assets/photos/klon1.png',
-            '/src/assets/photos/bonsai.png',
-            '/src/assets/photos/zdjecie-2.png',
-            '/src/assets/photos/iglaste.png',
-            '/src/assets/photos/hds1.png'
-          ],
-          captions: [
-            { title: 'Ogród Japoński', desc: 'Lorem ipsum dolor sit amet.' },
-            { title: 'Klon Palmowy', desc: 'consectetur adipiscing elit, sed do eiusmod tempor incididunt.' },
-            { title: 'Bonsai', desc: 'ut labore et dolore magna aliqua.' },
-            { title: 'Sadzonka', desc: 'Ut enim ad minim veniam, quis nostrud exercitation.' },
-            { title: 'Formowane Iglaki', desc: 'ullamco laboris nisi ut aliquip ex ea commodo consequat.' },
-            { title: 'Bonsai Park', desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' }
-          ],
-          openLightbox(img) {
-            this.currentImg = img;
-            this.lightboxOpen = true;
-            document.body.style.overflow = 'hidden';
-          },
-          closeLightbox() {
-            this.lightboxOpen = false;
-            setTimeout(() => { 
-              this.currentImg = ''; 
-              document.body.style.overflow = ''; 
-            }, 300);
-          }
-        }"
-        class="mx-auto max-w-[1920px] px-6 lg:px-16 xl:px-32">
+      <section x-data="projectsGallery()" class="mx-auto max-w-[1920px] px-6 lg:px-16 xl:px-32">
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-10 xl:grid-cols-3">
           <template x-for="(img, index) in images" :key="index">
             <div x-data="reveal(true)" class="relative h-full w-full">
