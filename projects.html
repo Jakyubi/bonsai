@@ -339,7 +339,9 @@
 
     <!-- GALERY -->
     <main class="w-full bg-white pt-12 pb-12 lg:pt-16 lg:pb-16">
-      <section x-data="reveal(true)" class="mx-auto mb-16 max-w-[1920px] px-6 lg:mb-24 lg:px-16 xl:px-32">
+      <section
+        x-data="reveal(true)"
+        class="mx-auto mb-16 max-w-[1920px] px-6 text-center lg:mb-24 lg:px-16 lg:text-left xl:px-32">
         <h1
           :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
           class="text-bonsai-dark text-4xl font-extralight tracking-wide transition-all duration-1000 ease-out sm:text-5xl lg:text-7xl">
@@ -347,14 +349,14 @@
         </h1>
         <p
           :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
-          class="text-bonsai-dark mt-6 max-w-3xl text-lg font-light tracking-wide transition-all delay-200 duration-1000 ease-out lg:text-xl">
+          class="text-bonsai-dark mx-auto mt-6 max-w-3xl text-lg font-light tracking-wide transition-all delay-200 duration-1000 ease-out lg:mx-0 lg:text-xl">
           Zobacz ogrody, kompozycje i ukształtowane drzewa Bonsai, które stworzyliśmy z pasją i dbałością o najmniejszy
           detal. Inspirujemy do tworzenia wyjątkowych przestrzeni.
         </p>
       </section>
 
       <section x-data="projectsGallery()" class="mx-auto max-w-[1920px] px-6 lg:px-16 xl:px-32">
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-10 xl:grid-cols-3">
+        <div class="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:gap-10 xl:grid-cols-3">
           <template x-for="(img, index) in images" :key="index">
             <div x-data="reveal(true)" class="relative h-full w-full">
               <div
@@ -378,7 +380,7 @@
                   </div>
                 </div>
 
-                <div class="mt-4 flex flex-col gap-1 px-1">
+                <div class="mt-4 flex flex-col gap-1 px-1 text-center lg:text-left">
                   <h3 class="text-bonsai-dark text-xl font-light tracking-wide" x-text="captions[index].title"></h3>
                   <p class="text-bonsai-dark text-lg font-extralight opacity-80" x-text="captions[index].desc"></p>
                 </div>
