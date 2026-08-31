@@ -338,6 +338,31 @@ Alpine.data("productsBar", () => ({
   },
 }));
 
+Alpine.data("productCatalogGrid", () => ({
+  products: [
+    { id: 1, name: "Wiśnia wonna", image: productImages.img1, link: "product.html" },
+    { id: 2, name: "Jabłoń Liset", image: productImages.img2, link: "product.html" },
+    { id: 3, name: "Jabłoń - Malus", image: productImages.img3, link: "product.html" },
+    { id: 4, name: "Jabłoń - Malus", image: productImages.img4, link: "product.html" },
+    { id: 5, name: "Wiśnia wonna", image: productImages.img1, link: "product.html" },
+    { id: 6, name: "Wiśnia wonna", image: productImages.img2, link: "product.html" },
+    { id: 7, name: "Wiśnia wonna", image: productImages.img3, link: "product.html" },
+    { id: 8, name: "Wiśnia wonna", image: productImages.img4, link: "product.html" },
+    { id: 9, name: "Wiśnia wonna", image: productImages.img1, link: "product.html" },
+    { id: 10, name: "Jabłoń Liset", image: productImages.img2, link: "product.html" },
+    { id: 11, name: "Wiśnia wonna", image: productImages.img1, link: "product.html" },
+    { id: 12, name: "Jabłoń Liset", image: productImages.img2, link: "product.html" },
+    { id: 13, name: "Jabłoń - Malus", image: productImages.img3, link: "product.html" },
+    { id: 14, name: "Jabłoń - Malus", image: productImages.img4, link: "product.html" },
+    { id: 15, name: "Wiśnia wonna", image: productImages.img1, link: "product.html" },
+    { id: 16, name: "Wiśnia wonna", image: productImages.img2, link: "product.html" },
+    { id: 17, name: "Wiśnia wonna", image: productImages.img3, link: "product.html" },
+    { id: 18, name: "Wiśnia wonna", image: productImages.img4, link: "product.html" },
+    { id: 19, name: "Wiśnia wonna", image: productImages.img1, link: "product.html" },
+    { id: 20, name: "Jabłoń Liset", image: productImages.img2, link: "product.html" },
+  ],
+}));
+
 Alpine.data("reveal", (repeat = false, threshold = 0.15) => ({
   shown: false,
   pageReady: window.__pageIsReady || false,
