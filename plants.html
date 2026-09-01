@@ -13,6 +13,10 @@
         overflow: hidden;
       }
 
+      html.fast-load .preloader-logo {
+        display: none !important;
+      }
+
       .preloader-class {
         position: fixed;
         inset: 0;
@@ -34,28 +38,44 @@
         }
       }
     </style>
+
+    <script>
+      if (sessionStorage.getItem("preloaderSeen")) {
+        document.documentElement.classList.add("fast-load");
+      }
+    </script>
   </head>
   <body class="is-loading">
     <!-- PRELOADER -->
     <div
       x-data="{ isLoading: true }"
       x-init="
-    
-    const minDisplayTime = 2500; 
-    const startTime = Date.now();
+        const isFast = document.documentElement.classList.contains('fast-load');
+        const minDisplayTime = 2500; 
+        const startTime = Date.now();
 
-    window.addEventListener('load', () => {
-        const elapsedTime = Date.now() - startTime;
-        const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+        window.addEventListener('load', () => {
+            if (isFast) {
+                isLoading = false;
+                document.body.classList.remove('is-loading');
+                document.documentElement.classList.remove('is-loading');
+                setTimeout(() => { $dispatch('page-ready') }, 50);
+            } else {
+                const elapsedTime = Date.now() - startTime;
+                const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
 
-        setTimeout(() => {
-            isLoading = false;
-              document.body.classList.remove('is-loading');
-  document.documentElement.classList.remove('is-loading');
-            setTimeout(() => { $dispatch('page-ready') }, 500);
-        }, remainingTime);
-    });
-  "
+                setTimeout(() => {
+                    isLoading = false;
+                    document.body.classList.remove('is-loading');
+                    document.documentElement.classList.remove('is-loading');
+                    
+                    sessionStorage.setItem('preloaderSeen', 'true');
+                    
+                    setTimeout(() => { $dispatch('page-ready') }, 500);
+                }, remainingTime);
+            }
+        });
+      "
       x-show="isLoading"
       x-transition:leave="transition ease-in-out duration-1000"
       x-transition:leave-start="opacity-100"
