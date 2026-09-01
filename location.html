@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Realizacje - Bonsai Park</title>
+    <title>Jak dojechać - Bonsai Park</title>
     <link rel="stylesheet" href="/src/style.css" />
 
     <style>
@@ -357,89 +357,35 @@
       </div>
     </header>
 
-    <!-- GALERY -->
     <main class="w-full bg-white pt-12 pb-12 lg:pt-16 lg:pb-16">
       <section
         x-data="reveal(true)"
-        class="mx-auto mb-16 max-w-[1920px] px-6 text-center lg:mb-24 lg:px-16 lg:text-left xl:px-32">
+        class="mx-auto mb-12 flex max-w-[1920px] flex-col items-center px-6 lg:mb-16 lg:items-start lg:px-16 xl:px-32">
         <h1
           :class="shown ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'"
-          class="text-bonsai-dark text-4xl font-extralight tracking-wide transition-all duration-1000 ease-out sm:text-5xl lg:text-7xl">
-          Nasze realizacje
+          class="text-bonsai-dark text-center text-4xl font-extralight tracking-wide transition-all duration-1000 ease-out sm:text-5xl lg:text-left lg:text-7xl">
+          Jak dojechać
         </h1>
         <p
           :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
-          class="text-bonsai-dark mx-auto mt-6 max-w-3xl text-lg font-light tracking-wide transition-all delay-200 duration-1000 ease-out lg:mx-0 lg:text-xl">
-          Zobacz ogrody, kompozycje i ukształtowane drzewa Bonsai, które stworzyliśmy z pasją i dbałością o najmniejszy
-          detal. Inspirujemy do tworzenia wyjątkowych przestrzeni.
+          class="text-bonsai-dark mt-6 max-w-3xl text-center text-lg font-light tracking-wide transition-all delay-200 duration-1000 ease-out lg:text-left lg:text-xl">
+          Zapraszamy do odwiedzenia naszej ekspozycji w Górkach Szczukowskich koło Kielc. Sprawdź lokalizację na mapie
+          poniżej.
         </p>
       </section>
 
-      <section x-data="projectsGallery()" class="mx-auto max-w-[1920px] px-6 lg:px-16 xl:px-32">
-        <div class="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:gap-10 xl:grid-cols-3">
-          <template x-for="(img, index) in images" :key="index">
-            <div x-data="reveal(true)" class="relative h-full w-full">
-              <div
-                :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
-                class="flex h-full w-full flex-col transition-all duration-1000 ease-out">
-                <div
-                  class="group relative aspect-4/3 w-full cursor-pointer overflow-hidden bg-gray-100"
-                  @click="openLightbox(img)">
-                  <img
-                    :src="img"
-                    alt="Realizacja Bonsai Park"
-                    loading="lazy"
-                    class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-
-                  <div
-                    class="bg-bonsai-dark/0 group-hover:bg-bonsai-dark/40 absolute inset-0 flex items-center justify-center transition-colors duration-500 ease-out">
-                    <span
-                      class="translate-y-4 text-lg font-light tracking-widest text-white opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                      Powiększ
-                    </span>
-                  </div>
-                </div>
-
-                <div class="mt-4 flex flex-col gap-1 px-1 text-center lg:text-left">
-                  <h3 class="text-bonsai-dark text-xl font-light tracking-wide" x-text="captions[index].title"></h3>
-                  <p class="text-bonsai-dark text-lg font-extralight opacity-80" x-text="captions[index].desc"></p>
-                </div>
-              </div>
-            </div>
-          </template>
-        </div>
-
+      <!-- Full Map Section -->
+      <section x-data="reveal(true)" class="mx-auto max-w-[1920px] px-6 lg:px-16 xl:px-32">
         <div
-          x-show="lightboxOpen"
-          style="display: none"
-          class="fixed inset-0 z-100 flex items-center justify-center bg-black/95 px-4 transition-opacity duration-300 lg:px-12"
-          x-transition:enter="ease-out duration-300"
-          x-transition:enter-start="opacity-0"
-          x-transition:enter-end="opacity-100"
-          x-transition:leave="ease-in duration-200"
-          x-transition:leave-start="opacity-100"
-          x-transition:leave-end="opacity-0"
-          @keydown.escape.window="closeLightbox()"
-          @click="closeLightbox()">
-          <button
-            @click.stop="closeLightbox()"
-            class="absolute top-6 right-6 p-2 text-white/70 transition-transform duration-200 hover:scale-110 hover:text-white focus:outline-none lg:top-10 lg:right-10">
-            <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-
-          <img
-            :src="currentImg"
-            @click.stop=""
-            alt="Powiększona realizacja"
-            class="max-h-[90vh] max-w-full object-contain shadow-2xl transition-transform duration-300"
-            x-transition:enter="ease-out duration-300 delay-100"
-            x-transition:enter-start="scale-95 opacity-0"
-            x-transition:enter-end="scale-100 opacity-100"
-            x-transition:leave="ease-in duration-200"
-            x-transition:leave-start="scale-100 opacity-100"
-            x-transition:leave-end="scale-95 opacity-0" />
+          :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
+          class="relative h-[60vh] w-full overflow-hidden rounded-2xl shadow-lg transition-all delay-300 duration-1000 ease-out lg:h-[75vh]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20140.133401689378!2d20.556032948614178!3d50.87714699040562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4718282cf9e54ae1%3A0x2f6f725231b62e1!2sSzczukowskie%20G%C3%B3rki%201%2C%2026-065%20Kielce!5e0!3m2!1spl!2spl!4v1788288353615!5m2!1spl!2spl"
+            class="h-full w-full border-0 object-cover opacity-90 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </section>
     </main>
@@ -626,7 +572,6 @@
                 </div>
               </div>
             </div>
-
             <!-- Map -->
             <div class="relative h-72 w-full shrink-0 overflow-hidden lg:mt-8 lg:h-112">
               <iframe
@@ -640,7 +585,6 @@
           </div>
         </div>
       </div>
-
       <!-- COPYRIGHT -->
       <div>
         <div class="text-bonsai-dark w-full bg-white px-6 py-10 text-base sm:px-12">
