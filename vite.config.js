@@ -14,6 +14,7 @@ export default defineConfig({
         contact: resolve(import.meta.dirname, "contact.html"),
         plants: resolve(import.meta.dirname, "plants.html"),
         bonsai: resolve(import.meta.dirname, "bonsai.html"),
+        location: resolve(import.meta.dirname, "location.html"),
       },
     },
   },
