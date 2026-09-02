@@ -279,7 +279,11 @@
         </div>
 
         <!-- Mobile menu open button -->
-        <button @click="open = !open" type="button" class="text-bonsai-dark ml-auto p-2 focus:outline-none lg:hidden">
+        <button
+          @click="open = !open"
+          type="button"
+          aria-label="Otwórz menu nawigacji"
+          class="text-bonsai-dark ml-auto p-2 focus:outline-none lg:hidden">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               x-show="!open"
@@ -384,6 +388,7 @@
             class="h-full w-full border-0 object-cover opacity-90 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
             allowfullscreen=""
             loading="lazy"
+            title="Mapa dojazdu do Bonsai Park"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
@@ -477,7 +482,7 @@
                 <!-- Contact -->
                 <div
                   class="text-bonsai-dark flex flex-col items-center space-y-2.5 text-base leading-relaxed md:col-span-3 md:items-start xl:text-lg">
-                  <h4 class="mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Dane kontaktowe</h4>
+                  <h3 class="mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Dane kontaktowe</h3>
                   <p class="lg:text-lg">Japanese Garden</p>
                   <p class="lg:text-base">Górki Szczukowskie 1,</p>
                   <p class="lg:text-base">26-065 Piekoszów</p>
@@ -500,7 +505,7 @@
 
                 <!-- Nav -->
                 <div class="flex flex-col items-center space-y-3 md:col-span-2 md:items-start md:pl-8">
-                  <h4 class="mb-8 text-xl font-light text-gray-800 lg:mb-16 lg:text-2xl">Nawigacja</h4>
+                  <h3 class="mb-8 text-xl font-light text-gray-800 lg:mb-16 lg:text-2xl">Nawigacja</h3>
                   <p>
                     <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">O nas</a>
                   </p>
@@ -517,7 +522,7 @@
 
                 <!-- Categories -->
                 <div class="flex flex-col items-center md:col-span-7 md:items-start md:pl-16">
-                  <h4 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h4>
+                  <h3 class="text-bonsai-dark mb-8 text-xl font-light lg:mb-16 lg:text-2xl">Kategorie</h3>
                   <div class="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-3 xl:gap-x-16 2xl:gap-x-36">
                     <div>
                       <a href="#" class="transition-colors duration-200 hover:text-gray-500 lg:text-lg">Zwisające</a>
@@ -579,6 +584,7 @@
                 class="h-full w-full border-0 object-cover opacity-90 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                 allowfullscreen=""
                 loading="lazy"
+                title="Mapa dojazdu do Bonsai Park"
                 referrerpolicy="no-referrer-when-downgrade">
               </iframe>
             </div>
