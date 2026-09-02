@@ -4,38 +4,38 @@ import Alpine from "alpinejs";
 window.Alpine = Alpine;
 
 const photos = {
-  photo1: new URL("./assets/photos/zdjecie-1.png", import.meta.url).href,
-  photo2: new URL("./assets/photos/zdjecie-2.png", import.meta.url).href,
-  photo3: new URL("./assets/photos/zdjecie-3.png", import.meta.url).href,
-  bonsai: new URL("./assets/photos/bonsai_.png", import.meta.url).href,
-  timeline1: new URL("./assets/photos/timeline1.png", import.meta.url).href,
-  timeline2: new URL("./assets/photos/timeline2.png", import.meta.url).href,
-  timeline3: new URL("./assets/photos/timeline3.png", import.meta.url).href,
+  photo1: new URL("./assets/photos/zdjecie-1.webp", import.meta.url).href,
+  photo2: new URL("./assets/photos/zdjecie-2.webp", import.meta.url).href,
+  photo3: new URL("./assets/photos/zdjecie-3.webp", import.meta.url).href,
+  bonsai: new URL("./assets/photos/bonsai_.webp", import.meta.url).href,
+  timeline1: new URL("./assets/photos/timeline1.webp", import.meta.url).href,
+  timeline2: new URL("./assets/photos/timeline2.webp", import.meta.url).href,
+  timeline3: new URL("./assets/photos/timeline3.webp", import.meta.url).href,
 };
 
 const plantImages = {
-  zwisajace: new URL("./assets/plants/zwisajace.png", import.meta.url).href,
-  drzewa: new URL("./assets/plants/drzewa.png", import.meta.url).href,
-  drzewka: new URL("./assets/plants/drzewka.png", import.meta.url).href,
-  krzewy: new URL("./assets/plants/krzewy.png", import.meta.url).href,
-  plozace: new URL("./assets/plants/plozace.png", import.meta.url).href,
-  kolumnowe: new URL("./assets/plants/kolumnowe.png", import.meta.url).href,
-  inne: new URL("./assets/plants/inne.png", import.meta.url).href,
-  lisciaste: new URL("./assets/plants/lisciaste.png", import.meta.url).href,
-  iglaste: new URL("./assets/plants/iglaste.png", import.meta.url).href,
-  wrzosowate: new URL("./assets/plants/wrzosowate.png", import.meta.url).href,
-  pnacza: new URL("./assets/plants/pnacza.png", import.meta.url).href,
-  roze: new URL("./assets/plants/roze.png", import.meta.url).href,
-  byliny: new URL("./assets/plants/byliny.png", import.meta.url).href,
-  owocowe: new URL("./assets/plants/owocowe.png", import.meta.url).href,
-  warzywa: new URL("./assets/plants/warzywa.png", import.meta.url).href,
+  zwisajace: new URL("./assets/plants/zwisajace.webp", import.meta.url).href,
+  drzewa: new URL("./assets/plants/drzewa.webp", import.meta.url).href,
+  drzewka: new URL("./assets/plants/drzewka.webp", import.meta.url).href,
+  krzewy: new URL("./assets/plants/krzewy.webp", import.meta.url).href,
+  plozace: new URL("./assets/plants/plozace.webp", import.meta.url).href,
+  kolumnowe: new URL("./assets/plants/kolumnowe.webp", import.meta.url).href,
+  inne: new URL("./assets/plants/inne.webp", import.meta.url).href,
+  lisciaste: new URL("./assets/plants/lisciaste.webp", import.meta.url).href,
+  iglaste: new URL("./assets/plants/iglaste.webp", import.meta.url).href,
+  wrzosowate: new URL("./assets/plants/wrzosowate.webp", import.meta.url).href,
+  pnacza: new URL("./assets/plants/pnacza.webp", import.meta.url).href,
+  roze: new URL("./assets/plants/roze.webp", import.meta.url).href,
+  byliny: new URL("./assets/plants/byliny.webp", import.meta.url).href,
+  owocowe: new URL("./assets/plants/owocowe.webp", import.meta.url).href,
+  warzywa: new URL("./assets/plants/warzywa.webp", import.meta.url).href,
 };
 
 const productImages = {
-  img1: new URL("./assets/products/Image1.png", import.meta.url).href,
-  img2: new URL("./assets/products/Image2.png", import.meta.url).href,
-  img3: new URL("./assets/products/Image3.png", import.meta.url).href,
-  img4: new URL("./assets/products/Image4.png", import.meta.url).href,
+  img1: new URL("./assets/products/Image1.webp", import.meta.url).href,
+  img2: new URL("./assets/products/Image2.webp", import.meta.url).href,
+  img3: new URL("./assets/products/Image3.webp", import.meta.url).href,
+  img4: new URL("./assets/products/Image4.webp", import.meta.url).href,
 };
 
 const specIcons = {
